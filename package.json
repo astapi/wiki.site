@@ -8,7 +8,10 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:fresh": "pnpm sync && pnpm build",
     "preview": "astro preview",
+    "sync": "pnpm sync:lootdive",
+    "sync:lootdive": "node scripts/sync-lootdive.mjs",
     "astro": "astro"
   },
   "dependencies": {

@@ -1,5 +1,15 @@
 ---
 import GameLayout from '../../../layouts/GameLayout.astro'
+import dungeonsData from '../../../data/lootdive/game/dungeons.json'
+
+type Dungeon = {
+  id: string
+  name: string
+  description: string
+  maxFloor: number
+  boss?: { monsterId: string; floor: number }
+  requiresTicket?: boolean
+}
 
 const gameSlug = 'lootdive'
 const nav = [
@@ -7,8 +17,32 @@ const nav = [
   { href: '/items/', label: 'アイテム' },
   { href: '/dungeons/', label: 'ダンジョン' },
 ]
+
+const dungeons = Object.entries(dungeonsData.dungeons as Record<string, unknown>)
+  .filter(([key, v]) => !key.startsWith('_') && !key.startsWith('debug_') && v && typeof v === 'object' && (v as Dungeon).id)
+  .map(([, v]) => v as Dungeon)
 ---
-<GameLayout title="ダンジョン一覧 — LootDive Wiki" gameSlug={gameSlug} gameTitle="LootDive" nav={nav}>
-  <h1 class="text-2xl md:text-3xl font-semibold mb-3">ダンジョン一覧</h1>
-  <p class="text-sm text-[var(--color-text-muted)]">近日対応予定。</p>
+<GameLayout title="ダンジョン一覧 — ルートダイブ wiki" gameSlug={gameSlug} gameTitle="ルートダイブ" nav={nav}>
+  <h1 class="text-2xl md:text-3xl font-semibold mb-2">ダンジョン一覧</h1>
+  <p class="text-sm text-[var(--color-text-muted)] mb-6">全 {dungeons.length} 件</p>
+
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    {dungeons.map((d) => (
+      <li>
+        <a
+          href={`/${gameSlug}/dungeons/${d.id}/`}
+          class="block p-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
+        >
+          <div class="flex items-baseline justify-between gap-2 mb-1">
+            <h2 class="text-base font-semibold">{d.name}</h2>
+            <span class="text-xs text-[var(--color-text-muted)] shrink-0">
+              {d.maxFloor}F
+              {d.requiresTicket && ' / 要チケット'}
+            </span>
+          </div>
+          <p class="text-xs text-[var(--color-text-muted)] line-clamp-2">{d.description}</p>
+        </a>
+      </li>
+    ))}
+  </ul>
 </GameLayout>

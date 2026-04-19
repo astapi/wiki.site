@@ -1,7 +1,36 @@
 ---
 import GameLayout from '../../../layouts/GameLayout.astro'
 import monstersData from '../../../data/lootdive/game/monsters.json'
+import itemsData from '../../../data/lootdive/game/items.json'
+import { itemName, slotName } from '../../../data/lootdive/i18n'
+import { getModDescription } from '../../../data/lootdive/modDescription'
+import {
+  getBossAbilities,
+  isUber,
+  isUberUber,
+  lookupSkillLabel,
+  triggerLabel,
+  type BossSkillInfo,
+  type SkillTriggerType,
+} from '../../../data/lootdive/bossSkills'
 
+type Item = {
+  id: string
+  name: string
+  slot: string
+  weaponType?: string
+  atk?: number
+  def?: number
+  fixedMods?: { type: string; value: number }[]
+}
+
+const itemsMap = itemsData.items as Record<string, Item | undefined>
+const getItem = (id: string): Item | null => {
+  const raw = itemsMap[id]
+  return raw && typeof raw === 'object' && raw.id ? raw : null
+}
+
+type Drop = { itemId: string; dropRate: number }
 type Monster = {
   id: string
   name: string
@@ -11,7 +40,9 @@ type Monster = {
   def: number
   exp: number
   attackSpeed: number
-  uniqueDrop?: { itemId: string; dropRate: number } | null
+  isBoss?: boolean
+  uniqueDrop?: Drop | null
+  uniqueDrops?: Drop[]
 }
 
 const gameSlug = 'lootdive'
@@ -32,14 +63,43 @@ export async function getStaticPaths() {
 }
 
 const { monster } = Astro.props as { monster: Monster }
+
+const uber = isUber(monster.id)
+const uberUber = isUberUber(monster.id)
+const abilities = uber ? getBossAbilities(monster.id) : null
+
+function filterSkills(list: BossSkillInfo[]): BossSkillInfo[] {
+  return list.filter((s) => {
+    if (s.isUberUberOnly && !uberUber) return false
+    return true
+  })
+}
+
+function skillDescKey(s: BossSkillInfo): string {
+  return uberUber && s.descKeyUberUber ? s.descKeyUberUber : s.descKey
+}
+
+function skillTrigger(s: BossSkillInfo): SkillTriggerType | undefined {
+  return uberUber && s.triggerTypeUberUber ? s.triggerTypeUberUber : s.triggerType
+}
+
+const regularSkills = abilities ? filterSkills(abilities.regularSkills) : []
+const thresholdSkills = abilities ? filterSkills(abilities.thresholdSkills) : []
+
+const drops: Drop[] = monster.uniqueDrops?.length
+  ? monster.uniqueDrops
+  : monster.uniqueDrop
+    ? [monster.uniqueDrop]
+    : []
 ---
 <GameLayout
-  title={`${monster.name} — LootDive Wiki`}
+  title={`${monster.name} — ルートダイブ wiki`}
   gameSlug={gameSlug}
-  gameTitle="LootDive"
+  gameTitle="ルートダイブ"
   nav={nav}
 >
   <a href={`/${gameSlug}/monsters/`} class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)]">← モンスター一覧</a>
+
   <div class="mt-4 flex items-start gap-6">
     <img src={`/${gameSlug}/images/monsters/${monster.image}.png`} alt={monster.name} class="w-32 h-32 object-contain" />
     <div>
@@ -52,12 +112,106 @@ const { monster } = Astro.props as { monster: Monster }
         <dt class="text-[var(--color-text-muted)]">EXP</dt><dd>{monster.exp}</dd>
         <dt class="text-[var(--color-text-muted)]">攻撃速度</dt><dd>{monster.attackSpeed}</dd>
       </dl>
-      {monster.uniqueDrop && (
-        <div class="mt-4 p-3 rounded border border-[var(--color-border)] bg-[var(--color-surface)] text-sm">
-          <span class="text-[var(--color-text-muted)]">ユニークドロップ:</span>
-          <span class="ml-2">{monster.uniqueDrop.itemId} ({monster.uniqueDrop.dropRate}%)</span>
-        </div>
-      )}
     </div>
   </div>
+
+  {abilities && (regularSkills.length > 0 || thresholdSkills.length > 0) && (
+    <section class="mt-8">
+      <h2 class="text-base font-semibold mb-3">スキル</h2>
+
+      {regularSkills.length > 0 && (
+        <ul class="space-y-2 mb-4">
+          {regularSkills.map((s) => {
+            const trigger = triggerLabel(skillTrigger(s))
+            return (
+              <li class="p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+                <div class="flex items-baseline justify-between gap-3 mb-1">
+                  <span class="text-sm font-medium">{lookupSkillLabel(monster.id, s.skillKey)}</span>
+                  {trigger && (
+                    <span class="text-[11px] text-[var(--color-text-muted)] shrink-0">{trigger}</span>
+                  )}
+                </div>
+                <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+                  {lookupSkillLabel(monster.id, skillDescKey(s))}
+                </p>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+
+      {thresholdSkills.length > 0 && (
+        <ul class="space-y-2">
+          {thresholdSkills.map((s) => {
+            const trigger = triggerLabel(skillTrigger(s))
+            return (
+              <li class="p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+                <div class="flex items-baseline justify-between gap-3 mb-1">
+                  <span class="text-sm font-medium">{lookupSkillLabel(monster.id, s.skillKey)}</span>
+                  {trigger && (
+                    <span class="text-[11px] text-[var(--color-text-muted)] shrink-0">{trigger}</span>
+                  )}
+                </div>
+                <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+                  {lookupSkillLabel(monster.id, skillDescKey(s))}
+                </p>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </section>
+  )}
+
+  {drops.length > 0 && (
+    <section class="mt-8">
+      <h2 class="text-base font-semibold mb-3">ユニークドロップ</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {drops.map((d) => {
+          const item = getItem(d.itemId)
+          const iconSlug =
+            item?.slot === 'weapon' && item.weaponType === 'staff' ? 'staff' : item?.slot
+          return (
+            <li>
+              <a
+                href={`/${gameSlug}/items/${d.itemId}/`}
+                class="block p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
+              >
+                <div class="flex items-start gap-3">
+                  {iconSlug && (
+                    <img
+                      src={`/${gameSlug}/images/items/${iconSlug}.png`}
+                      alt=""
+                      class="w-10 h-10 object-contain shrink-0"
+                    />
+                  )}
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between gap-2 mb-1">
+                      <span class="text-sm font-medium">{itemName(d.itemId)}</span>
+                      <span class="text-xs text-[var(--color-text-muted)] shrink-0">{d.dropRate}%</span>
+                    </div>
+                    {item && (
+                      <p class="text-[11px] text-[var(--color-text-muted)]">
+                        {slotName(item.slot)}
+                        {item.atk !== undefined && item.atk !== 0 && ` / ATK ${item.atk}`}
+                        {item.def !== undefined && item.def !== 0 && ` / DEF ${item.def}`}
+                      </p>
+                    )}
+                  </div>
+                </div>
+                {item?.fixedMods?.length ? (
+                  <ul class="mt-2 ml-13 space-y-0.5 text-xs text-[#9370DB]">
+                    {item.fixedMods.map((m) => {
+                      const desc = getModDescription(m)
+                      return desc ? <li>• {desc}</li> : null
+                    })}
+                  </ul>
+                ) : null}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    </section>
+  )}
 </GameLayout>
