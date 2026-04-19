@@ -10,6 +10,7 @@ const nav = [
   { href: '/monsters/', label: 'モンスター' },
   { href: '/items/', label: 'アイテム' },
   { href: '/dungeons/', label: 'ダンジョン' },
+  { href: '/system/', label: 'システム' },
 ]
 
 const monsterCount = Object.entries(monstersData.monsters).filter(
@@ -40,6 +41,12 @@ const categories = [
     label: 'ダンジョン',
     desc: '階層・敵構成・ボス・ドロップテーブル',
     count: dungeonCount,
+  },
+  {
+    href: '/system/',
+    label: 'システム',
+    desc: '状態異常・防御機構などバトル計算ルール',
+    count: null,
   },
 ]
 
@@ -95,7 +102,9 @@ const jsonLd = [
       >
         <div class="flex items-baseline justify-between mb-1">
           <h2 class="text-base font-semibold">{c.label}</h2>
-          <span class="text-xs text-[var(--color-text-muted)]">{c.count}件</span>
+          {c.count !== null && (
+            <span class="text-xs text-[var(--color-text-muted)]">{c.count}件</span>
+          )}
         </div>
         <p class="text-xs text-[var(--color-text-muted)]">{c.desc}</p>
       </a>
