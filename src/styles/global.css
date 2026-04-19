@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #0f1117;
+  --color-surface: #181b24;
+  --color-border: #262a36;
+  --color-text: #ececec;
+  --color-text-muted: #9ba0ae;
+  --color-accent: #ffd166;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+a { color: inherit; }

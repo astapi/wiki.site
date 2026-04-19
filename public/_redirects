@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects/rewrites
+#
+# 将来: ゲーム別サブドメインで運用するときのホスト→パス書き換え例
+# 下記のコメントを外し、Pages 側で各サブドメインをカスタムドメインに追加する
+#
+# https://wiki.lootdive.astapi.net/* /lootdive/:splat 200
+# https://wiki.hogehoge.astapi.net/* /hogehoge/:splat 200

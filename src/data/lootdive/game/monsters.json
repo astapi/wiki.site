@@ -1,0 +1,1341 @@
+{
+  "monsters": {
+    "slime": {
+      "id": "slime",
+      "name": "スライム",
+      "image": "slime",
+      "maxHp": 20,
+      "atk": 5,
+      "def": 2,
+      "exp": 10,
+      "attackSpeed": 0.7,
+      "uniqueDrop": {
+        "itemId": "division_core",
+        "dropRate": 5
+      }
+    },
+    "wild_rabbit": {
+      "id": "wild_rabbit",
+      "name": "キラーラビット",
+      "image": "killer_rabbit",
+      "maxHp": 15,
+      "atk": 6,
+      "def": 1,
+      "exp": 8,
+      "attackSpeed": 1.4,
+      "uniqueDrop": null
+    },
+    "goblin": {
+      "id": "goblin",
+      "name": "ゴブリン",
+      "image": "goblin",
+      "maxHp": 30,
+      "atk": 8,
+      "def": 3,
+      "exp": 15,
+      "attackSpeed": 1.0,
+      "uniqueDrop": null
+    },
+    "bee": {
+      "id": "bee",
+      "name": "キラービー",
+      "image": "killer_bee",
+      "maxHp": 12,
+      "atk": 10,
+      "def": 1,
+      "exp": 12,
+      "attackSpeed": 1.5,
+      "uniqueDrop": {
+        "itemId": "poison_needle_ring",
+        "dropRate": 5
+      }
+    },
+    "mimic": {
+      "id": "mimic",
+      "name": "ミミック",
+      "image": "mimic",
+      "maxHp": 30,
+      "atk": 8,
+      "def": 3,
+      "exp": 15,
+      "attackSpeed": 1.0,
+      "uniqueDrop": null
+    },
+    "wolf": {
+      "id": "wolf",
+      "name": "オオカミ",
+      "image": "wolf",
+      "maxHp": 25,
+      "atk": 10,
+      "def": 2,
+      "exp": 14,
+      "attackSpeed": 1.3,
+      "uniqueDrop": {
+        "itemId": "wolf_fang",
+        "dropRate": 5
+      }
+    },
+    "bat": {
+      "id": "bat",
+      "name": "ジャイアントバット",
+      "image": "giant_bat",
+      "maxHp": 28,
+      "atk": 12,
+      "def": 3,
+      "exp": 18,
+      "attackSpeed": 1.2,
+      "uniqueDrop": {
+        "itemId": "dark_night_mantle",
+        "dropRate": 3
+      }
+    },
+    "goblin_warrior": {
+      "id": "goblin_warrior",
+      "name": "ゴブリンウォリアー",
+      "image": "goblin_warrior",
+      "maxHp": 45,
+      "atk": 14,
+      "def": 6,
+      "exp": 25,
+      "attackSpeed": 0.9,
+      "uniqueDrop": null
+    },
+    "skeleton": {
+      "id": "skeleton",
+      "name": "スケルトン",
+      "image": "skeleton",
+      "maxHp": 35,
+      "atk": 12,
+      "def": 5,
+      "exp": 20,
+      "attackSpeed": 1.0,
+      "uniqueDrop": {
+        "itemId": "bone_sword",
+        "dropRate": 3
+      }
+    },
+    "rock_lizard": {
+      "id": "rock_lizard",
+      "name": "岩トカゲ",
+      "image": "rock_lizard",
+      "maxHp": 50,
+      "atk": 11,
+      "def": 10,
+      "exp": 22,
+      "attackSpeed": 0.7,
+      "uniqueDrop": null
+    },
+    "orc": {
+      "id": "orc",
+      "name": "オーク",
+      "image": "orc",
+      "maxHp": 60,
+      "atk": 16,
+      "def": 8,
+      "exp": 30,
+      "attackSpeed": 0.8,
+      "uniqueDrop": {
+        "itemId": "war_ogre_belt",
+        "dropRate": 3
+      }
+    },
+    "skeleton_knight": {
+      "id": "skeleton_knight",
+      "name": "スケルトンナイト",
+      "image": "skeleton_knight",
+      "maxHp": 70,
+      "atk": 18,
+      "def": 12,
+      "exp": 40,
+      "attackSpeed": 0.9,
+      "uniqueDrop": null
+    },
+    "golem": {
+      "id": "golem",
+      "name": "ゴーレム",
+      "image": "golem",
+      "maxHp": 100,
+      "atk": 20,
+      "def": 15,
+      "exp": 50,
+      "attackSpeed": 0.6,
+      "uniqueDrop": {
+        "itemId": "core_stone",
+        "dropRate": 2
+      }
+    },
+    "mummy": {
+      "id": "mummy",
+      "name": "ミイラ",
+      "image": "mummy",
+      "maxHp": 65,
+      "atk": 22,
+      "def": 8,
+      "exp": 45,
+      "attackSpeed": 0.8,
+      "uniqueDrop": {
+        "itemId": "curse_bandage",
+        "dropRate": 2
+      }
+    },
+    "lich": {
+      "id": "lich",
+      "name": "リッチ",
+      "image": "lich",
+      "maxHp": 55,
+      "atk": 28,
+      "def": 6,
+      "exp": 60,
+      "attackSpeed": 1.1,
+      "uniqueDrop": {
+        "itemId": "lost_grimoire",
+        "dropRate": 2
+      }
+    },
+    "gargoyle": {
+      "id": "gargoyle",
+      "name": "ガーゴイル",
+      "image": "gargoyle",
+      "maxHp": 80,
+      "atk": 24,
+      "def": 14,
+      "exp": 55,
+      "attackSpeed": 0.9,
+      "uniqueDrop": {
+        "itemId": "stone_wing_boots",
+        "dropRate": 2
+      }
+    },
+    "_comment_goblin_fort": "=== ゴブリンの砦 ===",
+    "goblin_archer": {
+      "id": "goblin_archer",
+      "name": "ゴブリンアーチャー",
+      "image": "goblin_archer",
+      "maxHp": 60,
+      "atk": 38,
+      "def": 18,
+      "exp": 60,
+      "attackSpeed": 1.2,
+      "uniqueDrop": null
+    },
+    "goblin_shaman": {
+      "id": "goblin_shaman",
+      "name": "ゴブリンシャーマン",
+      "image": "goblin_shaman",
+      "maxHp": 55,
+      "atk": 42,
+      "def": 15,
+      "exp": 65,
+      "attackSpeed": 1.0,
+      "uniqueDrop": {
+        "itemId": "shaman_staff",
+        "dropRate": 3
+      }
+    },
+    "goblin_knight": {
+      "id": "goblin_knight",
+      "name": "ゴブリンナイト",
+      "image": "goblin_knight",
+      "maxHp": 90,
+      "atk": 35,
+      "def": 25,
+      "exp": 70,
+      "attackSpeed": 0.8,
+      "uniqueDrop": {
+        "itemId": "goblin_shield",
+        "dropRate": 3
+      }
+    },
+    "goblin_champion": {
+      "id": "goblin_champion",
+      "name": "ゴブリンチャンピオン",
+      "image": "goblin_champion",
+      "maxHp": 110,
+      "atk": 40,
+      "def": 22,
+      "exp": 80,
+      "attackSpeed": 0.9,
+      "uniqueDrop": {
+        "itemId": "champion_axe",
+        "dropRate": 2
+      }
+    },
+    "goblin_king": {
+      "id": "goblin_king",
+      "name": "ゴブリンキング",
+      "image": "goblin_king",
+      "maxHp": 600,
+      "atk": 48,
+      "def": 28,
+      "exp": 500,
+      "attackSpeed": 0.6,
+      "isBoss": true,
+      "uniqueDrop": {
+        "itemId": "kings_crown",
+        "dropRate": 5
+      }
+    },
+    "_comment_bandit_hideout": "=== 盗賊のアジト (Lv17) ===",
+    "bandit": {
+      "id": "bandit",
+      "name": "盗賊",
+      "image": "bandit",
+      "maxHp": 55,
+      "atk": 28,
+      "def": 12,
+      "exp": 45,
+      "attackSpeed": 1.2,
+      "uniqueDrop": null
+    },
+    "bandit_archer": {
+      "id": "bandit_archer",
+      "name": "盗賊アーチャー",
+      "image": "bandit_archer",
+      "maxHp": 50,
+      "atk": 35,
+      "def": 10,
+      "exp": 50,
+      "attackSpeed": 1.3,
+      "uniqueDrop": null
+    },
+    "bandit_swordsman": {
+      "id": "bandit_swordsman",
+      "name": "盗賊剣士",
+      "image": "bandit_swordsman",
+      "maxHp": 70,
+      "atk": 32,
+      "def": 15,
+      "exp": 55,
+      "attackSpeed": 1.1,
+      "uniqueDrop": null
+    },
+    "bandit_brute": {
+      "id": "bandit_brute",
+      "name": "盗賊の荒くれ者",
+      "image": "bandit_brute",
+      "maxHp": 95,
+      "atk": 36,
+      "def": 16,
+      "exp": 60,
+      "attackSpeed": 0.9,
+      "uniqueDrop": null
+    },
+    "bandit_leader": {
+      "id": "bandit_leader",
+      "name": "盗賊の頭",
+      "image": "bandit_leader",
+      "maxHp": 500,
+      "atk": 42,
+      "def": 20,
+      "exp": 400,
+      "attackSpeed": 0.9,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "bandit_crown", "dropRate": 5 },
+        { "itemId": "double_strike_ring", "dropRate": 10 }
+      ]
+    },
+    "_comment_castle": "=== 魔王城 (Lv30) ===",
+    "death_knight": {
+      "id": "death_knight",
+      "name": "デスナイト",
+      "image": "death_knight",
+      "maxHp": 180,
+      "atk": 78,
+      "def": 42,
+      "exp": 150,
+      "attackSpeed": 0.9,
+      "uniqueDrop": null
+    },
+    "dark_mage": {
+      "id": "dark_mage",
+      "name": "ダークメイジ",
+      "image": "dark_mage",
+      "maxHp": 140,
+      "atk": 92,
+      "def": 32,
+      "exp": 160,
+      "attackSpeed": 1.1,
+      "uniqueDrop": {
+        "itemId": "dark_grimoire",
+        "dropRate": 2
+      }
+    },
+    "demon": {
+      "id": "demon",
+      "name": "デーモン",
+      "image": "demon",
+      "maxHp": 200,
+      "atk": 82,
+      "def": 45,
+      "exp": 165,
+      "attackSpeed": 0.9,
+      "uniqueDrop": {
+        "itemId": "demon_horn",
+        "dropRate": 2
+      }
+    },
+    "wyvern": {
+      "id": "wyvern",
+      "name": "ワイバーン",
+      "image": "wyvern",
+      "maxHp": 165,
+      "atk": 88,
+      "def": 38,
+      "exp": 155,
+      "attackSpeed": 1.1,
+      "uniqueDrop": {
+        "itemId": "wyvern_scale",
+        "dropRate": 2
+      }
+    },
+    "demon_lord": {
+      "id": "demon_lord",
+      "name": "魔王",
+      "image": "demon_lord",
+      "maxHp": 1200,
+      "atk": 98,
+      "def": 55,
+      "exp": 800,
+      "attackSpeed": 0.5,
+      "isBoss": true,
+      "uniqueDrop": {
+        "itemId": "demon_crown",
+        "dropRate": 5
+      }
+    },
+    "_comment_vampire_mansion": "=== ヴァンパイアの館 (Lv19) ===",
+    "zombie": {
+      "id": "zombie",
+      "name": "ゾンビ",
+      "image": "zombie",
+      "maxHp": 75,
+      "atk": 32,
+      "def": 14,
+      "exp": 55,
+      "attackSpeed": 0.6,
+      "uniqueDrop": null
+    },
+    "ghoul": {
+      "id": "ghoul",
+      "name": "グール",
+      "image": "ghoul",
+      "maxHp": 65,
+      "atk": 38,
+      "def": 16,
+      "exp": 60,
+      "attackSpeed": 1.0,
+      "uniqueDrop": null
+    },
+    "banshee": {
+      "id": "banshee",
+      "name": "バンシー",
+      "image": "banshee",
+      "maxHp": 55,
+      "atk": 45,
+      "def": 12,
+      "exp": 65,
+      "attackSpeed": 1.2,
+      "uniqueDrop": null
+    },
+    "wraith": {
+      "id": "wraith",
+      "name": "レイス",
+      "image": "wraith",
+      "maxHp": 70,
+      "atk": 42,
+      "def": 18,
+      "exp": 70,
+      "attackSpeed": 1.1,
+      "uniqueDrop": null
+    },
+    "vampire": {
+      "id": "vampire",
+      "name": "ヴァンパイア",
+      "image": "vampire",
+      "maxHp": 550,
+      "atk": 48,
+      "def": 25,
+      "exp": 450,
+      "attackSpeed": 1.0,
+      "isBoss": true,
+      "uniqueDrop": {
+        "itemId": "vampire_fang",
+        "dropRate": 5
+      }
+    },
+    "_comment_ice_cave": "=== 氷結の洞窟 (Lv34) ===",
+    "ice_golem": {
+      "id": "ice_golem",
+      "name": "アイスゴーレム",
+      "image": "ice_golem",
+      "maxHp": 260,
+      "atk": 95,
+      "def": 60,
+      "exp": 190,
+      "attackSpeed": 0.6,
+      "uniqueDrop": null
+    },
+    "frost_wolf": {
+      "id": "frost_wolf",
+      "name": "フロストウルフ",
+      "image": "frost_wolf",
+      "maxHp": 200,
+      "atk": 115,
+      "def": 45,
+      "exp": 195,
+      "attackSpeed": 1.3,
+      "uniqueDrop": null
+    },
+    "ice_witch": {
+      "id": "ice_witch",
+      "name": "アイスウィッチ",
+      "image": "ice_witch",
+      "maxHp": 175,
+      "atk": 125,
+      "def": 40,
+      "exp": 205,
+      "attackSpeed": 1.0,
+      "uniqueDrop": {
+        "itemId": "frozen_staff",
+        "dropRate": 2
+      }
+    },
+    "yeti": {
+      "id": "yeti",
+      "name": "イエティ",
+      "image": "yeti",
+      "maxHp": 250,
+      "atk": 102,
+      "def": 55,
+      "exp": 200,
+      "attackSpeed": 0.7,
+      "uniqueDrop": {
+        "itemId": "yeti_fur",
+        "dropRate": 2
+      }
+    },
+    "frost_wyrm": {
+      "id": "frost_wyrm",
+      "name": "フロストワーム",
+      "image": "frost_wyrm",
+      "maxHp": 235,
+      "atk": 98,
+      "def": 52,
+      "exp": 195,
+      "attackSpeed": 0.8,
+      "uniqueDrop": null
+    },
+    "_comment_underwater_cave": "=== 海底洞窟 (Lv21) ===",
+    "sahuagin": {
+      "id": "sahuagin",
+      "name": "サハギン",
+      "image": "sahuagin",
+      "maxHp": 85,
+      "atk": 42,
+      "def": 18,
+      "exp": 75,
+      "attackSpeed": 1.1,
+      "uniqueDrop": null
+    },
+    "merman": {
+      "id": "merman",
+      "name": "マーマン",
+      "image": "merman",
+      "maxHp": 95,
+      "atk": 48,
+      "def": 22,
+      "exp": 80,
+      "attackSpeed": 1.0,
+      "uniqueDrop": {
+        "itemId": "merman_trident",
+        "dropRate": 2
+      }
+    },
+    "sea_serpent": {
+      "id": "sea_serpent",
+      "name": "シーサーペント",
+      "image": "sea_serpent",
+      "maxHp": 100,
+      "atk": 52,
+      "def": 20,
+      "exp": 85,
+      "attackSpeed": 1.2,
+      "uniqueDrop": null
+    },
+    "giant_crab": {
+      "id": "giant_crab",
+      "name": "ジャイアントクラブ",
+      "image": "giant_crab",
+      "maxHp": 110,
+      "atk": 48,
+      "def": 35,
+      "exp": 90,
+      "attackSpeed": 0.7,
+      "uniqueDrop": null
+    },
+    "kelpy": {
+      "id": "kelpy",
+      "name": "ケルピー",
+      "image": "kelpy",
+      "maxHp": 90,
+      "atk": 46,
+      "def": 20,
+      "exp": 78,
+      "attackSpeed": 1.15,
+      "uniqueDrop": null
+    },
+    "kraken": {
+      "id": "kraken",
+      "name": "クラーケン",
+      "image": "kraken",
+      "maxHp": 600,
+      "atk": 55,
+      "def": 28,
+      "exp": 480,
+      "attackSpeed": 0.7,
+      "isBoss": true,
+      "uniqueDrop": {
+        "itemId": "kraken_tentacle",
+        "dropRate": 5
+      }
+    },
+    "_comment_volcano": "=== 灼熱の火山 (Lv26) ===",
+    "lava_slime": {
+      "id": "lava_slime",
+      "name": "ラーバスライム",
+      "image": "lava_slime",
+      "maxHp": 130,
+      "atk": 65,
+      "def": 30,
+      "exp": 115,
+      "attackSpeed": 1.1,
+      "uniqueDrop": null
+    },
+    "magma_golem": {
+      "id": "magma_golem",
+      "name": "マグマゴーレム",
+      "image": "magma_golem",
+      "maxHp": 170,
+      "atk": 58,
+      "def": 42,
+      "exp": 125,
+      "attackSpeed": 0.6,
+      "uniqueDrop": {
+        "itemId": "magma_core",
+        "dropRate": 2
+      }
+    },
+    "salamander": {
+      "id": "salamander",
+      "name": "サラマンダー",
+      "image": "salamander",
+      "maxHp": 140,
+      "atk": 68,
+      "def": 32,
+      "exp": 120,
+      "attackSpeed": 1.2,
+      "uniqueDrop": null
+    },
+    "flame_knight": {
+      "id": "flame_knight",
+      "name": "フレイムナイト",
+      "image": "flame_knight",
+      "maxHp": 155,
+      "atk": 62,
+      "def": 38,
+      "exp": 130,
+      "attackSpeed": 0.9,
+      "uniqueDrop": {
+        "itemId": "flame_sword",
+        "dropRate": 2
+      }
+    },
+    "phoenix": {
+      "id": "phoenix",
+      "name": "フェニックス",
+      "image": "phoenix",
+      "maxHp": 125,
+      "atk": 72,
+      "def": 28,
+      "exp": 125,
+      "attackSpeed": 1.3,
+      "uniqueDrop": null
+    },
+    "_comment_orc_fortress": "=== オークの要塞 (Lv23) ===",
+    "orc_warrior": {
+      "id": "orc_warrior",
+      "name": "オーク戦士",
+      "image": "orc",
+      "maxHp": 100,
+      "atk": 50,
+      "def": 24,
+      "exp": 90,
+      "attackSpeed": 0.9,
+      "uniqueDrop": null
+    },
+    "orc_mage": {
+      "id": "orc_mage",
+      "name": "オークメイジ",
+      "image": "orc_mage",
+      "maxHp": 80,
+      "atk": 60,
+      "def": 18,
+      "exp": 95,
+      "attackSpeed": 1.0,
+      "uniqueDrop": {
+        "itemId": "orc_staff",
+        "dropRate": 2
+      }
+    },
+    "troll": {
+      "id": "troll",
+      "name": "トロル",
+      "image": "troll",
+      "maxHp": 130,
+      "atk": 52,
+      "def": 30,
+      "exp": 100,
+      "attackSpeed": 0.7,
+      "uniqueDrop": null
+    },
+    "cyclops": {
+      "id": "cyclops",
+      "name": "サイクロプス",
+      "image": "cyclops",
+      "maxHp": 140,
+      "atk": 55,
+      "def": 26,
+      "exp": 105,
+      "attackSpeed": 0.6,
+      "uniqueDrop": {
+        "itemId": "cyclops_eye",
+        "dropRate": 2
+      }
+    },
+    "uruk_hai": {
+      "id": "uruk_hai",
+      "name": "ウルクハイ",
+      "image": "uruk_hai",
+      "maxHp": 700,
+      "atk": 58,
+      "def": 32,
+      "exp": 520,
+      "attackSpeed": 0.8,
+      "isBoss": true,
+      "uniqueDrop": {
+        "itemId": "uruk_blade",
+        "dropRate": 5
+      }
+    },
+    "_comment_dark_forest": "=== 深淵の森 (×5.06) HP337 ATK164 DEF82 EXP286 ===",
+    "dark_treant": {
+      "id": "dark_treant",
+      "name": "ダークトレント",
+      "image": "dark_treant",
+      "maxHp": 400,
+      "atk": 150,
+      "def": 100,
+      "exp": 280,
+      "attackSpeed": 0.6,
+      "uniqueDrop": null
+    },
+    "shadow_wolf": {
+      "id": "shadow_wolf",
+      "name": "シャドウウルフ",
+      "image": "shadow_wolf",
+      "maxHp": 300,
+      "atk": 180,
+      "def": 70,
+      "exp": 290,
+      "attackSpeed": 1.4,
+      "uniqueDrop": null
+    },
+    "forest_witch": {
+      "id": "forest_witch",
+      "name": "フォレストウィッチ",
+      "image": "forest_witch",
+      "maxHp": 280,
+      "atk": 190,
+      "def": 65,
+      "exp": 300,
+      "attackSpeed": 1.0,
+      "uniqueDrop": {
+        "itemId": "cursed_branch",
+        "dropRate": 2
+      }
+    },
+    "chimera": {
+      "id": "chimera",
+      "name": "キメラ",
+      "image": "chimera",
+      "maxHp": 380,
+      "atk": 160,
+      "def": 90,
+      "exp": 285,
+      "attackSpeed": 1.1,
+      "uniqueDrop": {
+        "itemId": "chimera_fang",
+        "dropRate": 2
+      }
+    },
+    "nightmare": {
+      "id": "nightmare",
+      "name": "ナイトメア",
+      "image": "nightmare",
+      "maxHp": 320,
+      "atk": 170,
+      "def": 85,
+      "exp": 275,
+      "attackSpeed": 1.2,
+      "uniqueDrop": null
+    },
+    "_comment_sky_tower": "=== 天空の塔 (×7.59) HP506 ATK247 DEF122 EXP429 ===",
+    "sky_knight": {
+      "id": "sky_knight",
+      "name": "スカイナイト",
+      "image": "sky_knight",
+      "maxHp": 520,
+      "atk": 240,
+      "def": 130,
+      "exp": 420,
+      "attackSpeed": 1.0,
+      "uniqueDrop": null
+    },
+    "storm_harpy": {
+      "id": "storm_harpy",
+      "name": "ストームハーピー",
+      "image": "storm_harpy",
+      "maxHp": 450,
+      "atk": 270,
+      "def": 100,
+      "exp": 435,
+      "attackSpeed": 1.4,
+      "uniqueDrop": null
+    },
+    "thunder_bird": {
+      "id": "thunder_bird",
+      "name": "サンダーバード",
+      "image": "thunder_bird",
+      "maxHp": 480,
+      "atk": 260,
+      "def": 115,
+      "exp": 440,
+      "attackSpeed": 1.3,
+      "uniqueDrop": {
+        "itemId": "thunder_feather",
+        "dropRate": 2
+      }
+    },
+    "cloud_giant": {
+      "id": "cloud_giant",
+      "name": "クラウドジャイアント",
+      "image": "cloud_giant",
+      "maxHp": 600,
+      "atk": 220,
+      "def": 150,
+      "exp": 425,
+      "attackSpeed": 0.6,
+      "uniqueDrop": {
+        "itemId": "giant_belt",
+        "dropRate": 2
+      }
+    },
+    "griffon": {
+      "id": "griffon",
+      "name": "グリフォン",
+      "image": "griffon",
+      "maxHp": 480,
+      "atk": 245,
+      "def": 115,
+      "exp": 425,
+      "attackSpeed": 1.2,
+      "uniqueDrop": null
+    },
+    "_comment_hell_gate": "=== 地獄の門 (×11.39) HP759 ATK370 DEF184 EXP643 ===",
+    "hell_hound": {
+      "id": "hell_hound",
+      "name": "ヘルハウンド",
+      "image": "hell_hound",
+      "maxHp": 700,
+      "atk": 400,
+      "def": 160,
+      "exp": 640,
+      "attackSpeed": 1.4,
+      "uniqueDrop": null
+    },
+    "infernal_knight": {
+      "id": "infernal_knight",
+      "name": "インファーナルナイト",
+      "image": "infernal_knight",
+      "maxHp": 850,
+      "atk": 350,
+      "def": 210,
+      "exp": 650,
+      "attackSpeed": 0.8,
+      "uniqueDrop": {
+        "itemId": "infernal_armor",
+        "dropRate": 2
+      }
+    },
+    "succubus": {
+      "id": "succubus",
+      "name": "サキュバス",
+      "image": "succubus",
+      "maxHp": 650,
+      "atk": 420,
+      "def": 150,
+      "exp": 660,
+      "attackSpeed": 1.1,
+      "uniqueDrop": null
+    },
+    "balrog": {
+      "id": "balrog",
+      "name": "バルログ",
+      "image": "balrog",
+      "maxHp": 900,
+      "atk": 360,
+      "def": 200,
+      "exp": 640,
+      "attackSpeed": 0.7,
+      "uniqueDrop": {
+        "itemId": "balrog_whip",
+        "dropRate": 2
+      }
+    },
+    "cerberus": {
+      "id": "cerberus",
+      "name": "ケルベロス",
+      "image": "cerberus",
+      "maxHp": 700,
+      "atk": 380,
+      "def": 180,
+      "exp": 625,
+      "attackSpeed": 1.3,
+      "uniqueDrop": null
+    },
+    "_comment_dragon_nest": "=== 竜の巣穴 (×17.09) HP1139 ATK555 DEF275 EXP965 ===",
+    "drake": {
+      "id": "drake",
+      "name": "ドレイク",
+      "image": "drake",
+      "maxHp": 1050,
+      "atk": 580,
+      "def": 250,
+      "exp": 950,
+      "attackSpeed": 1.0,
+      "uniqueDrop": null
+    },
+    "fire_dragon": {
+      "id": "fire_dragon",
+      "name": "ファイアドラゴン",
+      "image": "fire_dragon",
+      "maxHp": 1200,
+      "atk": 550,
+      "def": 280,
+      "exp": 980,
+      "attackSpeed": 0.8,
+      "uniqueDrop": {
+        "itemId": "fire_dragon_scale",
+        "dropRate": 2
+      }
+    },
+    "ice_dragon": {
+      "id": "ice_dragon",
+      "name": "アイスドラゴン",
+      "image": "ice_dragon",
+      "maxHp": 1150,
+      "atk": 540,
+      "def": 300,
+      "exp": 970,
+      "attackSpeed": 0.7,
+      "uniqueDrop": {
+        "itemId": "ice_dragon_scale",
+        "dropRate": 2
+      }
+    },
+    "thunder_dragon": {
+      "id": "thunder_dragon",
+      "name": "サンダードラゴン",
+      "image": "thunder_dragon",
+      "maxHp": 1100,
+      "atk": 580,
+      "def": 260,
+      "exp": 960,
+      "attackSpeed": 1.1,
+      "uniqueDrop": null
+    },
+    "elder_dragon": {
+      "id": "elder_dragon",
+      "name": "エルダードラゴン",
+      "image": "elder_dragon",
+      "maxHp": 1200,
+      "atk": 520,
+      "def": 290,
+      "exp": 965,
+      "attackSpeed": 0.6,
+      "uniqueDrop": {
+        "itemId": "dragon_heart",
+        "dropRate": 1
+      }
+    },
+    "_comment_sacred_temple": "=== 神域の神殿 (×25.63) HP1708 ATK832 DEF413 EXP1447 ===",
+    "divine_knight": {
+      "id": "divine_knight",
+      "name": "ディバインナイト",
+      "image": "divine_knight",
+      "maxHp": 1800,
+      "atk": 800,
+      "def": 450,
+      "exp": 1440,
+      "attackSpeed": 0.9,
+      "uniqueDrop": null
+    },
+    "seraph": {
+      "id": "seraph",
+      "name": "セラフ",
+      "image": "seraph",
+      "maxHp": 1500,
+      "atk": 900,
+      "def": 380,
+      "exp": 1480,
+      "attackSpeed": 1.2,
+      "uniqueDrop": {
+        "itemId": "holy_feather",
+        "dropRate": 2
+      }
+    },
+    "temple_guardian": {
+      "id": "temple_guardian",
+      "name": "テンプルガーディアン",
+      "image": "temple_guardian",
+      "maxHp": 2000,
+      "atk": 750,
+      "def": 500,
+      "exp": 1450,
+      "attackSpeed": 0.6,
+      "uniqueDrop": null
+    },
+    "holy_dragon": {
+      "id": "holy_dragon",
+      "name": "ホーリードラゴン",
+      "image": "holy_dragon",
+      "maxHp": 1700,
+      "atk": 850,
+      "def": 400,
+      "exp": 1460,
+      "attackSpeed": 0.8,
+      "uniqueDrop": {
+        "itemId": "holy_dragon_scale",
+        "dropRate": 2
+      }
+    },
+    "valkyrie": {
+      "id": "valkyrie",
+      "name": "ヴァルキリー",
+      "image": "valkyrie",
+      "maxHp": 1550,
+      "atk": 860,
+      "def": 340,
+      "exp": 1405,
+      "attackSpeed": 1.3,
+      "uniqueDrop": null
+    },
+    "_comment_chaos_realm": "=== 混沌の領域 (×38.44) HP2562 ATK1249 DEF619 EXP2171 ===",
+    "chaos_knight": {
+      "id": "chaos_knight",
+      "name": "カオスナイト",
+      "image": "chaos_knight",
+      "maxHp": 2700,
+      "atk": 1200,
+      "def": 650,
+      "exp": 2150,
+      "attackSpeed": 1.0,
+      "uniqueDrop": null
+    },
+    "void_walker": {
+      "id": "void_walker",
+      "name": "ヴォイドウォーカー",
+      "image": "void_walker",
+      "maxHp": 2300,
+      "atk": 1350,
+      "def": 550,
+      "exp": 2200,
+      "attackSpeed": 1.1,
+      "uniqueDrop": {
+        "itemId": "void_essence",
+        "dropRate": 2
+      }
+    },
+    "abomination": {
+      "id": "abomination",
+      "name": "アボミネーション",
+      "image": "abomination",
+      "maxHp": 3000,
+      "atk": 1150,
+      "def": 700,
+      "exp": 2180,
+      "attackSpeed": 0.7,
+      "uniqueDrop": null
+    },
+    "chaos_dragon": {
+      "id": "chaos_dragon",
+      "name": "カオスドラゴン",
+      "image": "chaos_dragon",
+      "maxHp": 2600,
+      "atk": 1280,
+      "def": 600,
+      "exp": 2170,
+      "attackSpeed": 0.9,
+      "uniqueDrop": {
+        "itemId": "chaos_scale",
+        "dropRate": 2
+      }
+    },
+    "elder_thing": {
+      "id": "elder_thing",
+      "name": "エルダーシング",
+      "image": "elder_thing",
+      "maxHp": 2200,
+      "atk": 1265,
+      "def": 595,
+      "exp": 2155,
+      "attackSpeed": 1.0,
+      "uniqueDrop": null
+    },
+    "_comment_final_land": "=== 終焉の地 (×57.67) HP3844 ATK1873 DEF929 EXP3257 ===",
+    "apocalypse_knight": {
+      "id": "apocalypse_knight",
+      "name": "アポカリプスナイト",
+      "image": "apocalypse_knight",
+      "maxHp": 4000,
+      "atk": 1800,
+      "def": 950,
+      "exp": 3200,
+      "attackSpeed": 0.9,
+      "uniqueDrop": null
+    },
+    "world_eater": {
+      "id": "world_eater",
+      "name": "ワールドイーター",
+      "image": "world_eater",
+      "maxHp": 4500,
+      "atk": 1750,
+      "def": 1000,
+      "exp": 3300,
+      "attackSpeed": 0.7,
+      "uniqueDrop": {
+        "itemId": "world_fragment",
+        "dropRate": 2
+      }
+    },
+    "primordial_titan": {
+      "id": "primordial_titan",
+      "name": "プライモーディアルタイタン",
+      "image": "primordial_titan",
+      "maxHp": 5000,
+      "atk": 1700,
+      "def": 1100,
+      "exp": 3350,
+      "attackSpeed": 0.5,
+      "uniqueDrop": null
+    },
+    "god_slayer": {
+      "id": "god_slayer",
+      "name": "ゴッドスレイヤー",
+      "image": "god_slayer",
+      "maxHp": 3500,
+      "atk": 2100,
+      "def": 800,
+      "exp": 3250,
+      "attackSpeed": 1.2,
+      "uniqueDrop": {
+        "itemId": "divine_blade",
+        "dropRate": 2
+      }
+    },
+    "end_bringer": {
+      "id": "end_bringer",
+      "name": "エンドブリンガー",
+      "image": "end_bringer",
+      "maxHp": 3200,
+      "atk": 2015,
+      "def": 795,
+      "exp": 3185,
+      "attackSpeed": 1.1,
+      "uniqueDrop": null
+    },
+    "true_final_boss": {
+      "id": "true_final_boss",
+      "name": "終焉の王",
+      "image": "true_final_boss",
+      "maxHp": 25000,
+      "atk": 2500,
+      "def": 1200,
+      "exp": 10000,
+      "attackSpeed": 0.4,
+      "isBoss": true,
+      "uniqueDrop": {
+        "itemId": "crown_of_end",
+        "dropRate": 5
+      }
+    },
+    "uber_goblin_king": {
+      "id": "uber_goblin_king",
+      "name": "Uber ゴブリンキング",
+      "image": "goblin_king",
+      "maxHp": 24000,
+      "atk": 2800,
+      "def": 600,
+      "exp": 5000,
+      "attackSpeed": 0.7,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "uber_goblin_blade", "dropRate": 5 },
+        { "itemId": "uber_goblin_plate", "dropRate": 5 },
+        { "itemId": "uber_goblin_grip", "dropRate": 5 },
+        { "itemId": "uber_goblin_stomp", "dropRate": 5 },
+        { "itemId": "uber_kings_crown", "dropRate": 5 }
+      ]
+    },
+    "uber_bandit_leader": {
+      "id": "uber_bandit_leader",
+      "name": "Uber 盗賊の頭",
+      "image": "bandit_leader",
+      "maxHp": 10000,
+      "atk": 3000,
+      "def": 1300,
+      "exp": 6000,
+      "attackSpeed": 1.0,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "uber_bandit_dagger", "dropRate": 5 },
+        { "itemId": "uber_bandit_coat", "dropRate": 5 },
+        { "itemId": "uber_bandit_grip", "dropRate": 5 },
+        { "itemId": "uber_bandit_steps", "dropRate": 5 },
+        { "itemId": "uber_bandit_crown", "dropRate": 5 },
+        { "itemId": "uber_double_strike_ring", "dropRate": 10 }
+      ]
+    },
+    "uber_vampire": {
+      "id": "uber_vampire",
+      "name": "Uber ヴァンパイア",
+      "image": "vampire",
+      "maxHp": 12000,
+      "atk": 3200,
+      "def": 1400,
+      "exp": 7000,
+      "attackSpeed": 1.1,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "uber_vampire_fang", "dropRate": 5 },
+        { "itemId": "uber_vampire_plate", "dropRate": 5 },
+        { "itemId": "uber_vampire_grip", "dropRate": 5 },
+        { "itemId": "uber_vampire_stride", "dropRate": 5 },
+        { "itemId": "uber_vampire_heart", "dropRate": 5 }
+      ]
+    },
+    "uber_kraken": {
+      "id": "uber_kraken",
+      "name": "Uber クラーケン",
+      "image": "kraken",
+      "maxHp": 15000,
+      "atk": 3400,
+      "def": 1500,
+      "exp": 8000,
+      "attackSpeed": 0.9,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "uber_kraken_tentacle", "dropRate": 5 },
+        { "itemId": "uber_kraken_shell", "dropRate": 5 },
+        { "itemId": "uber_kraken_claw", "dropRate": 5 },
+        { "itemId": "uber_kraken_fin", "dropRate": 5 },
+        { "itemId": "uber_kraken_eye", "dropRate": 5 }
+      ]
+    },
+    "uber_demon_lord": {
+      "id": "uber_demon_lord",
+      "name": "Uber 魔王",
+      "image": "demon_lord",
+      "maxHp": 54000,
+      "atk": 3600,
+      "def": 600,
+      "exp": 10000,
+      "attackSpeed": 0.6,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "uber_demon_blade", "dropRate": 5 },
+        { "itemId": "uber_demon_armor", "dropRate": 5 },
+        { "itemId": "uber_demon_grip", "dropRate": 5 },
+        { "itemId": "uber_demon_steps", "dropRate": 5 },
+        { "itemId": "uber_demon_crown", "dropRate": 5 }
+      ]
+    },
+    "uber_true_final_boss": {
+      "id": "uber_true_final_boss",
+      "name": "Uber 終焉の王",
+      "image": "true_final_boss",
+      "maxHp": 150000,
+      "atk": 4000,
+      "def": 600,
+      "exp": 20000,
+      "attackSpeed": 0.45,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "uber_endblade", "dropRate": 5 },
+        { "itemId": "uber_endplate", "dropRate": 5 },
+        { "itemId": "uber_endgrasp", "dropRate": 5 },
+        { "itemId": "uber_endstride", "dropRate": 5 },
+        { "itemId": "uber_crown_of_end", "dropRate": 5 }
+      ]
+    },
+    "uber_uber_goblin_king": {
+      "id": "uber_uber_goblin_king",
+      "name": "UberUber ゴブリンキング",
+      "image": "goblin_king",
+      "maxHp": 600000,
+      "atk": 4000,
+      "def": 600,
+      "exp": 10000,
+      "attackSpeed": 1.0,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "uber_goblin_blade", "dropRate": 10 },
+        { "itemId": "uber_goblin_plate", "dropRate": 10 },
+        { "itemId": "uber_goblin_grip", "dropRate": 10 },
+        { "itemId": "uber_goblin_stomp", "dropRate": 10 },
+        { "itemId": "uber_kings_crown", "dropRate": 10 },
+        { "itemId": "uber_uber_goblin_stomp", "dropRate": 20 }
+      ]
+    },
+    "uber_uber_bandit_leader": {
+      "id": "uber_uber_bandit_leader",
+      "name": "UberUber 盗賊の頭",
+      "image": "bandit_leader",
+      "maxHp": 250000,
+      "atk": 2100,
+      "def": 1300,
+      "exp": 12000,
+      "attackSpeed": 1.4,
+      "isBoss": true,
+      "uniqueDrop": null,
+      "uniqueDrops": [
+        { "itemId": "uber_bandit_dagger", "dropRate": 10 },
+        { "itemId": "uber_bandit_coat", "dropRate": 10 },
+        { "itemId": "uber_bandit_grip", "dropRate": 10 },
+        { "itemId": "uber_bandit_steps", "dropRate": 10 },
+        { "itemId": "uber_bandit_crown", "dropRate": 10 },
+        { "itemId": "uber_double_strike_ring", "dropRate": 15 },
+        { "itemId": "uber_uber_double_strike_ring", "dropRate": 20 }
+      ]
+    }
+  }
+}

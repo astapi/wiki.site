@@ -1,0 +1,250 @@
+{
+  "dungeons": [
+    {
+      "id": "grassland",
+      "name": "始まりの草原",
+      "description": "冒険者が最初に訪れる穏やかな草原。弱いモンスターが生息している。",
+      "maxFloor": 5
+    },
+    {
+      "id": "cave",
+      "name": "地底洞窟",
+      "description": "地下深くに広がる暗い洞窟。中級のモンスターが潜んでいる。",
+      "maxFloor": 7
+    },
+    {
+      "id": "ruins",
+      "name": "忘却の遺跡",
+      "description": "古代文明の遺跡。強力なモンスターが徘徊する危険な場所。",
+      "maxFloor": 10
+    },
+    {
+      "id": "goblin_fort",
+      "name": "ゴブリンの砦",
+      "description": "ゴブリンたちが築いた巨大な砦。奥深くにはゴブリンキングが君臨している。",
+      "maxFloor": 20
+    },
+    {
+      "id": "bandit_hideout",
+      "name": "盗賊のアジト",
+      "description": "山賊たちが根城にする隠れ家。略奪品が山と積まれている。",
+      "maxFloor": 15
+    },
+    {
+      "id": "vampire_mansion",
+      "name": "ヴァンパイアの館",
+      "description": "夜の闇に佇む不気味な館。不死の貴族が支配している。",
+      "maxFloor": 12
+    },
+    {
+      "id": "underwater_cave",
+      "name": "海底洞窟",
+      "description": "深海に広がる神秘的な洞窟。水棲の魔物が縄張りを守っている。",
+      "maxFloor": 15
+    },
+    {
+      "id": "orc_fortress",
+      "name": "オークの要塞",
+      "description": "オークとトロルが支配する巨大な要塞。凶暴な戦士たちが待ち構える。",
+      "maxFloor": 18
+    },
+    {
+      "id": "volcano",
+      "name": "灼熱の火山",
+      "description": "活火山の内部に広がる灼熱の迷宮。炎の魔物が棲みついている。",
+      "maxFloor": 15
+    },
+    {
+      "id": "demon_castle",
+      "name": "魔王城",
+      "description": "闇の力が渦巻く魔王の居城。強力な魔物たちが主を守護している。",
+      "maxFloor": 15
+    },
+    {
+      "id": "ice_cave",
+      "name": "氷結の洞窟",
+      "description": "永久凍土の奥深くに眠る氷の洞窟。極寒の魔物が生息する。",
+      "maxFloor": 15
+    },
+    {
+      "id": "dark_forest",
+      "name": "深淵の森",
+      "description": "光の届かない暗黒の森。古代の魔獣が潜んでいる。",
+      "maxFloor": 18
+    },
+    {
+      "id": "sky_tower",
+      "name": "天空の塔",
+      "description": "雲を突き抜けてそびえ立つ神秘の塔。天界の守護者が待ち受ける。",
+      "maxFloor": 18
+    },
+    {
+      "id": "hell_gate",
+      "name": "地獄の門",
+      "description": "冥界へと通じる禁断の門。地獄の番人たちが侵入者を阻む。",
+      "maxFloor": 20
+    },
+    {
+      "id": "dragon_nest",
+      "name": "竜の巣穴",
+      "description": "古龍たちが眠る伝説の巣穴。最強の竜種が生息する。",
+      "maxFloor": 20
+    },
+    {
+      "id": "sacred_temple",
+      "name": "神域の神殿",
+      "description": "神々に仕える守護者たちが守る聖なる神殿。",
+      "maxFloor": 25
+    },
+    {
+      "id": "chaos_realm",
+      "name": "混沌の領域",
+      "description": "現実と虚無の狭間に存在する混沌の世界。あらゆる法則が歪む。",
+      "maxFloor": 25
+    },
+    {
+      "id": "final_land",
+      "name": "終焉の地",
+      "description": "世界の果てに存在する最後の地。最強の存在が待ち構える。",
+      "maxFloor": 30
+    },
+    {
+      "id": "dimensional_rush_1",
+      "name": "異次元ラッシュI",
+      "description": "異次元の迷宮。50階のゴブリンキングを討ち倒せ。",
+      "maxFloor": 50
+    },
+    {
+      "id": "dimensional_rush_2",
+      "name": "異次元ラッシュII",
+      "description": "異次元の迷宮。70階の盗賊の頭を討ち倒せ。",
+      "maxFloor": 70
+    },
+    {
+      "id": "dimensional_rush_3",
+      "name": "異次元ラッシュIII",
+      "description": "異次元の迷宮。90階のヴァンパイアを討ち倒せ。",
+      "maxFloor": 90
+    },
+    {
+      "id": "dimensional_rush_4",
+      "name": "異次元ラッシュIV",
+      "description": "異次元の迷宮。110階のクラーケンを討ち倒せ。",
+      "maxFloor": 110
+    },
+    {
+      "id": "dimensional_rush_5",
+      "name": "異次元ラッシュV",
+      "description": "異次元の迷宮。120階の魔王を討ち倒せ。",
+      "maxFloor": 120
+    },
+    {
+      "id": "dimensional_rush_6",
+      "name": "異次元ラッシュVI",
+      "description": "異次元の迷宮・最終層。200階の終焉の王を討ち倒せ。",
+      "maxFloor": 200
+    },
+    {
+      "id": "uber_goblin_king",
+      "name": "Uber ゴブリンキング",
+      "description": "異次元で覚醒したゴブリンキング。",
+      "maxFloor": 1
+    },
+    {
+      "id": "uber_bandit_leader",
+      "name": "Uber 盗賊の頭",
+      "description": "異次元で強化された盗賊の頭。",
+      "maxFloor": 1
+    },
+    {
+      "id": "uber_vampire",
+      "name": "Uber ヴァンパイア",
+      "description": "血に飢えた異次元のヴァンパイア。",
+      "maxFloor": 1
+    },
+    {
+      "id": "uber_kraken",
+      "name": "Uber クラーケン",
+      "description": "異次元の海を支配する巨大生物。",
+      "maxFloor": 1
+    },
+    {
+      "id": "uber_demon_lord",
+      "name": "Uber 魔王",
+      "description": "異次元の力で蘇った魔王。",
+      "maxFloor": 1
+    },
+    {
+      "id": "uber_true_final_boss",
+      "name": "Uber 終焉の王",
+      "description": "真の終焉をもたらす存在。",
+      "maxFloor": 1
+    },
+    {
+      "id": "uber_uber_goblin_king",
+      "name": "UberUber ゴブリンキング",
+      "description": "全ての試練を乗り越えた者だけが挑める、究極のゴブリンキング。",
+      "maxFloor": 1
+    },
+    {
+      "id": "uber_uber_bandit_leader",
+      "name": "UberUber 盗賊の頭",
+      "description": "全ての試練を乗り越えた者だけが挑める、究極の暗殺者。",
+      "maxFloor": 1
+    },
+    {
+      "id": "debug_dimensional_goblin_king",
+      "name": "DEBUG: 異次元ラッシュ - ゴブリンキング",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1
+    },
+    {
+      "id": "debug_dimensional_bandit_leader",
+      "name": "DEBUG: 異次元ラッシュ - 盗賊の頭",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1
+    },
+    {
+      "id": "debug_dimensional_vampire",
+      "name": "DEBUG: 異次元ラッシュ - ヴァンパイア",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1
+    },
+    {
+      "id": "debug_dimensional_kraken",
+      "name": "DEBUG: 異次元ラッシュ - クラーケン",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1
+    },
+    {
+      "id": "debug_dimensional_demon_lord",
+      "name": "DEBUG: 異次元ラッシュ - 魔王",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1
+    },
+    {
+      "id": "debug_dimensional_true_final_boss",
+      "name": "DEBUG: 異次元ラッシュ - 終焉の王",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1
+    },
+    {
+      "id": "debug_uber_uber_goblin_king",
+      "name": "DEBUG: UberUber ゴブリンキング",
+      "description": "デバッグ用。UberUberゴブリンキングが単体で出現する。チケット不要。",
+      "maxFloor": 1
+    },
+    {
+      "id": "debug_uber_uber_bandit_leader",
+      "name": "DEBUG: UberUber 盗賊の頭",
+      "description": "デバッグ用。UberUber盗賊の頭が単体で出現する。チケット不要。",
+      "maxFloor": 1
+    },
+    {
+      "id": "dimensional_corridor",
+      "name": "次元回廊",
+      "description": "無限に続く次元の狭間。深層へ進むほど敵は強くなる。",
+      "maxFloor": -1
+    }
+  ]
+}

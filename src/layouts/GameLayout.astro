@@ -1,0 +1,34 @@
+---
+import BaseLayout from './BaseLayout.astro'
+
+interface Props {
+  title: string
+  description?: string
+  gameSlug: string
+  gameTitle: string
+  nav?: { href: string; label: string }[]
+}
+
+const { title, description, gameSlug, gameTitle, nav = [] } = Astro.props
+const base = `/${gameSlug}`
+---
+<BaseLayout title={title} description={description}>
+  <header class="border-b border-[var(--color-border)]">
+    <div class="max-w-5xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+      <a href={base} class="font-semibold">{gameTitle} Wiki</a>
+      <nav class="flex items-center gap-4 text-sm text-[var(--color-text-muted)]">
+        {nav.map((n) => (
+          <a href={`${base}${n.href}`} class="hover:text-[var(--color-text)]">{n.label}</a>
+        ))}
+      </nav>
+    </div>
+  </header>
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8">
+    <slot />
+  </main>
+  <footer class="border-t border-[var(--color-border)] mt-12">
+    <div class="max-w-5xl mx-auto px-5 md:px-8 py-6 text-xs text-[var(--color-text-muted)]">
+      <p>&copy; 2026 astapi Games — 非公式データリファレンス</p>
+    </div>
+  </footer>
+</BaseLayout>

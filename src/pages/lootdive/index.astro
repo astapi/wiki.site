@@ -1,0 +1,34 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro'
+
+const gameSlug = 'lootdive'
+const gameTitle = 'LootDive'
+const nav = [
+  { href: '/monsters/', label: 'モンスター' },
+  { href: '/items/', label: 'アイテム' },
+  { href: '/dungeons/', label: 'ダンジョン' },
+]
+
+const categories = [
+  { href: '/monsters/', label: 'モンスター', desc: '図鑑データ・出現ダンジョン・ドロップ' },
+  { href: '/items/', label: 'アイテム', desc: '基本ベース・ユニーク装備・MOD' },
+  { href: '/dungeons/', label: 'ダンジョン', desc: '階層・敵構成・ドロップテーブル' },
+]
+---
+<GameLayout title="LootDive Wiki" gameSlug={gameSlug} gameTitle={gameTitle} nav={nav}>
+  <h1 class="text-2xl md:text-3xl font-semibold mb-2">LootDive Wiki</h1>
+  <p class="text-sm md:text-base text-[var(--color-text-muted)] mb-8">
+    アプリ内マスターデータのリファレンスサイト。
+  </p>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {categories.map((c) => (
+      <a
+        href={`/${gameSlug}${c.href}`}
+        class="block p-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-accent)] transition-colors"
+      >
+        <h2 class="text-base font-semibold mb-1">{c.label}</h2>
+        <p class="text-xs text-[var(--color-text-muted)]">{c.desc}</p>
+      </a>
+    ))}
+  </div>
+</GameLayout>

@@ -1,0 +1,63 @@
+---
+import GameLayout from '../../../layouts/GameLayout.astro'
+import monstersData from '../../../data/lootdive/game/monsters.json'
+
+type Monster = {
+  id: string
+  name: string
+  image: string
+  maxHp: number
+  atk: number
+  def: number
+  exp: number
+  attackSpeed: number
+  uniqueDrop?: { itemId: string; dropRate: number } | null
+}
+
+const gameSlug = 'lootdive'
+const nav = [
+  { href: '/monsters/', label: 'モンスター' },
+  { href: '/items/', label: 'アイテム' },
+  { href: '/dungeons/', label: 'ダンジョン' },
+]
+
+export async function getStaticPaths() {
+  const data = (await import('../../../data/lootdive/game/monsters.json')).default
+  return Object.entries(data.monsters as Record<string, Partial<Monster>>)
+    .filter(([key, m]) => !key.startsWith('_') && m.id)
+    .map(([, m]) => ({
+      params: { id: m.id! },
+      props: { monster: m as Monster },
+    }))
+}
+
+const { monster } = Astro.props as { monster: Monster }
+---
+<GameLayout
+  title={`${monster.name} — LootDive Wiki`}
+  gameSlug={gameSlug}
+  gameTitle="LootDive"
+  nav={nav}
+>
+  <a href={`/${gameSlug}/monsters/`} class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)]">← モンスター一覧</a>
+  <div class="mt-4 flex items-start gap-6">
+    <img src={`/${gameSlug}/images/monsters/${monster.image}.png`} alt={monster.name} class="w-32 h-32 object-contain" />
+    <div>
+      <h1 class="text-2xl md:text-3xl font-semibold mb-2">{monster.name}</h1>
+      <p class="text-xs text-[var(--color-text-muted)] mb-4">ID: {monster.id}</p>
+      <dl class="grid grid-cols-2 gap-x-8 gap-y-1 text-sm">
+        <dt class="text-[var(--color-text-muted)]">HP</dt><dd>{monster.maxHp}</dd>
+        <dt class="text-[var(--color-text-muted)]">ATK</dt><dd>{monster.atk}</dd>
+        <dt class="text-[var(--color-text-muted)]">DEF</dt><dd>{monster.def}</dd>
+        <dt class="text-[var(--color-text-muted)]">EXP</dt><dd>{monster.exp}</dd>
+        <dt class="text-[var(--color-text-muted)]">攻撃速度</dt><dd>{monster.attackSpeed}</dd>
+      </dl>
+      {monster.uniqueDrop && (
+        <div class="mt-4 p-3 rounded border border-[var(--color-border)] bg-[var(--color-surface)] text-sm">
+          <span class="text-[var(--color-text-muted)]">ユニークドロップ:</span>
+          <span class="ml-2">{monster.uniqueDrop.itemId} ({monster.uniqueDrop.dropRate}%)</span>
+        </div>
+      )}
+    </div>
+  </div>
+</GameLayout>

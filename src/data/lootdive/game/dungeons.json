@@ -1,0 +1,1322 @@
+{
+  "dungeons": {
+    "grassland": {
+      "id": "grassland",
+      "name": "始まりの草原",
+      "description": "冒険者が最初に訪れる穏やかな草原。弱いモンスターが生息している。",
+      "maxFloor": 5,
+      "monsters": [
+        { "monsterId": "slime", "spawnRate": 30 },
+        { "monsterId": "wild_rabbit", "spawnRate": 25 },
+        { "monsterId": "goblin", "spawnRate": 20 },
+        { "monsterId": "bee", "spawnRate": 15 },
+        { "monsterId": "wolf", "spawnRate": 10 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "rusted_sword", "dropRate": 10 },
+          { "itemId": "rusted_staff", "dropRate": 10 },
+          { "itemId": "cloth_clothes", "dropRate": 10 },
+          { "itemId": "leather_hat", "dropRate": 10 },
+          { "itemId": "leather_gloves", "dropRate": 10 },
+          { "itemId": "leather_boots", "dropRate": 10 },
+          { "itemId": "copper_ring", "dropRate": 8 },
+          { "itemId": "traveler_amulet", "dropRate": 8 }
+        ],
+        "dungeon": [
+          { "itemId": "grassland_sword", "dropRate": 15 },
+          { "itemId": "grassland_staff", "dropRate": 15 },
+          { "itemId": "light_leather", "dropRate": 15 },
+          { "itemId": "rabbit_boots", "dropRate": 15 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 10 },
+      "modCountRange": { "min": 0, "max": 1 }
+    },
+    "cave": {
+      "id": "cave",
+      "name": "地底洞窟",
+      "description": "地下深くに広がる暗い洞窟。中級のモンスターが潜んでいる。",
+      "maxFloor": 7,
+      "monsters": [
+        { "monsterId": "bat", "spawnRate": 25 },
+        { "monsterId": "goblin_warrior", "spawnRate": 20 },
+        { "monsterId": "skeleton", "spawnRate": 25 },
+        { "monsterId": "rock_lizard", "spawnRate": 15 },
+        { "monsterId": "orc", "spawnRate": 15 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "rusted_sword", "dropRate": 5 },
+          { "itemId": "rusted_staff", "dropRate": 5 },
+          { "itemId": "cloth_clothes", "dropRate": 5 },
+          { "itemId": "leather_hat", "dropRate": 5 },
+          { "itemId": "leather_gloves", "dropRate": 8 },
+          { "itemId": "leather_boots", "dropRate": 8 },
+          { "itemId": "copper_ring", "dropRate": 8 },
+          { "itemId": "traveler_amulet", "dropRate": 8 }
+        ],
+        "dungeon": [
+          { "itemId": "cave_iron_sword", "dropRate": 15 },
+          { "itemId": "cave_iron_staff", "dropRate": 15 },
+          { "itemId": "bone_shield", "dropRate": 12 },
+          { "itemId": "bat_mantle", "dropRate": 12 },
+          { "itemId": "underground_charm", "dropRate": 10 },
+          { "itemId": "warrior_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 9 },
+      "modCountRange": { "min": 0, "max": 1 }
+    },
+    "ruins": {
+      "id": "ruins",
+      "name": "忘却の遺跡",
+      "description": "古代文明の遺跡。強力なモンスターが徘徊する危険な場所。",
+      "maxFloor": 10,
+      "monsters": [
+        { "monsterId": "skeleton_knight", "spawnRate": 25 },
+        { "monsterId": "golem", "spawnRate": 15 },
+        { "monsterId": "mummy", "spawnRate": 25 },
+        { "monsterId": "lich", "spawnRate": 15 },
+        { "monsterId": "gargoyle", "spawnRate": 20 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "leather_gloves", "dropRate": 5 },
+          { "itemId": "leather_boots", "dropRate": 5 },
+          { "itemId": "copper_ring", "dropRate": 5 },
+          { "itemId": "traveler_amulet", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "ruins_magic_sword", "dropRate": 15 },
+          { "itemId": "ruins_magic_staff", "dropRate": 15 },
+          { "itemId": "cursed_robe", "dropRate": 12 },
+          { "itemId": "gargoyle_boots", "dropRate": 12 },
+          { "itemId": "ancient_ring", "dropRate": 10 },
+          { "itemId": "oblivion_amulet", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 8 },
+      "modCountRange": { "min": 0, "max": 1 }
+    },
+    "goblin_fort": {
+      "id": "goblin_fort",
+      "name": "ゴブリンの砦",
+      "description": "ゴブリンたちが築いた巨大な砦。奥深くにはゴブリンキングが君臨している。",
+      "maxFloor": 20,
+      "monsters": [
+        { "monsterId": "goblin_warrior", "spawnRate": 25 },
+        { "monsterId": "goblin_archer", "spawnRate": 25 },
+        { "monsterId": "goblin_shaman", "spawnRate": 20 },
+        { "monsterId": "goblin_knight", "spawnRate": 18 },
+        { "monsterId": "goblin_champion", "spawnRate": 12 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "boss": {
+        "monsterId": "goblin_king",
+        "floor": 20
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "ruins_magic_sword", "dropRate": 5 },
+          { "itemId": "ruins_magic_staff", "dropRate": 5 },
+          { "itemId": "cursed_robe", "dropRate": 5 },
+          { "itemId": "gargoyle_boots", "dropRate": 5 },
+          { "itemId": "ancient_ring", "dropRate": 5 },
+          { "itemId": "oblivion_amulet", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "goblin_blade", "dropRate": 15 },
+          { "itemId": "goblin_staff", "dropRate": 15 },
+          { "itemId": "goblin_mail", "dropRate": 12 },
+          { "itemId": "spiked_gauntlets", "dropRate": 12 },
+          { "itemId": "raider_boots", "dropRate": 10 },
+          { "itemId": "tribal_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 7 },
+      "modCountRange": { "min": 0, "max": 3 }
+    },
+    "bandit_hideout": {
+      "id": "bandit_hideout",
+      "name": "盗賊のアジト",
+      "description": "山賊たちが根城にする隠れ家。略奪品が山と積まれている。",
+      "maxFloor": 15,
+      "monsters": [
+        { "monsterId": "bandit", "spawnRate": 30 },
+        { "monsterId": "bandit_archer", "spawnRate": 25 },
+        { "monsterId": "bandit_swordsman", "spawnRate": 25 },
+        { "monsterId": "bandit_brute", "spawnRate": 20 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "boss": {
+        "monsterId": "bandit_leader",
+        "floor": 15
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "ruins_magic_sword", "dropRate": 5 },
+          { "itemId": "ruins_magic_staff", "dropRate": 5 },
+          { "itemId": "cursed_robe", "dropRate": 5 },
+          { "itemId": "gargoyle_boots", "dropRate": 5 },
+          { "itemId": "ancient_ring", "dropRate": 5 },
+          { "itemId": "oblivion_amulet", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "thieves_blade", "dropRate": 15 },
+          { "itemId": "bandit_leather", "dropRate": 12 },
+          { "itemId": "thieves_gloves", "dropRate": 12 },
+          { "itemId": "shadow_boots", "dropRate": 10 },
+          { "itemId": "thieves_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 7 },
+      "modCountRange": { "min": 0, "max": 3 }
+    },
+    "demon_castle": {
+      "id": "demon_castle",
+      "name": "魔王城",
+      "description": "闇の力が渦巻く魔王の居城。強力な魔物たちが主を守護している。",
+      "maxFloor": 15,
+      "monsters": [
+        { "monsterId": "death_knight", "spawnRate": 25 },
+        { "monsterId": "dark_mage", "spawnRate": 25 },
+        { "monsterId": "demon", "spawnRate": 25 },
+        { "monsterId": "wyvern", "spawnRate": 25 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "boss": {
+        "monsterId": "demon_lord",
+        "floor": 15
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "goblin_blade", "dropRate": 5 },
+          { "itemId": "goblin_staff", "dropRate": 5 },
+          { "itemId": "goblin_mail", "dropRate": 5 },
+          { "itemId": "spiked_gauntlets", "dropRate": 5 },
+          { "itemId": "raider_boots", "dropRate": 5 },
+          { "itemId": "tribal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "demon_blade", "dropRate": 15 },
+          { "itemId": "demon_staff", "dropRate": 15 },
+          { "itemId": "dark_plate", "dropRate": 12 },
+          { "itemId": "dragon_gauntlets", "dropRate": 12 },
+          { "itemId": "inferno_boots", "dropRate": 10 },
+          { "itemId": "dark_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 6 },
+      "modCountRange": { "min": 0, "max": 3 }
+    },
+    "vampire_mansion": {
+      "id": "vampire_mansion",
+      "name": "ヴァンパイアの館",
+      "description": "夜の闇に佇む不気味な館。不死の貴族が支配している。",
+      "maxFloor": 12,
+      "monsters": [
+        { "monsterId": "zombie", "spawnRate": 30 },
+        { "monsterId": "ghoul", "spawnRate": 25 },
+        { "monsterId": "banshee", "spawnRate": 20 },
+        { "monsterId": "wraith", "spawnRate": 25 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "boss": {
+        "monsterId": "vampire",
+        "floor": 12
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "demon_blade", "dropRate": 5 },
+          { "itemId": "demon_staff", "dropRate": 5 },
+          { "itemId": "dark_plate", "dropRate": 5 },
+          { "itemId": "dragon_gauntlets", "dropRate": 5 },
+          { "itemId": "inferno_boots", "dropRate": 5 },
+          { "itemId": "dark_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "vampire_blade", "dropRate": 15 },
+          { "itemId": "night_cloak", "dropRate": 12 },
+          { "itemId": "undead_gauntlets", "dropRate": 12 },
+          { "itemId": "phantom_boots", "dropRate": 10 },
+          { "itemId": "blood_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 6 },
+      "modCountRange": { "min": 0, "max": 3 }
+    },
+    "ice_cave": {
+      "id": "ice_cave",
+      "name": "氷結の洞窟",
+      "description": "永久凍土の奥深くに眠る氷の洞窟。極寒の魔物が生息する。",
+      "maxFloor": 15,
+      "monsters": [
+        { "monsterId": "ice_golem", "spawnRate": 20 },
+        { "monsterId": "frost_wolf", "spawnRate": 25 },
+        { "monsterId": "ice_witch", "spawnRate": 20 },
+        { "monsterId": "yeti", "spawnRate": 20 },
+        { "monsterId": "frost_wyrm", "spawnRate": 15 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "demon_blade", "dropRate": 5 },
+          { "itemId": "demon_staff", "dropRate": 5 },
+          { "itemId": "dark_plate", "dropRate": 5 },
+          { "itemId": "dragon_gauntlets", "dropRate": 5 },
+          { "itemId": "inferno_boots", "dropRate": 5 },
+          { "itemId": "dark_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "frost_blade", "dropRate": 15 },
+          { "itemId": "frost_staff", "dropRate": 15 },
+          { "itemId": "ice_armor", "dropRate": 12 },
+          { "itemId": "frozen_gauntlets", "dropRate": 12 },
+          { "itemId": "blizzard_boots", "dropRate": 10 },
+          { "itemId": "ice_crystal_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 5 },
+      "modCountRange": { "min": 0, "max": 3 }
+    },
+    "underwater_cave": {
+      "id": "underwater_cave",
+      "name": "海底洞窟",
+      "description": "深海に広がる神秘的な洞窟。水棲の魔物が縄張りを守っている。",
+      "maxFloor": 15,
+      "monsters": [
+        { "monsterId": "sahuagin", "spawnRate": 30 },
+        { "monsterId": "merman", "spawnRate": 20 },
+        { "monsterId": "sea_serpent", "spawnRate": 20 },
+        { "monsterId": "giant_crab", "spawnRate": 25 },
+        { "monsterId": "kelpy", "spawnRate": 5 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "boss": {
+        "monsterId": "kraken",
+        "floor": 15
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "frost_blade", "dropRate": 5 },
+          { "itemId": "frost_staff", "dropRate": 5 },
+          { "itemId": "ice_armor", "dropRate": 5 },
+          { "itemId": "frozen_gauntlets", "dropRate": 5 },
+          { "itemId": "blizzard_boots", "dropRate": 5 },
+          { "itemId": "ice_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "trident", "dropRate": 15 },
+          { "itemId": "sea_scale_armor", "dropRate": 12 },
+          { "itemId": "coral_gauntlets", "dropRate": 12 },
+          { "itemId": "tide_boots", "dropRate": 10 },
+          { "itemId": "ocean_pearl_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 5 },
+      "modCountRange": { "min": 0, "max": 3 }
+    },
+    "volcano": {
+      "id": "volcano",
+      "name": "灼熱の火山",
+      "description": "活火山の内部に広がる灼熱の迷宮。炎の魔物が棲みついている。",
+      "maxFloor": 15,
+      "monsters": [
+        { "monsterId": "lava_slime", "spawnRate": 20 },
+        { "monsterId": "magma_golem", "spawnRate": 20 },
+        { "monsterId": "salamander", "spawnRate": 25 },
+        { "monsterId": "flame_knight", "spawnRate": 20 },
+        { "monsterId": "phoenix", "spawnRate": 15 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "frost_blade", "dropRate": 5 },
+          { "itemId": "frost_staff", "dropRate": 5 },
+          { "itemId": "ice_armor", "dropRate": 5 },
+          { "itemId": "frozen_gauntlets", "dropRate": 5 },
+          { "itemId": "blizzard_boots", "dropRate": 5 },
+          { "itemId": "ice_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "magma_blade", "dropRate": 15 },
+          { "itemId": "magma_staff", "dropRate": 15 },
+          { "itemId": "volcano_armor", "dropRate": 12 },
+          { "itemId": "flame_gauntlets", "dropRate": 12 },
+          { "itemId": "ember_boots", "dropRate": 10 },
+          { "itemId": "fire_ruby_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 4 },
+      "modCountRange": { "min": 1, "max": 4 }
+    },
+    "orc_fortress": {
+      "id": "orc_fortress",
+      "name": "オークの要塞",
+      "description": "オークとトロルが支配する巨大な要塞。凶暴な戦士たちが待ち構える。",
+      "maxFloor": 18,
+      "monsters": [
+        { "monsterId": "orc_warrior", "spawnRate": 25 },
+        { "monsterId": "orc_mage", "spawnRate": 20 },
+        { "monsterId": "troll", "spawnRate": 25 },
+        { "monsterId": "cyclops", "spawnRate": 30 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "boss": {
+        "monsterId": "uruk_hai",
+        "floor": 18
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "magma_blade", "dropRate": 5 },
+          { "itemId": "magma_staff", "dropRate": 5 },
+          { "itemId": "volcano_armor", "dropRate": 5 },
+          { "itemId": "flame_gauntlets", "dropRate": 5 },
+          { "itemId": "ember_boots", "dropRate": 5 },
+          { "itemId": "fire_ruby_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "orc_cleaver", "dropRate": 15 },
+          { "itemId": "war_plate", "dropRate": 12 },
+          { "itemId": "beast_gauntlets", "dropRate": 12 },
+          { "itemId": "warlord_boots", "dropRate": 10 },
+          { "itemId": "berserker_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 4 },
+      "modCountRange": { "min": 1, "max": 4 }
+    },
+    "dark_forest": {
+      "id": "dark_forest",
+      "name": "深淵の森",
+      "description": "光の届かない暗黒の森。古代の魔獣が潜んでいる。",
+      "maxFloor": 18,
+      "monsters": [
+        { "monsterId": "dark_treant", "spawnRate": 20 },
+        { "monsterId": "shadow_wolf", "spawnRate": 25 },
+        { "monsterId": "forest_witch", "spawnRate": 20 },
+        { "monsterId": "chimera", "spawnRate": 20 },
+        { "monsterId": "nightmare", "spawnRate": 15 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "magma_blade", "dropRate": 5 },
+          { "itemId": "magma_staff", "dropRate": 5 },
+          { "itemId": "volcano_armor", "dropRate": 5 },
+          { "itemId": "flame_gauntlets", "dropRate": 5 },
+          { "itemId": "ember_boots", "dropRate": 5 },
+          { "itemId": "fire_ruby_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "shadow_blade", "dropRate": 15 },
+          { "itemId": "shadow_staff", "dropRate": 15 },
+          { "itemId": "dark_bark_armor", "dropRate": 12 },
+          { "itemId": "nightmare_gauntlets", "dropRate": 12 },
+          { "itemId": "forest_walker_boots", "dropRate": 10 },
+          { "itemId": "cursed_eye_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 3 },
+      "modCountRange": { "min": 1, "max": 4 }
+    },
+    "sky_tower": {
+      "id": "sky_tower",
+      "name": "天空の塔",
+      "description": "雲を突き抜けてそびえ立つ神秘の塔。天界の守護者が待ち受ける。",
+      "maxFloor": 18,
+      "monsters": [
+        { "monsterId": "sky_knight", "spawnRate": 20 },
+        { "monsterId": "storm_harpy", "spawnRate": 25 },
+        { "monsterId": "thunder_bird", "spawnRate": 20 },
+        { "monsterId": "cloud_giant", "spawnRate": 15 },
+        { "monsterId": "griffon", "spawnRate": 20 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "shadow_blade", "dropRate": 5 },
+          { "itemId": "shadow_staff", "dropRate": 5 },
+          { "itemId": "dark_bark_armor", "dropRate": 5 },
+          { "itemId": "nightmare_gauntlets", "dropRate": 5 },
+          { "itemId": "forest_walker_boots", "dropRate": 5 },
+          { "itemId": "cursed_eye_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "sky_blade", "dropRate": 15 },
+          { "itemId": "sky_staff", "dropRate": 15 },
+          { "itemId": "cloud_armor", "dropRate": 12 },
+          { "itemId": "storm_gauntlets", "dropRate": 12 },
+          { "itemId": "wind_walker_boots", "dropRate": 10 },
+          { "itemId": "sky_sapphire_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 2 },
+      "modCountRange": { "min": 1, "max": 4 }
+    },
+    "hell_gate": {
+      "id": "hell_gate",
+      "name": "地獄の門",
+      "description": "冥界へと通じる禁断の門。地獄の番人たちが侵入者を阻む。",
+      "maxFloor": 20,
+      "monsters": [
+        { "monsterId": "hell_hound", "spawnRate": 20 },
+        { "monsterId": "infernal_knight", "spawnRate": 20 },
+        { "monsterId": "succubus", "spawnRate": 20 },
+        { "monsterId": "balrog", "spawnRate": 20 },
+        { "monsterId": "cerberus", "spawnRate": 20 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "sky_blade", "dropRate": 5 },
+          { "itemId": "sky_staff", "dropRate": 5 },
+          { "itemId": "cloud_armor", "dropRate": 5 },
+          { "itemId": "storm_gauntlets", "dropRate": 5 },
+          { "itemId": "wind_walker_boots", "dropRate": 5 },
+          { "itemId": "sky_sapphire_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "hellfire_blade", "dropRate": 15 },
+          { "itemId": "hellfire_staff", "dropRate": 15 },
+          { "itemId": "infernal_plate", "dropRate": 12 },
+          { "itemId": "demon_gauntlets", "dropRate": 12 },
+          { "itemId": "hellwalker_boots", "dropRate": 10 },
+          { "itemId": "infernal_ruby_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "dragon_nest": {
+      "id": "dragon_nest",
+      "name": "竜の巣穴",
+      "description": "古龍たちが眠る伝説の巣穴。最強の竜種が生息する。",
+      "maxFloor": 20,
+      "monsters": [
+        { "monsterId": "drake", "spawnRate": 25 },
+        { "monsterId": "fire_dragon", "spawnRate": 20 },
+        { "monsterId": "ice_dragon", "spawnRate": 20 },
+        { "monsterId": "thunder_dragon", "spawnRate": 20 },
+        { "monsterId": "elder_dragon", "spawnRate": 15 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "hellfire_blade", "dropRate": 5 },
+          { "itemId": "hellfire_staff", "dropRate": 5 },
+          { "itemId": "infernal_plate", "dropRate": 5 },
+          { "itemId": "demon_gauntlets", "dropRate": 5 },
+          { "itemId": "hellwalker_boots", "dropRate": 5 },
+          { "itemId": "infernal_ruby_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "dragon_slayer", "dropRate": 15 },
+          { "itemId": "dragon_staff", "dropRate": 15 },
+          { "itemId": "dragon_scale_armor", "dropRate": 12 },
+          { "itemId": "dragon_claw_gauntlets", "dropRate": 12 },
+          { "itemId": "dragon_hide_boots", "dropRate": 10 },
+          { "itemId": "dragon_eye_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "sacred_temple": {
+      "id": "sacred_temple",
+      "name": "神域の神殿",
+      "description": "神々に仕える守護者たちが守る聖なる神殿。",
+      "maxFloor": 25,
+      "monsters": [
+        { "monsterId": "divine_knight", "spawnRate": 20 },
+        { "monsterId": "seraph", "spawnRate": 20 },
+        { "monsterId": "temple_guardian", "spawnRate": 20 },
+        { "monsterId": "holy_dragon", "spawnRate": 20 },
+        { "monsterId": "valkyrie", "spawnRate": 20 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "dragon_slayer", "dropRate": 5 },
+          { "itemId": "dragon_staff", "dropRate": 5 },
+          { "itemId": "dragon_scale_armor", "dropRate": 5 },
+          { "itemId": "dragon_claw_gauntlets", "dropRate": 5 },
+          { "itemId": "dragon_hide_boots", "dropRate": 5 },
+          { "itemId": "dragon_eye_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "holy_blade", "dropRate": 15 },
+          { "itemId": "holy_staff", "dropRate": 15 },
+          { "itemId": "divine_armor", "dropRate": 12 },
+          { "itemId": "seraph_gauntlets", "dropRate": 12 },
+          { "itemId": "divine_boots", "dropRate": 10 },
+          { "itemId": "holy_diamond_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "chaos_realm": {
+      "id": "chaos_realm",
+      "name": "混沌の領域",
+      "description": "現実と虚無の狭間に存在する混沌の世界。あらゆる法則が歪む。",
+      "maxFloor": 25,
+      "monsters": [
+        { "monsterId": "chaos_knight", "spawnRate": 20 },
+        { "monsterId": "void_walker", "spawnRate": 20 },
+        { "monsterId": "abomination", "spawnRate": 20 },
+        { "monsterId": "chaos_dragon", "spawnRate": 20 },
+        { "monsterId": "elder_thing", "spawnRate": 20 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "dropTable": {
+        "common": [
+          { "itemId": "holy_blade", "dropRate": 5 },
+          { "itemId": "holy_staff", "dropRate": 5 },
+          { "itemId": "divine_armor", "dropRate": 5 },
+          { "itemId": "seraph_gauntlets", "dropRate": 5 },
+          { "itemId": "divine_boots", "dropRate": 5 },
+          { "itemId": "holy_diamond_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "chaos_blade", "dropRate": 15 },
+          { "itemId": "chaos_staff", "dropRate": 15 },
+          { "itemId": "void_armor", "dropRate": 12 },
+          { "itemId": "chaos_gauntlets", "dropRate": 12 },
+          { "itemId": "void_boots", "dropRate": 10 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "final_land": {
+      "id": "final_land",
+      "name": "終焉の地",
+      "description": "世界の果てに存在する最後の地。最強の存在が待ち構える。",
+      "maxFloor": 30,
+      "monsters": [
+        { "monsterId": "apocalypse_knight", "spawnRate": 20 },
+        { "monsterId": "world_eater", "spawnRate": 20 },
+        { "monsterId": "primordial_titan", "spawnRate": 20 },
+        { "monsterId": "god_slayer", "spawnRate": 20 },
+        { "monsterId": "end_bringer", "spawnRate": 20 },
+        { "monsterId": "mimic", "spawnRate": 1 }
+      ],
+      "boss": {
+        "monsterId": "true_final_boss",
+        "floor": 30
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "dimensional_rush_1": {
+      "id": "dimensional_rush_1",
+      "name": "異次元ラッシュI",
+      "description": "異次元の迷宮。50階のゴブリンキングを討ち倒せ。",
+      "maxFloor": 50,
+      "monsters": [],
+      "boss": {
+        "monsterId": "goblin_king",
+        "floor": 50
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "dimensional_rush_2": {
+      "id": "dimensional_rush_2",
+      "name": "異次元ラッシュII",
+      "description": "異次元の迷宮。70階の盗賊の頭を討ち倒せ。",
+      "maxFloor": 70,
+      "monsters": [],
+      "boss": {
+        "monsterId": "bandit_leader",
+        "floor": 70
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "dimensional_rush_3": {
+      "id": "dimensional_rush_3",
+      "name": "異次元ラッシュIII",
+      "description": "異次元の迷宮。90階のヴァンパイアを討ち倒せ。",
+      "maxFloor": 90,
+      "monsters": [],
+      "boss": {
+        "monsterId": "vampire",
+        "floor": 90
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "dimensional_rush_4": {
+      "id": "dimensional_rush_4",
+      "name": "異次元ラッシュIV",
+      "description": "異次元の迷宮。110階のクラーケンを討ち倒せ。",
+      "maxFloor": 110,
+      "monsters": [],
+      "boss": {
+        "monsterId": "kraken",
+        "floor": 110
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "dimensional_rush_5": {
+      "id": "dimensional_rush_5",
+      "name": "異次元ラッシュV",
+      "description": "異次元の迷宮。120階の魔王を討ち倒せ。",
+      "maxFloor": 120,
+      "monsters": [],
+      "boss": {
+        "monsterId": "demon_lord",
+        "floor": 120
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "dimensional_rush_6": {
+      "id": "dimensional_rush_6",
+      "name": "異次元ラッシュVI",
+      "description": "異次元の迷宮・最終層。200階の終焉の王を討ち倒せ。",
+      "maxFloor": 200,
+      "monsters": [],
+      "boss": {
+        "monsterId": "true_final_boss",
+        "floor": 200
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "uber_goblin_king": {
+      "id": "uber_goblin_king",
+      "name": "Uber ゴブリンキング",
+      "description": "異次元で覚醒したゴブリンキング。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_goblin_king", "spawnRate": 100 }
+      ],
+      "boss": {
+        "monsterId": "uber_goblin_king",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "uber_bandit_leader": {
+      "id": "uber_bandit_leader",
+      "name": "Uber 盗賊の頭",
+      "description": "異次元で強化された盗賊の頭。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_bandit_leader", "spawnRate": 100 }
+      ],
+      "boss": {
+        "monsterId": "uber_bandit_leader",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 },
+          { "itemId": "uber_assassin_blade", "dropRate": 3 },
+          { "itemId": "uber_assassin_coat", "dropRate": 3 },
+          { "itemId": "uber_assassin_grip", "dropRate": 3 },
+          { "itemId": "uber_assassin_steps", "dropRate": 3 },
+          { "itemId": "uber_assassin_pendant", "dropRate": 3 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 },
+          { "itemId": "uber_double_strike_ring", "dropRate": 8 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "uber_vampire": {
+      "id": "uber_vampire",
+      "name": "Uber ヴァンパイア",
+      "description": "血に飢えた異次元のヴァンパイア。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_vampire", "spawnRate": 100 }
+      ],
+      "boss": {
+        "monsterId": "uber_vampire",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 },
+          { "itemId": "uber_venom_fang", "dropRate": 3 },
+          { "itemId": "uber_venom_plate", "dropRate": 3 },
+          { "itemId": "uber_venom_grip", "dropRate": 3 },
+          { "itemId": "uber_venom_stride", "dropRate": 3 },
+          { "itemId": "uber_venom_heart", "dropRate": 3 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "uber_kraken": {
+      "id": "uber_kraken",
+      "name": "Uber クラーケン",
+      "description": "異次元の海を支配する巨大生物。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_kraken", "spawnRate": 100 }
+      ],
+      "boss": {
+        "monsterId": "uber_kraken",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 },
+          { "itemId": "uber_fortress_blade", "dropRate": 3 },
+          { "itemId": "uber_fortress_plate", "dropRate": 3 },
+          { "itemId": "uber_fortress_grip", "dropRate": 3 },
+          { "itemId": "uber_fortress_stomp", "dropRate": 3 },
+          { "itemId": "uber_fortress_bulwark", "dropRate": 3 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "uber_demon_lord": {
+      "id": "uber_demon_lord",
+      "name": "Uber 魔王",
+      "description": "異次元の力で蘇った魔王。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_demon_lord", "spawnRate": 100 }
+      ],
+      "boss": {
+        "monsterId": "uber_demon_lord",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "uber_true_final_boss": {
+      "id": "uber_true_final_boss",
+      "name": "Uber 終焉の王",
+      "description": "真の終焉をもたらす存在。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_true_final_boss", "spawnRate": 100 }
+      ],
+      "boss": {
+        "monsterId": "uber_true_final_boss",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "debug_dimensional_goblin_king": {
+      "id": "debug_dimensional_goblin_king",
+      "name": "DEBUG: 異次元ラッシュ - ゴブリンキング",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1,
+      "monsters": [],
+      "boss": {
+        "monsterId": "goblin_king",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "debug_dimensional_bandit_leader": {
+      "id": "debug_dimensional_bandit_leader",
+      "name": "DEBUG: 異次元ラッシュ - 盗賊の頭",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1,
+      "monsters": [],
+      "boss": {
+        "monsterId": "bandit_leader",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 },
+          { "itemId": "double_strike_ring", "dropRate": 8 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "debug_dimensional_vampire": {
+      "id": "debug_dimensional_vampire",
+      "name": "DEBUG: 異次元ラッシュ - ヴァンパイア",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1,
+      "monsters": [],
+      "boss": {
+        "monsterId": "vampire",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "debug_dimensional_kraken": {
+      "id": "debug_dimensional_kraken",
+      "name": "DEBUG: 異次元ラッシュ - クラーケン",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1,
+      "monsters": [],
+      "boss": {
+        "monsterId": "kraken",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "debug_dimensional_demon_lord": {
+      "id": "debug_dimensional_demon_lord",
+      "name": "DEBUG: 異次元ラッシュ - 魔王",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1,
+      "monsters": [],
+      "boss": {
+        "monsterId": "demon_lord",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "debug_dimensional_true_final_boss": {
+      "id": "debug_dimensional_true_final_boss",
+      "name": "DEBUG: 異次元ラッシュ - 終焉の王",
+      "description": "デバッグ用。異次元ラッシュのボスが単体で出現する。",
+      "maxFloor": 1,
+      "monsters": [],
+      "boss": {
+        "monsterId": "true_final_boss",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "debug_uber_uber_goblin_king": {
+      "id": "debug_uber_uber_goblin_king",
+      "name": "DEBUG: UberUber ゴブリンキング",
+      "description": "デバッグ用。UberUberゴブリンキングが単体で出現する。チケット不要。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_uber_goblin_king", "spawnRate": 100 }
+      ],
+      "boss": {
+        "monsterId": "uber_uber_goblin_king",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [],
+        "dungeon": []
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 3, "max": 4 }
+    },
+    "debug_uber_uber_bandit_leader": {
+      "id": "debug_uber_uber_bandit_leader",
+      "name": "DEBUG: UberUber 盗賊の頭",
+      "description": "デバッグ用。UberUber盗賊の頭が単体で出現する。チケット不要。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_uber_bandit_leader", "spawnRate": 100 }
+      ],
+      "boss": {
+        "monsterId": "uber_uber_bandit_leader",
+        "floor": 1
+      },
+      "dropTable": {
+        "common": [],
+        "dungeon": []
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 3, "max": 4 }
+    },
+    "dimensional_corridor": {
+      "id": "dimensional_corridor",
+      "name": "次元回廊",
+      "description": "無限に続く次元の狭間。深層へ進むほど敵は強くなる。",
+      "maxFloor": -1,
+      "monsters": [],
+      "dropTable": {
+        "common": [
+          { "itemId": "chaos_blade", "dropRate": 5 },
+          { "itemId": "chaos_staff", "dropRate": 5 },
+          { "itemId": "void_armor", "dropRate": 5 },
+          { "itemId": "chaos_gauntlets", "dropRate": 5 },
+          { "itemId": "void_boots", "dropRate": 5 },
+          { "itemId": "chaos_crystal_ring", "dropRate": 5 }
+        ],
+        "dungeon": [
+          { "itemId": "apocalypse_blade", "dropRate": 15 },
+          { "itemId": "apocalypse_staff", "dropRate": 15 },
+          { "itemId": "end_armor", "dropRate": 12 },
+          { "itemId": "titan_gauntlets", "dropRate": 12 },
+          { "itemId": "end_walker_boots", "dropRate": 10 },
+          { "itemId": "oblivion_ring", "dropRate": 10 }
+        ]
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 2, "max": 4 }
+    },
+    "uber_uber_goblin_king": {
+      "id": "uber_uber_goblin_king",
+      "name": "UberUber ゴブリンキング",
+      "description": "究極の覚醒を遂げたゴブリンキング。全てのUberボスを倒した者のみが挑める。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_uber_goblin_king", "spawnRate": 100 }
+      ],
+      "boss": { "monsterId": "uber_uber_goblin_king", "floor": 1 },
+      "dropTable": {
+        "common": [],
+        "dungeon": []
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 3, "max": 4 },
+      "requiresTicket": true
+    },
+    "uber_uber_bandit_leader": {
+      "id": "uber_uber_bandit_leader",
+      "name": "UberUber 盗賊の頭",
+      "description": "究極の暗殺者と化した盗賊の頭。全てのUberボスを倒した者のみが挑める。",
+      "maxFloor": 1,
+      "monsters": [
+        { "monsterId": "uber_uber_bandit_leader", "spawnRate": 100 }
+      ],
+      "boss": { "monsterId": "uber_uber_bandit_leader", "floor": 1 },
+      "dropTable": {
+        "common": [],
+        "dungeon": []
+      },
+      "modTierRange": { "minTier": 10, "maxTier": 1 },
+      "modCountRange": { "min": 3, "max": 4 },
+      "requiresTicket": true
+    }
+  }
+}
