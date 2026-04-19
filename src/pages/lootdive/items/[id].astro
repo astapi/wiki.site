@@ -50,9 +50,12 @@ const hasSources =
   monsterSources.length > 0 || dungeonSources.length > 0 || itemIsCommon
 ---
 <GameLayout
-  title={`${item.name} — ルートダイブ wiki`}
+  title={`${item.name}の性能・入手方法 | ルートダイブ攻略`}
+  description={`ルートダイブの「${item.name}」の性能(ATK/DEF/固有MOD)、${hasSources ? 'ドロップ先のモンスター/ダンジョン' : '詳細データ'}をまとめています。`}
+  keywords={`${item.name}, ${item.name} 入手, ${item.name} ドロップ, ルートダイブ 装備, ルートダイブ攻略, LootDive`}
   gameSlug={gameSlug}
   gameTitle="ルートダイブ"
+  ogType="article"
   nav={nav}
 >
   <a href={`/${gameSlug}/items/`} class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)]">← アイテム一覧</a>
@@ -95,7 +98,7 @@ const hasSources =
             {monsterSources.map((s) => (
               <li>
                 <a
-                  href={`/lootdive/monsters/${s.monsterId}/`}
+                  href={`/${gameSlug}/monsters/${s.monsterId}/`}
                   class="flex items-baseline justify-between p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
                 >
                   <span class="text-sm">{s.monsterName}</span>
@@ -114,7 +117,7 @@ const hasSources =
             {dungeonSources.map((s) => (
               <li>
                 <a
-                  href={`/lootdive/dungeons/${s.dungeonId}/`}
+                  href={`/${gameSlug}/dungeons/${s.dungeonId}/`}
                   class="flex items-baseline justify-between p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
                 >
                   <span class="text-sm">

@@ -4,15 +4,36 @@ import BaseLayout from './BaseLayout.astro'
 interface Props {
   title: string
   description?: string
+  keywords?: string
   gameSlug: string
   gameTitle: string
+  ogImage?: string
+  ogType?: 'website' | 'article'
   nav?: { href: string; label: string }[]
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[]
 }
 
-const { title, description, gameSlug, gameTitle, nav = [] } = Astro.props
+const {
+  title,
+  description,
+  keywords,
+  gameSlug,
+  gameTitle,
+  ogImage,
+  ogType,
+  nav = [],
+  jsonLd,
+} = Astro.props
 const base = `/${gameSlug}`
 ---
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  ogImage={ogImage}
+  ogType={ogType}
+  jsonLd={jsonLd}
+>
   <header class="border-b border-[var(--color-border)]">
     <div class="max-w-5xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
       <a href={base} class="font-semibold">{gameTitle} wiki</a>

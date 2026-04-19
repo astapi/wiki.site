@@ -3,9 +3,3 @@
 # ルート wiki.astapi.net はサイトトップを持たないため、公式サイトへ逃がす
 https://wiki.astapi.net/ https://astapi.net/ 301
 https://wiki.astapi.net https://astapi.net/ 301
-
-# 将来: ゲーム別サブドメインで運用するときのホスト→パス書き換え例
-# 下記のコメントを外し、Pages 側で各サブドメインをカスタムドメインに追加する
-#
-# https://wiki.lootdive.astapi.net/* /lootdive/:splat 200
-# https://wiki.hogehoge.astapi.net/* /hogehoge/:splat 200

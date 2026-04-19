@@ -1,7 +1,7 @@
 # wiki.astapi.net
 
-astapi Games の各タイトル向けデータリファレンス (Wiki) サイト。
-1リポジトリで複数ゲームを配信する構成。
+astapi Games の各タイトル向けデータリファレンス (攻略wiki) サイト。
+1リポジトリで複数ゲームを配信する構成。URLは `wiki.astapi.net/<game>/...` のパス方式。
 
 ## スタック
 
@@ -29,13 +29,16 @@ src/
 │   └── lootdive/                # LootDive マスターデータ
 │       ├── game/                # items, monsters, dungeons, mods...
 │       ├── locales/             # ja/en/de/es/fr/ko/zh
-│       └── types.ts             # hakuslaDungeon の types/index.ts コピー
+│       ├── types.ts             # hakuslaDungeon の types/index.ts コピー
+│       ├── i18n.ts              # ja.json からの名称取得ヘルパ
+│       ├── modDescription.ts    # アプリ形式の MOD 表示文生成
+│       ├── bossSkills.ts        # Uber系ボスのスキル情報
+│       └── dropIndex.ts         # アイテム→入手元 の逆引きインデックス
 ├── layouts/
-│   ├── BaseLayout.astro         # HTML shell (全ページ共通)
+│   ├── BaseLayout.astro         # HTML shell + SEOメタタグ
 │   └── GameLayout.astro         # ゲーム個別の header/footer
 ├── pages/
-│   └── lootdive/                # ゲーム別に1ディレクトリ
-│                                # (ルートトップは持たない — 各ゲームのサブドメイン経由で配信)
+│   └── lootdive/                # ゲーム別ディレクトリ
 │       ├── index.astro
 │       ├── monsters/
 │       │   ├── index.astro      # 一覧
@@ -46,39 +49,36 @@ src/
 
 public/
 ├── favicon.ico / favicon.svg
-├── _redirects                   # Cloudflare Pages のリダイレクト/リライト
+├── robots.txt
+├── _redirects                   # apex は astapi.net へ 301
 └── lootdive/
     └── images/                  # モンスター・アイテム画像
 ```
 
-新規ゲーム追加は `src/data/<slug>/` と `src/pages/<slug>/` を同じ構造で足し、
-`public/_redirects` に対応サブドメインのリライト行を追加する。
+新規ゲーム追加は `src/data/<slug>/` と `src/pages/<slug>/`, `public/<slug>/images/`
+を同じ構造で足す。
 
 ## デプロイ: Cloudflare Pages
 
 ### 初回セットアップ
 
-1. Cloudflare Dashboard → Pages → Create a project → Connect Git
+1. Cloudflare Dashboard → Pages → Create a project → Connect Git → `astapi/wiki.site`
 2. ビルド設定:
    - Framework preset: **Astro**
    - Build command: `pnpm run build`
    - Build output directory: `dist`
    - Environment variables: `NODE_VERSION=22.12.0`
 3. Custom domains:
-   - `wiki.<game>.astapi.net` をゲームごとに追加 (例: `wiki.lootdive.astapi.net`)
-   - `wiki.astapi.net` (apex) は `_redirects` で `astapi.net` へ 301 転送
+   - `wiki.astapi.net` を追加 (apex)
+   - 将来サブドメインで運用したくなったら Custom Domain 追加 + URL書換実装
 
-### サブドメイン → パス書き換え
+## SEO
 
-将来、ゲームごとにサブドメインで運用したくなったら、
-`public/_redirects` の該当行のコメントを外す:
-
-```
-https://wiki.lootdive.astapi.net/* /lootdive/:splat 200
-```
-
-status code `200` = rewrite (URLバー変更なし)。
-各サブドメインを Cloudflare Pages の Custom domain に追加すれば有効化される。
+- **canonical / og:url**: `src/layouts/BaseLayout.astro` が `Astro.site` を基に生成
+- **sitemap**: `@astrojs/sitemap` が `dist/sitemap-index.xml` を自動生成
+- **robots.txt**: `public/robots.txt`
+- **JSON-LD**: lootdive トップに `WebSite` + `VideoGame` schema を埋め込み
+- **OGデフォルト画像 (未作成)**: `/og-default.png` を参照。1200×630 で用意して `public/og-default.png` に置くこと
 
 ## データ同期
 
@@ -100,10 +100,14 @@ HAKUSLA_DUNGEON_ROOT=~/projects/ReactNativeExpo/hakuslaDungeon pnpm sync
 | 型定義 | `types/index.ts` | `src/data/lootdive/types.ts` |
 | 画像 | `assets/images/{monsters,items,characters,passive,chests}/` | `public/lootdive/images/` |
 
+モンスター画像名のエイリアス (`daemon.png → demon.png` 等、`data/images.ts` の
+`require()` マッピング由来) も sync スクリプト内で正規化している。
+
 ### 手動追加が必要なケース
 
-同期スクリプトでカバーされないのは以下のみ。新しいゲーム要素を追加するときは注意:
+同期スクリプトでカバーされないのは以下:
 
 - **新しいMOD type**: `src/data/lootdive/modDescription.ts` のswitch case追加
 - **新しいボス種**: `src/data/lootdive/bossSkills.ts` の `BOSS_ABILITIES_MAP` とマッピング追加
-- **新しいゲーム**: `src/pages/<slug>/`, `public/<slug>/images/` を追加、`scripts/` にも同ゲーム向け sync スクリプトを足す
+- **画像のファイル名エイリアス追加**: `scripts/sync-lootdive.mjs` の `MONSTER_IMAGE_ALIASES` に追加
+- **新しいゲーム**: `src/pages/<slug>/`, `src/data/<slug>/`, `public/<slug>/images/` を追加

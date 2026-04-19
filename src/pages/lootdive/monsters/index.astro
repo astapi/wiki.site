@@ -22,7 +22,14 @@ const monsters = Object.entries(
   .filter(([key, m]) => !key.startsWith('_') && m.id)
   .map(([, m]) => m as { id: string; name: string; image: string; maxHp: number; atk: number; def: number })
 ---
-<GameLayout title="モンスター一覧 — ルートダイブ wiki" gameSlug={gameSlug} gameTitle="ルートダイブ" nav={nav}>
+<GameLayout
+  title="モンスター一覧 | ルートダイブ攻略 wiki"
+  description={`ルートダイブに登場する全${monsters.length}体のモンスターをHP・ATK・DEFなどのステータス付きで一覧表示。ボス・Uber系を含む図鑑データ。`}
+  keywords="ルートダイブ モンスター, ルートダイブ 敵, モンスター一覧, モンスター図鑑, ルートダイブ攻略, LootDive"
+  gameSlug={gameSlug}
+  gameTitle="ルートダイブ"
+  nav={nav}
+>
   <h1 class="text-2xl md:text-3xl font-semibold mb-6">モンスター一覧 ({monsters.length})</h1>
   <ul class="grid grid-cols-2 md:grid-cols-4 gap-3">
     {monsters.map((m) => (

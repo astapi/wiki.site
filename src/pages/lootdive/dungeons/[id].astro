@@ -48,9 +48,12 @@ const monsterImage = (id: string): string | null => {
 }
 ---
 <GameLayout
-  title={`${dungeon.name} — ルートダイブ wiki`}
+  title={`${dungeon.name}の攻略・敵構成・ドロップ | ルートダイブ攻略`}
+  description={`ルートダイブのダンジョン「${dungeon.name}」(最大${dungeon.maxFloor}階)の出現モンスター、${dungeon.boss ? 'ボス情報、' : ''}ドロップテーブル、MOD Tierをまとめた攻略情報。`}
+  keywords={`${dungeon.name}, ${dungeon.name} 攻略, ${dungeon.name} ドロップ, ${dungeon.name} ボス, ルートダイブ ダンジョン, ルートダイブ攻略, LootDive`}
   gameSlug={gameSlug}
   gameTitle="ルートダイブ"
+  ogType="article"
   nav={nav}
 >
   <a href={`/${gameSlug}/dungeons/`} class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)]">← ダンジョン一覧</a>

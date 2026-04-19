@@ -93,9 +93,12 @@ const drops: Drop[] = monster.uniqueDrops?.length
     : []
 ---
 <GameLayout
-  title={`${monster.name} — ルートダイブ wiki`}
+  title={`${monster.name}のステータス・ドロップ | ルートダイブ攻略`}
+  description={`ルートダイブの「${monster.name}」のHP ${monster.maxHp} / ATK ${monster.atk} / DEF ${monster.def} などの全ステータス、${abilities ? 'スキル、' : ''}${drops.length > 0 ? 'ユニークドロップ、' : ''}出現情報をまとめています。`}
+  keywords={`${monster.name}, ${monster.name} 攻略, ${monster.name} ステータス, ${monster.name} ドロップ, ルートダイブ 攻略, LootDive`}
   gameSlug={gameSlug}
   gameTitle="ルートダイブ"
+  ogType="article"
   nav={nav}
 >
   <a href={`/${gameSlug}/monsters/`} class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)]">← モンスター一覧</a>
