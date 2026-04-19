@@ -4,6 +4,7 @@ import monstersData from '../../../data/lootdive/game/monsters.json'
 import itemsData from '../../../data/lootdive/game/items.json'
 import { itemName, slotName } from '../../../data/lootdive/i18n'
 import { getModDescription } from '../../../data/lootdive/modDescription'
+import { getBossTips } from '../../../data/lootdive/bossTips'
 import {
   getBossAbilities,
   isUber,
@@ -91,6 +92,8 @@ const drops: Drop[] = monster.uniqueDrops?.length
   : monster.uniqueDrop
     ? [monster.uniqueDrop]
     : []
+
+const tips = getBossTips(monster.id)
 ---
 <GameLayout
   title={`${monster.name}のステータス・ドロップ | ルートダイブ攻略`}
@@ -117,6 +120,15 @@ const drops: Drop[] = monster.uniqueDrops?.length
       </dl>
     </div>
   </div>
+
+  {tips && tips.length > 0 && (
+    <section class="mt-8">
+      <h2 class="text-base font-semibold mb-3">攻略ポイント</h2>
+      <ul class="p-4 rounded-xl border border-[#FFD166] bg-[#FFF8E1] space-y-2 text-sm leading-relaxed">
+        {tips.map((t) => <li>・{t}</li>)}
+      </ul>
+    </section>
+  )}
 
   {abilities && (regularSkills.length > 0 || thresholdSkills.length > 0) && (
     <section class="mt-8">
