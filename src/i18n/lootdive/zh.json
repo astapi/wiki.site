@@ -1,0 +1,402 @@
+{
+  "gameTitle": "Loot Dive",
+  "gameSubtitle": "自动战斗刷宝 RPG",
+  "siteName": "astapi Games 攻略 wiki",
+  "htmlLang": "zh-CN",
+  "ogLocale": "zh_CN",
+  "nav": {
+    "monsters": "怪物",
+    "items": "装备",
+    "dungeons": "地下城",
+    "system": "系统"
+  },
+  "common": {
+    "count": "{{count}}件",
+    "countMonsters": "{{count}}只",
+    "backToList": "← 返回列表",
+    "backToMonsters": "← 怪物列表",
+    "backToItems": "← 装备列表",
+    "backToDungeons": "← 地下城列表",
+    "copyright": "© 2026 astapi Games"
+  },
+  "index": {
+    "title": "Loot Dive攻略 wiki | 装备·怪物·地下城完整数据库",
+    "description": "手游「Loot Dive」官方攻略 wiki。收录共 {{itemCount}} 件装备、{{monsterCount}} 只怪物、{{dungeonCount}} 个地下城的全部资料数据库。供自动战斗刷宝 RPG 的周回与配装参考。",
+    "keywords": "Loot Dive, Loot Dive攻略, Loot Dive, Loot Dive攻略, 刷宝, 刷宝RPG, 自动战斗, 放置RPG, 攻略wiki, 数据库",
+    "heading": "Loot Dive攻略 wiki",
+    "intro": "自动战斗刷宝 RPG「<strong>Loot Dive</strong>」的资料参考。涵盖装备·怪物·地下城信息，辅助你进行配装与周回效率化。",
+    "categories": {
+      "monsters": "图鉴数据·属性·出现地下城·掉落",
+      "items": "基础装备·专武·固有 MOD·入手方式",
+      "dungeons": "层数·敌方构成·Boss·掉落表",
+      "system": "异常状态·防御机制等战斗计算规则"
+    },
+    "jsonLdDescription": "Loot Dive攻略 wiki"
+  },
+  "monsters": {
+    "listTitle": "怪物列表 | Loot Dive攻略 wiki",
+    "listDescription": "Loot Dive登场的全 {{count}} 只怪物的 HP·ATK·DEF 等属性列表。含 Boss·Uber 系图鉴数据。",
+    "listKeywords": "Loot Dive 怪物, Loot Dive 敌人, 怪物列表, 怪物图鉴, Loot Dive攻略, Loot Dive",
+    "listHeading": "怪物列表 ({{count}})",
+    "detailTitle": "{{name}}的属性·掉落 | Loot Dive攻略",
+    "detailDescription": "Loot Dive「{{name}}」的 HP {{hp}} / ATK {{atk}} / DEF {{def}} 等全部属性、{{skillsPart}}{{dropsPart}}出现信息。",
+    "detailDescriptionSkillsPart": "技能、",
+    "detailDescriptionDropsPart": "专属掉落、",
+    "detailKeywords": "{{name}}, {{name}} 攻略, {{name}} 属性, {{name}} 掉落, Loot Dive 攻略, Loot Dive",
+    "idLabel": "ID",
+    "stats": {
+      "hp": "HP",
+      "atk": "ATK",
+      "def": "DEF",
+      "exp": "EXP",
+      "attackSpeed": "攻击速度"
+    },
+    "tipsHeading": "攻略要点",
+    "skillsHeading": "技能",
+    "uniqueDropsHeading": "专属掉落"
+  },
+  "items": {
+    "listTitle": "装备·道具列表 | Loot Dive攻略 wiki",
+    "listDescription": "Loot Dive全 {{count}} 件装备·道具按部位(武器·护甲·手套·鞋子·饰品)分类的列表。含专武·固有 MOD。",
+    "listKeywords": "Loot Dive 装备, Loot Dive 道具, Loot Dive 专武, 装备列表, Loot Dive攻略, Loot Dive 装备",
+    "listHeading": "装备列表",
+    "listTotal": "共 {{count}} 件",
+    "detailTitle": "{{name}}的性能·入手方式 | Loot Dive攻略",
+    "detailDescriptionWithSources": "Loot Dive「{{name}}」的性能(ATK/DEF/固有MOD)、掉落来源怪物/地下城信息。",
+    "detailDescriptionWithoutSources": "Loot Dive「{{name}}」的性能(ATK/DEF/固有MOD)、详细数据。",
+    "detailKeywords": "{{name}}, {{name}} 入手, {{name}} 掉落, Loot Dive 装备, Loot Dive攻略, Loot Dive",
+    "fixedModsHeading": "固有 MOD",
+    "sourcesHeading": "入手方式",
+    "monsterSourcesHeading": "怪物掉落",
+    "dungeonSourcesHeading": "地下城掉落",
+    "dungeonExclusive": "专属",
+    "commonDropNote": "※ 所有地下城通用掉落"
+  },
+  "dungeons": {
+    "listTitle": "地下城列表 | Loot Dive攻略 wiki",
+    "listDescription": "Loot Dive全 {{count}} 个地下城的最大层数·出现怪物·Boss 信息列表。含 Uber 地下城·异次元回廊。",
+    "listKeywords": "Loot Dive 地下城, Loot Dive Boss, 地下城列表, Uber, 异次元回廊, Loot Dive攻略, Loot Dive",
+    "listHeading": "地下城列表",
+    "listTotal": "共 {{count}} 个",
+    "floorUnit": "层",
+    "requiresTicketShort": "需入场券",
+    "detailTitle": "{{name}}攻略·敌方构成·掉落 | Loot Dive攻略",
+    "detailDescription": "Loot Dive地下城「{{name}}」(最大 {{maxFloor}} 层)的出现怪物、{{bossPart}}掉落表、MOD Tier 攻略信息。",
+    "detailDescriptionBossPart": "Boss 信息、",
+    "detailKeywords": "{{name}}, {{name}} 攻略, {{name}} 掉落, {{name}} Boss, Loot Dive 地下城, Loot Dive攻略, Loot Dive",
+    "maxFloorSuffix": "层封顶",
+    "requiresTicket": "需入场券",
+    "modTier": "MOD Tier {{max}}–{{min}}",
+    "modCount": "MOD 数 {{min}}–{{max}}",
+    "bossHeading": "Boss",
+    "bossFloorSuffix": "层",
+    "enemiesHeading": "出现怪物",
+    "spawnRate": "出现率 {{rate}}%",
+    "dropTableHeading": "掉落表",
+    "dropTableDungeon": "地下城专属",
+    "dropTableCommon": "通用"
+  },
+  "triggers": {
+    "persistent": "常驻",
+    "regular": "每3次攻击",
+    "everyAttack": "每次攻击",
+    "every10": "每10次攻击",
+    "threshold": "HP 50% 以下"
+  },
+  "modDescriptions": {
+    "atk_bonus": "ATK+{{value}}",
+    "def_bonus": "DEF+{{value}}",
+    "hp_bonus": "HP+{{value}}",
+    "hp_regen": "每秒恢复 HP {{value}}",
+    "hp_regen_pct": "每秒恢复 HP {{value}}%",
+    "poison_chance": "中毒附加+{{value}}%",
+    "ignite_chance": "点燃附加+{{value}}%",
+    "ignite_duration_pct": "点燃持续+{{value}}%",
+    "ignite_tick_speed_pct": "点燃速度+{{value}}%",
+    "ignite_damage_pct": "点燃伤害+{{value}}%",
+    "ignite_lifesteal": "点燃伤害吸血 {{value}}%",
+    "critical_chance": "暴击+{{value}}%",
+    "critical_damage": "暴击伤害+{{value}}%",
+    "hp_on_hit": "命中时 HP+{{value}} 恢复",
+    "damage_defer_pct": "伤害延迟 {{value}}%",
+    "damage_reduction_pct": "受伤 -{{value}}%",
+    "attack_speed_pct": "攻击速度 {{sign}}{{value}}%",
+    "attack_speed_more_pct": "攻击速度 {{sign}}{{value}}% more",
+    "hp_increased_pct": "HP+{{value}}%",
+    "atk_increased_pct": "ATK+{{value}}%",
+    "def_increased_pct": "DEF+{{value}}%",
+    "time_atk_inc_pct": "每5秒 ATK+{{value}}%",
+    "time_def_inc_pct": "每5秒 DEF+{{value}}%",
+    "time_hp_regen": "每5秒 每秒 HP+{{value}} 恢复",
+    "hp_regen_to_atk_pct": "将 HP 回复量的 {{value}}% 转为 ATK",
+    "warlord_enrage": "乱军之王 (HP 30% 以下触发1次。攻击速度+20%, 攻击时 HP 恢复+300)",
+    "chill_chance": "冰缓附加+{{value}}%",
+    "chill_effect_pct": "冰缓效果+{{value}}%",
+    "chill_duration_pct": "冰缓持续+{{value}}%",
+    "freeze_chance": "冻结附加+{{value}}%",
+    "freeze_duration_pct": "冻结持续+{{value}}%",
+    "poison_damage_pct": "中毒伤害+{{value}}%",
+    "poison_damage_more_pct": "中毒伤害 {{value}}% more",
+    "poison_damage_reduction": "对中毒敌人受伤 -{{value}}%",
+    "hp_on_crit": "暴击时 HP+{{value}} 恢复",
+    "critical_follow_up_attack": "暴击时追击+{{value}}",
+    "follow_up_attack_pct": "双击之刃 (每次攻击按 ATK 的 {{value}}% 追击)",
+    "king_slam": "王者冲击 (每5次攻击 ATK×3 追击)",
+    "royal_roar": "王之咆哮 (每3次攻击解除自身的中毒·点燃·冰缓)",
+    "lifesteal": "生命偷取 {{value}}%",
+    "atk_more_pct": "ATK {{value}}% more",
+    "def_more_pct": "DEF {{value}}% more",
+    "hp_more_pct": "HP {{value}}% more"
+  },
+  "bossTips": {
+    "uber_uber_goblin_king": [
+      "堆叠伤害延迟与回复系 MOD 以承受高火力",
+      "建议确保特定专武和护甲随机 MOD 的伤害减免%",
+      "王者冲击可能造成即死。将哥布林王冻结可重置计数",
+      "UberUber 哥布林的踏击王之咆哮或许会派上用场"
+    ],
+    "uber_uber_bandit_leader": [
+      "堆叠伤害延迟与回复 MOD 以承受高速攻击",
+      "建议确保特定专武和护甲随机 MOD 的伤害减免%",
+      "由于攻击速度快, 用冰缓降低攻击速度有效",
+      "配合冻结几率, 可在冻结期间回复",
+      "UberUber 双击之戒是超攻击性道具"
+    ]
+  },
+  "langSwitcher": {
+    "label": "语言",
+    "ja": "日本語",
+    "ko": "한국어",
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "system": {
+    "title": "战斗系统解说 | Loot Dive攻略 wiki",
+    "description": "Loot Dive战斗系统解说。基础伤害公式·暴击·攻击速度 (ATB)·追击·异常状态 (中毒/点燃/冰缓/冻结)·防御机制·觉醒/关键石附带计算公式完整介绍。",
+    "keywords": "Loot Dive 系统, Loot Dive 异常状态, Loot Dive 中毒, Loot Dive 点燃, Loot Dive 冰缓, Loot Dive 冻结, 伤害延迟, 伤害减免, 暴击, 攻击速度, 关键石, Loot Dive攻略",
+    "heading": "战斗系统解说",
+    "intro": "整理了装备选择与配装构筑的前提计算规则。数值基于默认设置 (可能随平衡调整而变化)。",
+    "toc": {
+      "damageFormula": "基础伤害",
+      "critical": "暴击",
+      "gauge": "攻击速度·ATB",
+      "followUp": "追击",
+      "status": "异常状态",
+      "defense": "防御机制",
+      "timeBuff": "时间流逝 Buff",
+      "awakening": "觉醒·关键石"
+    },
+    "damageFormula": {
+      "heading": "基础伤害公式",
+      "intro": "普通攻击的伤害由 ATK 与 DEF 按以下公式决定。异常状态·追击系伤害都以此「基础伤害」为基准计算。",
+      "formulas": [
+        "DEF 减免率 = DEF / (DEF + 500)",
+        "总减免率 = DEF 减免率 + 伤害减免 MOD",
+        "基础伤害 = max(1, floor(ATK × (1 − 总减免率)))"
+      ],
+      "notes": [
+        "DEF 500 → 50% 减免, DEF 1000 → 67% 减免, DEF 1500 → 75% 减免",
+        "「伤害减免%」MOD 与 DEF 减免<strong class=\"text-[var(--color-text)]\">相加</strong>",
+        "暴击时在基础伤害上乘以 ×3.0 + 暴击伤害 MOD"
+      ]
+    },
+    "critical": {
+      "heading": "暴击",
+      "intro": "普通攻击时按「暴击+%」判定, 成功则造成高倍率伤害。基础倍率高达 <strong class=\"text-[var(--color-text)]\">×3.0</strong>, 暴击特化配装的火力增长非常可观。",
+      "formulas": [
+        "暴击倍率 = 3.0 + 暴击伤害% / 100",
+        "暴击伤害 = 基础伤害 × 暴击倍率"
+      ],
+      "notes": [
+        "暴击伤害 +100% → ×4.0 (基础的 4 倍伤害)",
+        "暴击伤害 +200% → ×5.0, +300% → ×6.0",
+        "<strong class=\"text-[var(--color-text)]\">暴击时追击</strong> (双击之戒 / Uber 双击之戒固有效果): 暴击命中时触发 ATK×0.5 的追加命中 (命中时 HP 回复也会再次触发)",
+        "<strong class=\"text-[var(--color-text)]\">暴击时 HP 回复</strong> (被动树可获取): 仅暴击时在命中时 HP 回复之上追加固定值回复",
+        "<strong class=\"text-[var(--color-text)]\">暴击时伤害吸收%</strong> (被动树可获取): 将暴击伤害的一定%转为 HP"
+      ],
+      "footnote": "战士职业初始拥有暴击率 +10%, 更易进入暴击配装。暴击率达到 100% 后伤害稳定, 便于期望值计算。"
+    },
+    "gauge": {
+      "heading": "攻击速度·ATB 战斗",
+      "intro": "玩家与敌人各自拥有槽, 槽满 100 后行动一次。攻击速度 (AS) 直接决定槽蓄积速度, <strong class=\"text-[var(--color-text)]\">AS 越高出手越多</strong>。",
+      "formulas": [
+        "AS 1.0 = 每秒蓄积 200 槽",
+        "行动间隔 = 100 / (AS × 200) = 0.5 / AS 秒"
+      ],
+      "notes": [
+        "AS 1.0 → 每 0.5 秒攻击一次",
+        "AS 2.0 → 每 0.25 秒 (每秒出手数翻倍)",
+        "AS 0.5 → 每 1 秒",
+        "<strong class=\"text-[var(--color-text)]\">冰缓</strong>中 AS 倍率相乘, 蓄积变慢",
+        "<strong class=\"text-[var(--color-text)]\">冻结</strong>中槽蓄积完全停止"
+      ],
+      "asModHeading": "攻击速度 MOD 有 2 种",
+      "asModIntro": "对 PoE 系熟悉的玩家: 提升攻击速度的 MOD 分 <strong class=\"text-[var(--color-text)]\">increased</strong> 与 <strong class=\"text-[var(--color-text)]\">more</strong> 两种, 计算方式不同。",
+      "asModBox": [
+        "<strong>increased (相加):</strong> 多个时取合计值算倍率。+30% 与 +20% 合计 +50% → ×1.50",
+        "<strong>more (相乘):</strong> 一个一个相乘。+30% more 与 +20% more 为 ×1.30 × ×1.20 = ×1.56",
+        "<strong>计算顺序:</strong> <code>最终 AS = 基础 AS × (1 + increased 合计 / 100) × more 倍率 ×...</code>"
+      ]
+    },
+    "followUp": {
+      "heading": "追击系统",
+      "intro": "普通攻击主命中之外附加的额外攻击效果。叠加可一次造成多段伤害。",
+      "subIntro": "追击效果几乎都是<strong class=\"text-[var(--color-text)]\">特定专武上赋予的固有 MOD</strong>, 设计上不依赖随机 MOD 或技能树, 而是通过装备本身取得。",
+      "cards": [
+        "<strong>暴击时追击</strong> (双击之戒 / Uber 双击之戒): 仅暴击命中时触发 ATK×0.5 追击。命中时 HP 回复再次触发, 实际上火力与回复双增。",
+        "<strong>UberUber 双击之戒的每攻击追击</strong>: 每次攻击时触发 ATK × 指定% 的追击。不依赖暴击, 暴击率低的配装也能常驻。",
+        "<strong>王者冲击</strong> (UberUber 哥布林踏击): 每 5 次攻击触发 ATK×3 超强追击。与主攻击同时触发, 实质 ATK×4 伤害。",
+        "<strong>Uber 暴击追击</strong> (Uber 树关键石): 暴击追击再 +1 命中 (ATK×1.0)。大幅提升暴击特化配装的火力。"
+      ]
+    },
+    "status": {
+      "heading": "异常状态",
+      "poison": {
+        "heading": "中毒 (Poison)",
+        "intro": "玩家普通攻击时按「中毒附加%」判定, 成功则对敌附加。叠层制, 可多层同时进行 (默认上限 1 层, 可通过被动/MOD 扩展)。",
+        "box": [
+          "<strong>伤害:</strong> <code>基础伤害 × 1.2</code> 每<strong>1 秒 × 5 次</strong> (合计 ×6.0)",
+          "<strong>增幅:</strong> <code>中毒伤害+% (相加)</code> / <code>中毒伤害 more% (相乘)</code> MOD 强化",
+          "<strong>叠层:</strong> 达到上限时新附加失败 (需等待中毒结束或消耗)"
+        ],
+        "note": "将敌人打入中毒状态会触发「中毒状态时伤害减免% MOD」, 受到的伤害也会减轻。"
+      },
+      "ignite": {
+        "heading": "点燃 (Ignite)",
+        "intro": "按「点燃附加%」判定, 成功则附加至敌人。<strong>覆盖式</strong>不叠层, 新附加会刷新剩余时间与伤害。",
+        "box": [
+          "<strong>伤害:</strong> <code>基础伤害 × 0.5</code> 每<strong>0.3 秒 × 10 次</strong> (合计 ×5.0, 持续 3 秒)",
+          "<strong>持续:</strong> <code>点燃持续+% MOD</code>延长",
+          "<strong>点燃速度:</strong> <code>点燃速度+% MOD</code>缩短伤害间隔 (= 伤害密度提高, 总伤害增加)",
+          "<strong>点燃伤害:</strong> <code>点燃伤害+% MOD</code>提高单次威力"
+        ],
+        "note": "相比中毒 (×6.0), 总伤害较小, 但覆盖式便于反映最新属性, 提高攻速也能多次出手。"
+      },
+      "chill": {
+        "heading": "冰缓 (Chill)",
+        "intro": "按「冰缓附加%」判定, 成功则降低敌人攻击速度。覆盖式。",
+        "box": [
+          "<strong>效果:</strong> 敌攻击速度倍率 = <code>max(0.5, 0.8 − 冰缓效果% × 0.2)</code>",
+          "　 ・ 冰缓效果 0% → ×0.8 (攻速降低 20%)",
+          "　 ・ 冰缓效果 50% → ×0.7 (降低 30%)",
+          "　 ・ 冰缓效果 100% 以上 → ×0.5 (降低 50%, 硬上限)",
+          "<strong>持续:</strong> 3 秒 (<code>冰缓持续+% MOD</code>延长)"
+        ],
+        "note": "非伤害型, 属于「减少出手数」的异常状态。对攻速高的 Boss (UberUber 山贼首领等) 特别有效。"
+      },
+      "freeze": {
+        "heading": "冻结 (Freeze)",
+        "intro": "按「冻结附加%」判定, 成功则使敌完全停止。行动计数系技能 (王者冲击等) 的计数也会重置。",
+        "box": [
+          "<strong>效果:</strong> 完全停止敌槽/行动",
+          "<strong>持续:</strong> 1.5 秒 (<code>冻结持续+% MOD</code>延长)",
+          "<strong>发生率上限:</strong> <strong class=\"text-[var(--color-text)]\">10% 硬上限</strong> (MOD 叠多少也不会超过 10%)",
+          "<strong>再附加:</strong> 冻结中不会再次冻结",
+          "<strong>解除后:</strong> 自动切换为同 MOD 的冰缓 (减速几乎无缝延续)"
+        ],
+        "note": "可概率完全停止的稀有手段。概率本身 10% 上限, 但攻速越快尝试次数越多, 机会也越大。"
+      }
+    },
+    "defense": {
+      "heading": "防御机制",
+      "intro": "减伤系与回复系两类。高难度 Boss 越需要多项组合。",
+      "damageReduction": {
+        "heading": "伤害减免%",
+        "intro": "按一定比例削减受到的伤害。与 DEF 减免<strong class=\"text-[var(--color-text)]\">相加</strong>, 与高 DEF 装备组合更耐打。",
+        "box": [
+          "<strong>计算:</strong> <code>总减免率 = DEF 减免率 + 伤害减免%</code>",
+          "<strong>例:</strong> DEF 500 (50% 减免) + 伤害减免 5% → 合计 55% 减免"
+        ],
+        "note": "极为强力的防御手段, 但<strong class=\"text-[var(--color-text)]\">获取途径稀少</strong>是其弱点。目前只能通过护甲随机 MOD (-5%) 或部分专武等有限路径积累。在终局内容受伤过多时, 优先考虑护甲 MOD 洗练。"
+      },
+      "damageDefer": {
+        "heading": "伤害延迟%",
+        "intro": "不立即受取部分受到的伤害, 而是在 4 秒内分摊接受。对即死 (瞬间火力) 的规避与每秒 HP 回复相性良好。",
+        "box": [
+          "<strong>效果:</strong> 将受到伤害的 <code>X%</code> 不立即受取, <strong>在 4 秒内每秒均等</strong>接受",
+          "<strong>上限:</strong> 50% (叠再多 MOD 也停在 50%)",
+          "<strong>例:</strong> 受伤 1000 / 延迟 50% → 立即 500 + (125/秒 × 4 秒)"
+        ],
+        "note": "分散期间若能用每秒 HP 回复等抵消, 可大幅降低实际受伤。对王者冲击这种单发超高伤害攻击尤为有效。"
+      },
+      "hpOnHit": {
+        "heading": "命中时 HP 回复",
+        "intro": "玩家每对敌造成伤害时以固定值回复。伤害为 0 时不触发。",
+        "box": [
+          "<strong>效果:</strong> 每次攻击命中时按 <code>回复量</code> 回复 HP (固定值, 非%)",
+          "<strong>暴击时 HP 回复 MOD</strong>存在时, 暴击命中会再追加回复",
+          "<strong>触发条件:</strong> 伤害 &gt; 0 (普通攻击·追击对象, 异常状态伤害另计)",
+          "<strong>重触发:</strong> 追击发生时, 追击同样适用命中时 HP 回复"
+        ],
+        "note": "与攻速·追击 MOD 组合时, 出手越多回复越多。配装的基础防线。"
+      },
+      "hpRegen": {
+        "heading": "每秒 HP 回复",
+        "intro": "每秒自动回复 HP。分固定值与最大 HP 百分比两种。",
+        "box": [
+          "<strong>效果:</strong> 每秒回复 <code>固定值 + 最大 HP × (每秒 HP% 回复)</code>",
+          "<strong>间隔:</strong> 战斗开始后每 1 秒",
+          "<strong>上限:</strong> 不会回复超过最大 HP"
+        ],
+        "note": "与伤害延迟组合, 形成「延迟期间以回复抵消」的循环, 可将瞬间火力转化为持久战。"
+      },
+      "poisonAbsorb": {
+        "heading": "中毒伤害吸收%",
+        "intro": "将对敌造成的中毒伤害的一定比例转化为自身 HP 回复。",
+        "box": [
+          "<strong>效果:</strong> 每秒中毒伤害 (全层合计) × <code>吸收%</code> 回复",
+          "<strong>对象:</strong> 「敌方受到的中毒伤害」为对象, 自身中毒不在此列"
+        ],
+        "note": "中毒配装的续航核心。与增加中毒叠层数的被动/MOD 相性良好。"
+      },
+      "igniteAbsorb": {
+        "heading": "点燃伤害吸收%",
+        "intro": "将敌方受到的点燃伤害的一定比例转化为 HP 回复。",
+        "box": [
+          "<strong>效果:</strong> 点燃伤害 × <code>吸收%</code> 回复",
+          "<strong>特点:</strong> 点燃每 0.3 秒触发伤害, 回复粒度精细, 持久战更稳定"
+        ],
+        "note": "点燃配装的续航核心。与点燃速度+% MOD 组合可缩短伤害间隔, 回复节奏也加快。"
+      },
+      "counter": {
+        "heading": "反击",
+        "intro": "被动树可获取的「受伤时 DEF 的%反击」效果。承受敌方攻击瞬间将 DEF × 指定%的伤害回敬敌方。",
+        "box": [
+          "<strong>效果:</strong> 每次被击以 <code>DEF × 反击%</code> 反射伤害",
+          "<strong>例:</strong> DEF 500, 反击 20% → 每次被击造成敌方 100 伤害"
+        ],
+        "note": "敌攻速越高反击次数越多, 与敌 AS 高·玩家低 AS 配装相性良好。触发起点是「被击」而非攻击, 不被击的配装无法发挥。"
+      }
+    },
+    "timeBuff": {
+      "heading": "时间流逝 Buff",
+      "intro": "越持久战越有利的效果。每 5 秒加 1 层, <strong class=\"text-[var(--color-text)]\">无上限累积</strong>。均作为<strong class=\"text-[var(--color-text)]\">Uber 专武的固有 MOD</strong>赋予, 没有相应装备不会生效。",
+      "cards": [
+        "<strong>每 5 秒 ATK+X%</strong> (Uber 哥布林之剑 / Uber 终焉之刃): 每经过 5 秒 ATK increased% 加 +X。10 秒 +2X, 30 秒 +6X…",
+        "<strong>每 5 秒 DEF+X%</strong> (Uber 哥布林之铠 / Uber 终焉之甲): 同理 DEF increased%",
+        "<strong>每 5 秒 HP 回复+N</strong> (UberUber 哥布林踏击): 在每秒 HP 回复的平值上加 +N"
+      ],
+      "footnote": "Boss 战越久越强的设计。若有前期承伤机制 (伤害延迟·每秒 HP 回复·高 HP), 可营造后期叠层爆发火力的局势。"
+    },
+    "awakening": {
+      "heading": "觉醒·关键石",
+      "intro": "技能树深处解锁的特殊效果。大多数决定配装核心方向, 效果极其强力。",
+      "passiveHeading": "被动树",
+      "passiveCards": [
+        "<strong>普通伤害无效</strong>: 普通攻击伤害变为 0, 取而代之完全特化异常状态·追击系伤害的中毒/点燃配装关键石。",
+        "<strong>迟缓之焰</strong>: 每 5 次点燃附加使点燃伤害 +10% 累加 (最大 +200%)。提升点燃配装的长期火力。",
+        "<strong>点燃传染</strong>: 击败点燃中的敌人时, 点燃状态会传给下一个敌人。大幅提升行进中的清怪速度。"
+      ],
+      "uberHeading": "Uber 树 (Uber Boss 解锁后)",
+      "uberCards": [
+        "<strong>重击</strong>: 攻击速度 -20% / 造成伤害 100% 转 HP 吸收 / 每次攻击对敌附加重伤层 (上限 5, 每层受伤 ×1.2, 最高 ×2.488)。",
+        "<strong>防御转换</strong>: 将 <code>DEF + 最大 HP/2</code> 加入 ATK。以坦克装备打伤害的浪漫配装。",
+        "<strong>Uber 暴击追击</strong>: 暴击时追击 +1 命中, 追加部分为 ATK×1.0 (与普通攻击同威力)。暴击配装的最强节点。",
+        "<strong>剧毒觉醒</strong>: 中毒伤害实效叠层倍率 +50% (×1.5)。中毒配装的纯火力加成。",
+        "<strong>灼热加速</strong>: 点燃持续时间减半 / 间隔也减半 (伤害密度 ×2)。短期决战中点燃的瞬发火力最大化。",
+        "<strong>冰缓/冻结中伤害倍率</strong>: 对冰缓·冻结中敌人造成伤害 ×倍增幅。冰系配装的决胜手段。"
+      ],
+      "footnote": "这些节点决定配装核心, 装备·随机 MOD 也应按关键石洗练, 效果方能最大化。"
+    }
+  }
+}

@@ -1,0 +1,402 @@
+{
+  "gameTitle": "Loot Dive",
+  "gameSubtitle": "Auto-Battle Hack & Slash RPG",
+  "siteName": "astapi Games Wiki",
+  "htmlLang": "en",
+  "ogLocale": "en_US",
+  "nav": {
+    "monsters": "Monsters",
+    "items": "Items",
+    "dungeons": "Dungeons",
+    "system": "System"
+  },
+  "common": {
+    "count": "{{count}}",
+    "countMonsters": "{{count}}",
+    "backToList": "← Back to list",
+    "backToMonsters": "← Monsters",
+    "backToItems": "← Items",
+    "backToDungeons": "← Dungeons",
+    "copyright": "© 2026 astapi Games"
+  },
+  "index": {
+    "title": "Loot Dive Wiki | Complete Gear, Monster & Dungeon Database",
+    "description": "Official wiki for the mobile game Loot Dive. A reference database covering all {{itemCount}} equipment pieces, {{monsterCount}} monsters, and {{dungeonCount}} dungeons. Useful for build crafting and efficient farming in this auto-battle hack-and-slash RPG.",
+    "keywords": "Loot Dive, Loot Dive wiki, Loot Dive guide, hack and slash, idle RPG, auto battle, database, game wiki",
+    "heading": "Loot Dive Wiki",
+    "intro": "Master data reference for the auto-battle hack & slash RPG <strong>Loot Dive</strong>. Browse gear, monsters, and dungeons to craft builds and optimize your farming.",
+    "categories": {
+      "monsters": "Bestiary · stats · spawn dungeons · drops",
+      "items": "Base gear · uniques · fixed mods · sources",
+      "dungeons": "Floors · enemies · bosses · drop tables",
+      "system": "Ailments, defense, and other battle calculation rules"
+    },
+    "jsonLdDescription": "Loot Dive Wiki"
+  },
+  "monsters": {
+    "listTitle": "Monsters | Loot Dive Wiki",
+    "listDescription": "All {{count}} monsters appearing in Loot Dive, listed with HP/ATK/DEF stats. Includes bosses and Uber-tier entries.",
+    "listKeywords": "Loot Dive monsters, Loot Dive enemies, monster list, bestiary, Loot Dive wiki",
+    "listHeading": "Monsters ({{count}})",
+    "detailTitle": "{{name}} — Stats & Drops | Loot Dive Wiki",
+    "detailDescription": "Full stats for Loot Dive's {{name}}: HP {{hp}} / ATK {{atk}} / DEF {{def}}, {{skillsPart}}{{dropsPart}}spawn locations.",
+    "detailDescriptionSkillsPart": "skills, ",
+    "detailDescriptionDropsPart": "unique drops, ",
+    "detailKeywords": "{{name}}, {{name}} guide, {{name}} stats, {{name}} drops, Loot Dive wiki",
+    "idLabel": "ID",
+    "stats": {
+      "hp": "HP",
+      "atk": "ATK",
+      "def": "DEF",
+      "exp": "EXP",
+      "attackSpeed": "Atk Speed"
+    },
+    "tipsHeading": "Tips",
+    "skillsHeading": "Skills",
+    "uniqueDropsHeading": "Unique Drops"
+  },
+  "items": {
+    "listTitle": "Gear & Items | Loot Dive Wiki",
+    "listDescription": "All {{count}} pieces of gear and items in Loot Dive, grouped by slot (weapon/armor/gloves/boots/accessory). Uniques and fixed mods included.",
+    "listKeywords": "Loot Dive gear, Loot Dive items, Loot Dive uniques, item list, Loot Dive wiki",
+    "listHeading": "Items",
+    "listTotal": "{{count}} total",
+    "detailTitle": "{{name}} — Stats & Sources | Loot Dive Wiki",
+    "detailDescriptionWithSources": "Loot Dive's {{name}}: stats (ATK/DEF/fixed mods) and monster/dungeon drop sources.",
+    "detailDescriptionWithoutSources": "Loot Dive's {{name}}: stats (ATK/DEF/fixed mods) and detailed data.",
+    "detailKeywords": "{{name}}, {{name}} source, {{name}} drop, Loot Dive gear, Loot Dive wiki",
+    "fixedModsHeading": "Fixed Mods",
+    "sourcesHeading": "Sources",
+    "monsterSourcesHeading": "Monster Drops",
+    "dungeonSourcesHeading": "Dungeon Drops",
+    "dungeonExclusive": "exclusive",
+    "commonDropNote": "※ Common drop across all dungeons"
+  },
+  "dungeons": {
+    "listTitle": "Dungeons | Loot Dive Wiki",
+    "listDescription": "All {{count}} Loot Dive dungeons with max floor, enemy roster, and boss info. Uber dungeons and the Dimensional Corridor included.",
+    "listKeywords": "Loot Dive dungeons, Loot Dive bosses, dungeon list, Uber, Dimensional Corridor, Loot Dive wiki",
+    "listHeading": "Dungeons",
+    "listTotal": "{{count}} total",
+    "floorUnit": "F",
+    "requiresTicketShort": "ticket",
+    "detailTitle": "{{name}} — Enemies, Bosses & Drops | Loot Dive Wiki",
+    "detailDescription": "Loot Dive dungeon {{name}} (up to floor {{maxFloor}}): enemy spawns, {{bossPart}}drop table, and mod tier range.",
+    "detailDescriptionBossPart": "boss, ",
+    "detailKeywords": "{{name}}, {{name}} guide, {{name}} drops, {{name}} boss, Loot Dive dungeon, Loot Dive wiki",
+    "maxFloorSuffix": "F max",
+    "requiresTicket": "Entry ticket required",
+    "modTier": "MOD Tier {{max}}–{{min}}",
+    "modCount": "MOD count {{min}}–{{max}}",
+    "bossHeading": "Boss",
+    "bossFloorSuffix": "F",
+    "enemiesHeading": "Enemies",
+    "spawnRate": "Spawn {{rate}}%",
+    "dropTableHeading": "Drop Table",
+    "dropTableDungeon": "Dungeon-exclusive",
+    "dropTableCommon": "Common"
+  },
+  "triggers": {
+    "persistent": "Passive",
+    "regular": "Every 3 attacks",
+    "everyAttack": "Every attack",
+    "every10": "Every 10 attacks",
+    "threshold": "HP ≤ 50%"
+  },
+  "modDescriptions": {
+    "atk_bonus": "ATK +{{value}}",
+    "def_bonus": "DEF +{{value}}",
+    "hp_bonus": "HP +{{value}}",
+    "hp_regen": "HP regen +{{value}}/s",
+    "hp_regen_pct": "HP regen +{{value}}%/s",
+    "poison_chance": "Poison chance +{{value}}%",
+    "ignite_chance": "Ignite chance +{{value}}%",
+    "ignite_duration_pct": "Ignite duration +{{value}}%",
+    "ignite_tick_speed_pct": "Ignite tick speed +{{value}}%",
+    "ignite_damage_pct": "Ignite damage +{{value}}%",
+    "ignite_lifesteal": "Ignite lifesteal {{value}}%",
+    "critical_chance": "Crit chance +{{value}}%",
+    "critical_damage": "Crit damage +{{value}}%",
+    "hp_on_hit": "HP on hit +{{value}}",
+    "damage_defer_pct": "Damage defer {{value}}%",
+    "damage_reduction_pct": "Damage taken -{{value}}%",
+    "attack_speed_pct": "Attack speed {{sign}}{{value}}%",
+    "attack_speed_more_pct": "Attack speed {{sign}}{{value}}% more",
+    "hp_increased_pct": "HP +{{value}}%",
+    "atk_increased_pct": "ATK +{{value}}%",
+    "def_increased_pct": "DEF +{{value}}%",
+    "time_atk_inc_pct": "ATK +{{value}}% per 5s",
+    "time_def_inc_pct": "DEF +{{value}}% per 5s",
+    "time_hp_regen": "HP regen +{{value}}/s per 5s",
+    "hp_regen_to_atk_pct": "{{value}}% of HP regen converts to ATK",
+    "warlord_enrage": "Warlord's Rage (Triggers once at HP ≤30%. Attack speed +20%, HP on hit +300)",
+    "chill_chance": "Chill chance +{{value}}%",
+    "chill_effect_pct": "Chill effect +{{value}}%",
+    "chill_duration_pct": "Chill duration +{{value}}%",
+    "freeze_chance": "Freeze chance +{{value}}%",
+    "freeze_duration_pct": "Freeze duration +{{value}}%",
+    "poison_damage_pct": "Poison damage +{{value}}%",
+    "poison_damage_more_pct": "Poison damage {{value}}% more",
+    "poison_damage_reduction": "Damage taken from poisoned enemies -{{value}}%",
+    "hp_on_crit": "HP on crit +{{value}}",
+    "critical_follow_up_attack": "Follow-up on crit +{{value}}",
+    "follow_up_attack_pct": "Twin Blades (Every attack triggers a follow-up for {{value}}% of ATK)",
+    "king_slam": "King's Slam (Every 5 attacks: ATK×3 follow-up)",
+    "royal_roar": "Royal Roar (Every 3 attacks: cleanse self of poison/ignite/chill)",
+    "lifesteal": "Lifesteal {{value}}%",
+    "atk_more_pct": "ATK {{value}}% more",
+    "def_more_pct": "DEF {{value}}% more",
+    "hp_more_pct": "HP {{value}}% more"
+  },
+  "bossTips": {
+    "uber_uber_goblin_king": [
+      "Stack damage-defer and healing mods to survive the high damage output",
+      "Damage-reduction % from specific uniques or random armor mods is highly recommended",
+      "King's Slam can one-shot you. Freezing the Goblin King resets the attack counter",
+      "The stomp's Royal Roar on UberUber Goblin may become useful"
+    ],
+    "uber_uber_bandit_leader": [
+      "Stack damage-defer and healing mods to survive the fast attacks",
+      "Damage-reduction % from specific uniques or random armor mods is highly recommended",
+      "Since attack speed is high, chill-based slowdown is effective",
+      "A freeze chance lets you heal during the freeze window",
+      "The UberUber Twin Strike ring is a hyper-offensive item"
+    ]
+  },
+  "langSwitcher": {
+    "label": "Language",
+    "ja": "日本語",
+    "ko": "한국어",
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "system": {
+    "title": "Battle System Guide | Loot Dive Wiki",
+    "description": "Loot Dive battle system guide. Base damage formula, critical hits, attack speed (ATB), follow-up attacks, ailments (poison/ignite/chill/freeze), defense mechanics, and awakening/keystone effects — all covered with formulas.",
+    "keywords": "Loot Dive system, Loot Dive ailments, Loot Dive poison, Loot Dive ignite, Loot Dive chill, Loot Dive freeze, damage defer, damage reduction, critical, attack speed, keystone, Loot Dive wiki",
+    "heading": "Battle System Guide",
+    "intro": "Calculation rules that underpin gear choice and build crafting. Numbers reflect default settings (subject to balance changes).",
+    "toc": {
+      "damageFormula": "Base Damage",
+      "critical": "Critical",
+      "gauge": "Attack Speed / ATB",
+      "followUp": "Follow-up",
+      "status": "Ailments",
+      "defense": "Defense",
+      "timeBuff": "Time Buffs",
+      "awakening": "Awakening / Keystones"
+    },
+    "damageFormula": {
+      "heading": "Base Damage Formula",
+      "intro": "Normal-attack damage is derived from ATK and DEF with the following formula. Ailment and follow-up damage is computed based on this \"base damage\".",
+      "formulas": [
+        "DEF reduction = DEF / (DEF + 500)",
+        "Total reduction = DEF reduction + damage-reduction MOD",
+        "Base damage = max(1, floor(ATK × (1 − total reduction)))"
+      ],
+      "notes": [
+        "DEF 500 → 50% reduction, DEF 1000 → 67%, DEF 1500 → 75%",
+        "\"Damage reduction %\" MODs are <strong class=\"text-[var(--color-text)]\">added</strong> to DEF reduction",
+        "Crits multiply base damage by ×3.0 + crit damage MODs"
+      ]
+    },
+    "critical": {
+      "heading": "Critical",
+      "intro": "Crit% rolls on each normal attack. On success, damage is multiplied by a high factor. With a base multiplier of <strong class=\"text-[var(--color-text)]\">×3.0</strong>, crit-focused builds scale exceptionally well.",
+      "formulas": [
+        "Crit multiplier = 3.0 + crit damage% / 100",
+        "Crit damage = base damage × crit multiplier"
+      ],
+      "notes": [
+        "Crit dmg +100% → ×4.0 (4× base damage)",
+        "Crit dmg +200% → ×5.0, +300% → ×6.0",
+        "<strong class=\"text-[var(--color-text)]\">Follow-up on crit</strong> (Twin Blades / Uber Twin Blades fixed mod): On crit, an extra ATK×0.5 hit (HP-on-hit re-triggers)",
+        "<strong class=\"text-[var(--color-text)]\">HP on crit</strong> (passive tree): adds flat HP regen on top of HP-on-hit, only when crit",
+        "<strong class=\"text-[var(--color-text)]\">Crit damage absorb%</strong> (passive tree): Converts a % of crit damage into HP"
+      ],
+      "footnote": "Warriors start with crit +10%, making crit builds easy to enter. Hitting 100% crit rate stabilizes DPS and makes expected-value math simpler."
+    },
+    "gauge": {
+      "heading": "Attack Speed / Gauge Battle (ATB)",
+      "intro": "Players and enemies each fill a gauge; reaching 100 triggers one action. Attack speed (AS) directly drives gauge-fill rate — <strong class=\"text-[var(--color-text)]\">higher AS means more actions</strong>.",
+      "formulas": [
+        "AS 1.0 = 200 gauge per second",
+        "Action interval = 100 / (AS × 200) = 0.5 / AS seconds"
+      ],
+      "notes": [
+        "AS 1.0 → attack every 0.5s",
+        "AS 2.0 → every 0.25s (2× actions per second)",
+        "AS 0.5 → every 1s",
+        "Under <strong class=\"text-[var(--color-text)]\">Chill</strong>, the AS multiplier slows gauge fill",
+        "Under <strong class=\"text-[var(--color-text)]\">Freeze</strong>, gauge fill is completely halted"
+      ],
+      "asModHeading": "Two kinds of Attack Speed MODs",
+      "asModIntro": "For players familiar with PoE: attack-speed MODs come as <strong class=\"text-[var(--color-text)]\">increased</strong> and <strong class=\"text-[var(--color-text)]\">more</strong>, each computed differently.",
+      "asModBox": [
+        "<strong>increased (additive):</strong> All sum, then apply once. +30% & +20% → sum +50% → ×1.50",
+        "<strong>more (multiplicative):</strong> Each multiplies. +30% more & +20% more → ×1.30 × ×1.20 = ×1.56",
+        "<strong>Order:</strong> <code>Final AS = base AS × (1 + sum of increased / 100) × more multipliers ×...</code>"
+      ]
+    },
+    "followUp": {
+      "heading": "Follow-up Attacks",
+      "intro": "Extra hits that trigger alongside the main attack. Stack them to land multiple hits per swing.",
+      "subIntro": "Follow-up effects are almost always <strong class=\"text-[var(--color-text)]\">fixed mods on specific unique gear</strong> — you acquire them through equipment rather than random mods or the tree.",
+      "cards": [
+        "<strong>Follow-up on crit</strong> (Twin Blades / Uber Twin Blades): On crit only, an ATK×0.5 follow-up. HP-on-hit re-triggers, so both DPS and sustain rise together.",
+        "<strong>UberUber Twin Blades' per-attack follow-up</strong>: Every attack triggers an ATK × X% follow-up. Crit-independent, so it fires even on low-crit builds.",
+        "<strong>King's Slam</strong> (UberUber Goblin Stomp): Every 5 attacks, ATK×3 super follow-up. Fires with the main attack, effectively ATK×4 damage.",
+        "<strong>Uber Crit Follow-up</strong> (Uber-tree keystone): Adds +1 hit to crit follow-up (ATK×1.0). A huge boost for crit-focused builds."
+      ]
+    },
+    "status": {
+      "heading": "Ailments",
+      "poison": {
+        "heading": "Poison",
+        "intro": "On normal attack, poison applies by \"Poison chance%\". Stackable — multiple instances can run (default cap 1, expandable via passives/MODs).",
+        "box": [
+          "<strong>Damage:</strong> <code>base damage × 1.2</code> <strong>every second × 5 times</strong> (total ×6.0)",
+          "<strong>Amplifiers:</strong> <code>Poison damage+% (additive)</code> / <code>Poison damage more% (multiplicative)</code> MODs",
+          "<strong>Stacks:</strong> At cap, new applications fail (wait out or consume)"
+        ],
+        "note": "Poisoning an enemy triggers \"Damage taken from poisoned enemies -% MOD\", also softening incoming damage."
+      },
+      "ignite": {
+        "heading": "Ignite",
+        "intro": "Rolled via \"Ignite chance%\". On success, applies to the target. <strong>Overwriting</strong> — it doesn't stack; reapplication refreshes duration and damage.",
+        "box": [
+          "<strong>Damage:</strong> <code>base damage × 0.5</code> <strong>every 0.3s × 10 times</strong> (total ×5.0, 3-second duration)",
+          "<strong>Duration:</strong> extended by <code>Ignite duration+% MOD</code>",
+          "<strong>Tick speed:</strong> <code>Ignite tick speed+% MOD</code> shortens intervals (denser damage, higher total)",
+          "<strong>Ignite damage:</strong> <code>Ignite damage+% MOD</code> raises per-tick power"
+        ],
+        "note": "Total damage is lower than poison (×6.0), but the overwrite model keeps stats fresh and higher attack speed still yields many applications."
+      },
+      "chill": {
+        "heading": "Chill",
+        "intro": "Rolled via \"Chill chance%\". On success, reduces the enemy's attack speed. Overwriting.",
+        "box": [
+          "<strong>Effect:</strong> Enemy AS multiplier = <code>max(0.5, 0.8 − chill effect% × 0.2)</code>",
+          "　 ・ Chill effect 0% → ×0.8 (AS -20%)",
+          "　 ・ Chill effect 50% → ×0.7 (-30%)",
+          "　 ・ Chill effect 100% or more → ×0.5 (-50%, hard cap)",
+          "<strong>Duration:</strong> 3 seconds (extended by <code>Chill duration+% MOD</code>)"
+        ],
+        "note": "A \"reduce actions\" ailment rather than damage. Especially effective against high-AS bosses (e.g. UberUber Bandit Leader)."
+      },
+      "freeze": {
+        "heading": "Freeze",
+        "intro": "Rolled via \"Freeze chance%\". On success, fully halts the enemy. Action-counter skills (King's Slam etc.) also have their counters reset.",
+        "box": [
+          "<strong>Effect:</strong> Fully halts the enemy's gauge/action",
+          "<strong>Duration:</strong> 1.5 seconds (extended by <code>Freeze duration+% MOD</code>)",
+          "<strong>Chance cap:</strong> <strong class=\"text-[var(--color-text)]\">10% hard cap</strong> (MODs never push it above 10%)",
+          "<strong>Re-apply:</strong> Cannot re-freeze while frozen",
+          "<strong>After expiry:</strong> Auto-transitions to chill from the same MOD (near-seamless slowdown)"
+        ],
+        "note": "One of the few ways to fully stun enemies by chance. The 10% cap holds, but high attack speed means more rolls and more openings."
+      }
+    },
+    "defense": {
+      "heading": "Defense",
+      "intro": "Two categories: damage mitigation and sustain. Higher-difficulty bosses usually demand a mix.",
+      "damageReduction": {
+        "heading": "Damage Reduction %",
+        "intro": "Cuts incoming damage by a percentage. <strong class=\"text-[var(--color-text)]\">Added</strong> to DEF reduction, so combines well with high-DEF gear.",
+        "box": [
+          "<strong>Calculation:</strong> <code>Total reduction = DEF reduction + damage reduction%</code>",
+          "<strong>Example:</strong> DEF 500 (50% reduction) + damage reduction 5% → 55% total"
+        ],
+        "note": "Very strong mitigation, but <strong class=\"text-[var(--color-text)]\">hard to obtain</strong>. Currently only available through armor random mods (-5%) or select uniques. If endgame damage is an issue, start by hunting armor mods."
+      },
+      "damageDefer": {
+        "heading": "Damage Defer %",
+        "intro": "Delays part of incoming damage, spreading it over 4 seconds instead of instantly. Pairs well with HP-per-second sustain and helps avoid one-shots.",
+        "box": [
+          "<strong>Effect:</strong> <code>X%</code> of incoming damage is received <strong>evenly over 4 seconds</strong> instead of instantly",
+          "<strong>Cap:</strong> 50% (more MODs won't push it past 50%)",
+          "<strong>Example:</strong> Hit for 1000 / 50% defer → 500 instant + (125/s × 4s)"
+        ],
+        "note": "If you out-heal the spread with HP/s regen, effective damage drops dramatically. Strong against single burst hits like King's Slam."
+      },
+      "hpOnHit": {
+        "heading": "HP on Hit",
+        "intro": "You heal a flat amount every time you damage an enemy. Does not trigger on 0 damage.",
+        "box": [
+          "<strong>Effect:</strong> Heal <code>amount</code> per hit (flat, not %)",
+          "With <strong>HP on crit MOD</strong>, crits give additional healing",
+          "<strong>Trigger:</strong> damage &gt; 0 (normal and follow-up attacks; ailment damage is separate)",
+          "<strong>Re-trigger:</strong> Follow-up attacks also apply HP on Hit"
+        ],
+        "note": "Combines powerfully with attack-speed and follow-up MODs — more hits, more healing. A foundational defensive layer."
+      },
+      "hpRegen": {
+        "heading": "HP Regen per Second",
+        "intro": "Automatically heals HP each second. Comes in flat and max-HP % flavors.",
+        "box": [
+          "<strong>Effect:</strong> Heal <code>flat + max HP × (HP%/s)</code> each second",
+          "<strong>Interval:</strong> Every 1 second from battle start",
+          "<strong>Cap:</strong> Cannot heal past max HP"
+        ],
+        "note": "Combined with damage defer, a \"heal-while-deferring\" loop forms, turning burst damage into sustainable encounters."
+      },
+      "poisonAbsorb": {
+        "heading": "Poison Lifesteal %",
+        "intro": "Converts a % of the poison damage you're dealing back into HP regen.",
+        "box": [
+          "<strong>Effect:</strong> Heal (per-second poison damage across all stacks) × <code>absorb%</code>",
+          "<strong>Target:</strong> Applies to poison you deal — not to poison on yourself"
+        ],
+        "note": "The sustain backbone of poison builds. Synergizes with poison-stack expansion passives/MODs."
+      },
+      "igniteAbsorb": {
+        "heading": "Ignite Lifesteal %",
+        "intro": "Converts a % of ignite damage dealt back into HP regen.",
+        "box": [
+          "<strong>Effect:</strong> Heal (ignite damage) × <code>absorb%</code>",
+          "<strong>Characteristic:</strong> Ignite ticks every 0.3s, so healing arrives in frequent small increments — stable in drawn-out fights"
+        ],
+        "note": "Sustain backbone for ignite builds. Ignite tick-speed+% MODs shorten intervals and speed up healing."
+      },
+      "counter": {
+        "heading": "Counter",
+        "intro": "A passive-tree effect: \"Counter for a % of DEF when hit\". Instantly reflects DEF × % damage back at the attacker.",
+        "box": [
+          "<strong>Effect:</strong> Per hit taken, reflect <code>DEF × counter%</code> damage",
+          "<strong>Example:</strong> DEF 500, counter 20% → 100 damage to enemy per hit taken"
+        ],
+        "note": "More reflects trigger against high-AS enemies — pairs well with high-enemy-AS / low-player-AS builds. Triggers on being hit rather than attacking, so no-hit builds won't benefit."
+      }
+    },
+    "timeBuff": {
+      "heading": "Time-Based Buffs",
+      "intro": "Effects that favor longer fights. One stack every 5 seconds, <strong class=\"text-[var(--color-text)]\">unlimited stacking</strong>. All appear as <strong class=\"text-[var(--color-text)]\">fixed MODs on Uber unique gear</strong>, so they require the relevant item to function.",
+      "cards": [
+        "<strong>ATK +X% per 5s</strong> (Uber Goblin Blade / Uber End Blade): Every 5 seconds, +X to ATK increased%. +2X at 10s, +6X at 30s…",
+        "<strong>DEF +X% per 5s</strong> (Uber Goblin Armor / Uber End Armor): Same, for DEF increased%",
+        "<strong>HP regen +N per 5s</strong> (UberUber Goblin Stomp): Adds +N flat to HP per second regen"
+      ],
+      "footnote": "Designed to reward long boss fights. If you can absorb early damage (damage defer, HP/s regen, high HP), stacks build up and DPS explodes."
+    },
+    "awakening": {
+      "heading": "Awakening / Keystones",
+      "intro": "Special effects unlocked deep in the trees. Most are build-defining.",
+      "passiveHeading": "Passive Tree",
+      "passiveCards": [
+        "<strong>Normal Damage Negation</strong>: Normal-attack damage becomes 0, but you fully specialize into ailment / follow-up damage. Keystone for poison/ignite builds.",
+        "<strong>Slow-burning Flame</strong>: Every 5 ignite applications, ignite damage +10% (cap +200%). Boosts ignite long-fight damage.",
+        "<strong>Ignite Contagion</strong>: When an ignited enemy dies, ignite transfers to the next enemy. Dramatically speeds up clearing."
+      ],
+      "uberHeading": "Uber Tree (unlocked after Uber bosses)",
+      "uberCards": [
+        "<strong>Heavy Strike</strong>: AS -20% / 100% of damage as HP lifesteal / per attack, apply a \"wound\" stack (cap 5, each stack makes the enemy take ×1.2 damage, up to ×2.488).",
+        "<strong>Defensive Conversion</strong>: Adds <code>DEF + maxHP/2</code> to ATK. Tank-builds-that-hit-hard fantasy.",
+        "<strong>Uber Crit Follow-up</strong>: Adds +1 hit to crit follow-up at ATK×1.0 (equal to a normal attack). Best-in-slot node for crit builds.",
+        "<strong>Venom Awakening</strong>: Effective poison stack multiplier +50% (×1.5). Pure DPS boost for poison builds.",
+        "<strong>Blazing Tempo</strong>: Ignite duration halved, tick interval halved (×2 damage density). Maximizes ignite burst for short fights.",
+        "<strong>Damage vs Chilled/Frozen</strong>: Damage dealt to chilled or frozen enemies multiplied. The finisher for cold builds."
+      ],
+      "footnote": "Because these nodes define your build axis, tuning gear and random mods around your keystone maximizes the payoff."
+    }
+  }
+}

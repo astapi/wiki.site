@@ -1,0 +1,33 @@
+---
+import ItemDetail from '../../../../components/lootdive/ItemDetail.astro'
+import { NON_DEFAULT_LANGS, type Lang } from '../../../../i18n/site'
+
+type Item = {
+  id: string
+  slot: string
+  weaponType?: string
+  atk?: number
+  def?: number
+  fixedMods?: { type: string; value: number }[]
+}
+
+export async function getStaticPaths() {
+  const data = (await import('../../../../data/lootdive/game/items.json')).default
+  const items = Object.entries(data.items as Record<string, unknown>)
+    .filter(([key, v]) => !key.startsWith('_') && v && typeof v === 'object' && (v as Item).id)
+
+  const paths = []
+  for (const lang of NON_DEFAULT_LANGS) {
+    for (const [, v] of items) {
+      paths.push({
+        params: { lang, id: (v as Item).id },
+        props: { lang, item: v as Item },
+      })
+    }
+  }
+  return paths
+}
+
+const { lang, item } = Astro.props as { lang: Lang; item: Item }
+---
+<ItemDetail lang={lang} item={item} />

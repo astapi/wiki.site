@@ -1,0 +1,100 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro'
+import itemsData from '../../data/lootdive/game/items.json'
+import { itemName, slotName } from '../../data/lootdive/i18n'
+import { t, localeHref, type Lang } from '../../i18n/site'
+
+interface Props {
+  lang: Lang
+}
+const { lang } = Astro.props
+
+type Item = {
+  id: string
+  slot: string
+  weaponType?: string
+  atk?: number
+  def?: number
+  fixedMods?: { type: string; value: number }[]
+}
+
+const gameSlug = 'lootdive'
+const base = `/${gameSlug}`
+
+const slotOrder = ['weapon', 'armor', 'gloves', 'boots', 'accessory']
+
+const rawItems = Object.entries(itemsData.items as Record<string, unknown>)
+  .filter(([key, v]) => !key.startsWith('_') && v && typeof v === 'object')
+  .map(([, v]) => v as Item)
+
+const bySlot: Record<string, Item[]> = {}
+for (const it of rawItems) {
+  if (!bySlot[it.slot]) bySlot[it.slot] = []
+  bySlot[it.slot].push(it)
+}
+// Sort by localized name for the current lang, using ja as secondary collation
+const collator = new Intl.Collator(lang === 'zh' ? 'zh-Hans' : lang)
+for (const s of Object.keys(bySlot)) {
+  bySlot[s].sort((a, b) => collator.compare(itemName(a.id, lang), itemName(b.id, lang)))
+}
+
+const slots = slotOrder.filter((s) => bySlot[s]?.length)
+const total = rawItems.length
+---
+<GameLayout
+  title={t(lang, 'items.listTitle')}
+  description={t(lang, 'items.listDescription', { count: total })}
+  keywords={t(lang, 'items.listKeywords')}
+  gameSlug={gameSlug}
+  lang={lang}
+  currentPath="/items/"
+>
+  <h1 class="text-2xl md:text-3xl font-semibold mb-2">{t(lang, 'items.listHeading')}</h1>
+  <p class="text-sm text-[var(--color-text-muted)] mb-6">{t(lang, 'items.listTotal', { count: total })}</p>
+
+  <nav class="flex flex-wrap gap-2 mb-8">
+    {slots.map((s) => (
+      <a
+        href={`#slot-${s}`}
+        class="px-3 py-1 text-xs rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)]"
+      >
+        {slotName(s, lang)} ({bySlot[s].length})
+      </a>
+    ))}
+  </nav>
+
+  {slots.map((slot) => (
+    <section id={`slot-${slot}`} class="mb-10 scroll-mt-20">
+      <h2 class="text-lg font-semibold mb-3 flex items-center gap-2">
+        <img src={`/${gameSlug}/images/items/${slot}.png`} alt="" class="w-5 h-5 object-contain" />
+        {slotName(slot, lang)}
+        <span class="text-xs font-normal text-[var(--color-text-muted)]">({bySlot[slot].length})</span>
+      </h2>
+      <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        {bySlot[slot].map((it) => (
+          <li>
+            <a
+              href={localeHref(lang, base, `/items/${it.id}/`)}
+              class="flex items-center gap-3 p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
+            >
+              <img
+                src={`/${gameSlug}/images/items/${slot === 'weapon' && it.weaponType === 'staff' ? 'staff' : slot}.png`}
+                alt=""
+                class="w-8 h-8 object-contain shrink-0"
+              />
+              <div class="min-w-0 flex-1">
+                <p class="text-sm truncate">{itemName(it.id, lang)}</p>
+                <p class="text-[11px] text-[var(--color-text-muted)]">
+                  {it.atk ? `ATK ${it.atk}` : ''}
+                  {it.atk && it.def ? ' / ' : ''}
+                  {it.def ? `DEF ${it.def}` : ''}
+                  {it.fixedMods?.length ? ' / MOD' : ''}
+                </p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</GameLayout>

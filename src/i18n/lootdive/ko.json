@@ -1,0 +1,402 @@
+{
+  "gameTitle": "Loot Dive",
+  "gameSubtitle": "자동 전투 핵앤슬래시 RPG",
+  "siteName": "astapi Games 공략 wiki",
+  "htmlLang": "ko",
+  "ogLocale": "ko_KR",
+  "nav": {
+    "monsters": "몬스터",
+    "items": "아이템",
+    "dungeons": "던전",
+    "system": "시스템"
+  },
+  "common": {
+    "count": "{{count}}건",
+    "countMonsters": "{{count}}마리",
+    "backToList": "← 목록으로",
+    "backToMonsters": "← 몬스터 목록",
+    "backToItems": "← 아이템 목록",
+    "backToDungeons": "← 던전 목록",
+    "copyright": "© 2026 astapi Games"
+  },
+  "index": {
+    "title": "Loot Dive 공략 wiki | 장비·몬스터·던전 완전 데이터베이스",
+    "description": "모바일 게임 「Loot Dive」 공식 공략 wiki. 전체 {{itemCount}}종의 장비, {{monsterCount}}마리의 몬스터, {{dungeonCount}}개 던전의 마스터 데이터를 정리한 데이터베이스. 자동 전투 핵앤슬래시 RPG의 주회·빌드 구축 참고용.",
+    "keywords": "Loot Dive, Loot Dive 공략, Loot Dive, Loot Dive 공략, 핵앤슬래시, 핵슬라, 자동전투, 방치 RPG, 공략 wiki, 데이터베이스",
+    "heading": "Loot Dive 공략 wiki",
+    "intro": "자동 전투 핵앤슬래시 RPG 「<strong>Loot Dive</strong>」의 마스터 데이터 레퍼런스. 장비·몬스터·던전 정보를 망라하여 빌드 구축과 주회 효율화에 참고하세요.",
+    "categories": {
+      "monsters": "도감 데이터·스탯·출현 던전·드롭",
+      "items": "기본 베이스·유니크 장비·고유 MOD·입수 방법",
+      "dungeons": "층수·적 구성·보스·드롭 테이블",
+      "system": "상태이상·방어 메커니즘 등 전투 계산 규칙"
+    },
+    "jsonLdDescription": "Loot Dive 공략 wiki"
+  },
+  "monsters": {
+    "listTitle": "몬스터 목록 | Loot Dive 공략 wiki",
+    "listDescription": "Loot Dive에 등장하는 전체 {{count}}마리의 몬스터를 HP·ATK·DEF 스탯과 함께 목록으로 표시. 보스·Uber 계열 포함 도감 데이터.",
+    "listKeywords": "Loot Dive 몬스터, Loot Dive 적, 몬스터 목록, 몬스터 도감, Loot Dive 공략, Loot Dive",
+    "listHeading": "몬스터 목록 ({{count}})",
+    "detailTitle": "{{name}}의 스탯·드롭 | Loot Dive 공략",
+    "detailDescription": "Loot Dive의 「{{name}}」의 HP {{hp}} / ATK {{atk}} / DEF {{def}} 등 전체 스탯, {{skillsPart}}{{dropsPart}}출현 정보를 정리했습니다.",
+    "detailDescriptionSkillsPart": "스킬, ",
+    "detailDescriptionDropsPart": "유니크 드롭, ",
+    "detailKeywords": "{{name}}, {{name}} 공략, {{name}} 스탯, {{name}} 드롭, Loot Dive 공략, Loot Dive",
+    "idLabel": "ID",
+    "stats": {
+      "hp": "HP",
+      "atk": "ATK",
+      "def": "DEF",
+      "exp": "EXP",
+      "attackSpeed": "공격 속도"
+    },
+    "tipsHeading": "공략 포인트",
+    "skillsHeading": "스킬",
+    "uniqueDropsHeading": "유니크 드롭"
+  },
+  "items": {
+    "listTitle": "장비·아이템 목록 | Loot Dive 공략 wiki",
+    "listDescription": "Loot Dive의 전체 {{count}}종의 장비·아이템을 슬롯별(무기·갑옷·장갑·신발·악세)로 정리한 목록. 유니크 장비·고유 MOD도 수록.",
+    "listKeywords": "Loot Dive 장비, Loot Dive 아이템, Loot Dive 유니크, 장비 목록, Loot Dive 공략, Loot Dive 장비",
+    "listHeading": "아이템 목록",
+    "listTotal": "전체 {{count}}종",
+    "detailTitle": "{{name}}의 성능·입수 방법 | Loot Dive 공략",
+    "detailDescriptionWithSources": "Loot Dive의 「{{name}}」의 성능(ATK/DEF/고유MOD), 드롭 출처 몬스터/던전을 정리했습니다.",
+    "detailDescriptionWithoutSources": "Loot Dive의 「{{name}}」의 성능(ATK/DEF/고유MOD), 상세 데이터를 정리했습니다.",
+    "detailKeywords": "{{name}}, {{name}} 입수, {{name}} 드롭, Loot Dive 장비, Loot Dive 공략, Loot Dive",
+    "fixedModsHeading": "고유 MOD",
+    "sourcesHeading": "입수 방법",
+    "monsterSourcesHeading": "몬스터 드롭",
+    "dungeonSourcesHeading": "던전 드롭",
+    "dungeonExclusive": "고유",
+    "commonDropNote": "※ 모든 던전 공통 드롭 대상"
+  },
+  "dungeons": {
+    "listTitle": "던전 목록 | Loot Dive 공략 wiki",
+    "listDescription": "Loot Dive의 전체 {{count}}개 던전의 최대 층수·출현 몬스터·보스 정보를 정리한 목록. Uber 던전·차원의 회랑도 수록.",
+    "listKeywords": "Loot Dive 던전, Loot Dive 보스, 던전 목록, Uber, 차원의 회랑, Loot Dive 공략, Loot Dive",
+    "listHeading": "던전 목록",
+    "listTotal": "전체 {{count}}개",
+    "floorUnit": "F",
+    "requiresTicketShort": "티켓 필요",
+    "detailTitle": "{{name}}의 공략·적 구성·드롭 | Loot Dive 공략",
+    "detailDescription": "Loot Dive 던전 「{{name}}」(최대 {{maxFloor}}층)의 출현 몬스터, {{bossPart}}드롭 테이블, MOD Tier를 정리한 공략 정보.",
+    "detailDescriptionBossPart": "보스 정보, ",
+    "detailKeywords": "{{name}}, {{name}} 공략, {{name}} 드롭, {{name}} 보스, Loot Dive 던전, Loot Dive 공략, Loot Dive",
+    "maxFloorSuffix": "F까지",
+    "requiresTicket": "입장권 필요",
+    "modTier": "MOD Tier {{max}}–{{min}}",
+    "modCount": "MOD 수 {{min}}–{{max}}",
+    "bossHeading": "보스",
+    "bossFloorSuffix": "F",
+    "enemiesHeading": "출현 몬스터",
+    "spawnRate": "출현율 {{rate}}%",
+    "dropTableHeading": "드롭 테이블",
+    "dropTableDungeon": "던전 전용",
+    "dropTableCommon": "공통"
+  },
+  "triggers": {
+    "persistent": "상시",
+    "regular": "3회 공격마다",
+    "everyAttack": "매 공격",
+    "every10": "10회 공격마다",
+    "threshold": "HP 50% 이하"
+  },
+  "modDescriptions": {
+    "atk_bonus": "ATK+{{value}}",
+    "def_bonus": "DEF+{{value}}",
+    "hp_bonus": "HP+{{value}}",
+    "hp_regen": "초당 HP {{value}} 회복",
+    "hp_regen_pct": "초당 HP {{value}}% 회복",
+    "poison_chance": "독 부여+{{value}}%",
+    "ignite_chance": "점화 부여+{{value}}%",
+    "ignite_duration_pct": "점화 지속+{{value}}%",
+    "ignite_tick_speed_pct": "점화 속도+{{value}}%",
+    "ignite_damage_pct": "점화 피해+{{value}}%",
+    "ignite_lifesteal": "점화 피해 흡수 {{value}}%",
+    "critical_chance": "치명타+{{value}}%",
+    "critical_damage": "치명타 피해+{{value}}%",
+    "hp_on_hit": "명중 시 HP+{{value}} 회복",
+    "damage_defer_pct": "피해 지연 {{value}}%",
+    "damage_reduction_pct": "받는 피해 -{{value}}%",
+    "attack_speed_pct": "공격 속도 {{sign}}{{value}}%",
+    "attack_speed_more_pct": "공격 속도 {{sign}}{{value}}% more",
+    "hp_increased_pct": "HP+{{value}}%",
+    "atk_increased_pct": "ATK+{{value}}%",
+    "def_increased_pct": "DEF+{{value}}%",
+    "time_atk_inc_pct": "5초마다 ATK+{{value}}%",
+    "time_def_inc_pct": "5초마다 DEF+{{value}}%",
+    "time_hp_regen": "5초마다 초당 HP+{{value}} 회복",
+    "hp_regen_to_atk_pct": "HP 회복량의 {{value}}%를 ATK로 변환",
+    "warlord_enrage": "난군의 왕 (HP 30% 이하에서 1회 발동. 공격 속도+20%, 공격 시 HP 회복+300)",
+    "chill_chance": "냉기 부여+{{value}}%",
+    "chill_effect_pct": "냉기 효과+{{value}}%",
+    "chill_duration_pct": "냉기 지속+{{value}}%",
+    "freeze_chance": "빙결 부여+{{value}}%",
+    "freeze_duration_pct": "빙결 지속+{{value}}%",
+    "poison_damage_pct": "독 피해+{{value}}%",
+    "poison_damage_more_pct": "독 피해 {{value}}% more",
+    "poison_damage_reduction": "독 상태의 적에게 받는 피해 -{{value}}%",
+    "hp_on_crit": "치명타 시 HP+{{value}} 회복",
+    "critical_follow_up_attack": "치명타 시 추격+{{value}}",
+    "follow_up_attack_pct": "쌍격의 칼날 (매 공격 시 ATK의 {{value}}%로 추격)",
+    "king_slam": "킹 슬램 (5회 공격마다 ATK×3의 추격)",
+    "royal_roar": "왕의 포효 (3회 공격마다 자신의 독·점화·냉기 해제)",
+    "lifesteal": "생명력 흡수 {{value}}%",
+    "atk_more_pct": "ATK {{value}}% more",
+    "def_more_pct": "DEF {{value}}% more",
+    "hp_more_pct": "HP {{value}}% more"
+  },
+  "bossTips": {
+    "uber_uber_goblin_king": [
+      "피해 지연과 회복 계열 MOD를 쌓아 높은 화력을 견디세요",
+      "특정 유니크나 갑옷의 랜덤 MOD의 피해 감소%도 확보하면 좋습니다",
+      "킹 슬램은 즉사 가능성이 큽니다. 고블린 킹을 빙결 상태로 만들면 카운트가 리셋됩니다",
+      "UberUber 고블린의 발구르기 왕의 포효가 도움이 될 때가 있을 수 있습니다"
+    ],
+    "uber_uber_bandit_leader": [
+      "피해 지연과 회복 MOD를 쌓아 고속 공격을 견디세요",
+      "특정 유니크나 갑옷의 랜덤 MOD의 피해 감소%도 확보하면 좋습니다",
+      "공격 속도가 빠르므로 냉기로 공격 속도 저하가 유효합니다",
+      "빙결 확률이 있으면 빙결 중에 회복이 가능합니다",
+      "UberUber 쌍격의 반지는 초공격적 아이템입니다"
+    ]
+  },
+  "langSwitcher": {
+    "label": "언어",
+    "ja": "日本語",
+    "ko": "한국어",
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "system": {
+    "title": "전투 시스템 해설 | Loot Dive 공략 wiki",
+    "description": "Loot Dive의 전투 시스템 해설. 기본 피해식·치명타·공격 속도 (ATB)·추격·상태이상 (독/점화/냉기/빙결)·방어 메커니즘·각성/키스톤을 계산식과 함께 망라.",
+    "keywords": "Loot Dive 시스템, Loot Dive 상태이상, Loot Dive 독, Loot Dive 점화, Loot Dive 냉기, Loot Dive 빙결, 피해 지연, 피해 감소, 치명타, 공격 속도, 키스톤, Loot Dive 공략",
+    "heading": "전투 시스템 해설",
+    "intro": "장비 선택과 빌드 구축의 전제가 되는 계산 규칙을 정리했습니다. 수치는 기본 설정 기준 (밸런스 조정으로 변경될 수 있음).",
+    "toc": {
+      "damageFormula": "기본 피해",
+      "critical": "치명타",
+      "gauge": "공격 속도·ATB",
+      "followUp": "추격",
+      "status": "상태이상",
+      "defense": "방어 메커니즘",
+      "timeBuff": "시간 경과 버프",
+      "awakening": "각성·키스톤"
+    },
+    "damageFormula": {
+      "heading": "기본 피해식",
+      "intro": "일반 공격의 피해는 ATK와 DEF로부터 다음 식으로 결정됩니다. 상태이상·추격 계열 피해는 이 「기본 피해」를 바탕으로 계산됩니다.",
+      "formulas": [
+        "DEF 감소율 = DEF / (DEF + 500)",
+        "총 감소율 = DEF 감소율 + 피해 감소 MOD",
+        "기본 피해 = max(1, floor(ATK × (1 − 총 감소율)))"
+      ],
+      "notes": [
+        "DEF 500 → 50% 감소, DEF 1000 → 67% 감소, DEF 1500 → 75% 감소",
+        "「피해 감소%」 MOD는 DEF 감소와 <strong class=\"text-[var(--color-text)]\">합산</strong>됩니다",
+        "치명타 시 기본 피해에 ×3.0 + 치명타 피해 MOD를 곱함"
+      ]
+    },
+    "critical": {
+      "heading": "치명타",
+      "intro": "일반 공격 시 「치명타+%」로 판정되어 성공하면 높은 배율의 피해를 입힙니다. 기본 배율이 <strong class=\"text-[var(--color-text)]\">×3.0</strong>으로 높아 치명타 특화 빌드는 화력 상승폭이 압도적입니다.",
+      "formulas": [
+        "치명타 배율 = 3.0 + 치명타 피해% / 100",
+        "치명타 피해 = 기본 피해 × 치명타 배율"
+      ],
+      "notes": [
+        "치명타 피해 +100% → ×4.0 (기본의 4배 피해)",
+        "치명타 피해 +200% → ×5.0, +300% → ×6.0",
+        "<strong class=\"text-[var(--color-text)]\">치명타 시 추격</strong> (쌍격의 반지 / Uber 쌍격의 반지 고유 효과): 치명타 적중 시 ATK×0.5의 추가 적중 (적중 시 HP 회복도 재발동)",
+        "<strong class=\"text-[var(--color-text)]\">치명타 시 HP 회복</strong> (패시브 트리에서 획득 가능): 치명타 시에만 적중 시 HP 회복에 추가로 고정 수치 회복",
+        "<strong class=\"text-[var(--color-text)]\">치명타 시 피해 흡수%</strong> (패시브 트리에서 획득 가능): 치명타 피해의 일정%를 HP로 변환"
+      ],
+      "footnote": "워리어 클래스는 초기에 치명타율 +10%를 가져 치명타 빌드로 진입하기 쉽습니다. 치명타율 100%에 도달하면 피해가 안정되어 기대값 계산이 쉬워집니다."
+    },
+    "gauge": {
+      "heading": "공격 속도·게이지 전투 (ATB)",
+      "intro": "플레이어와 적은 각자 게이지를 가지며, 게이지가 100이 되면 1회 행동합니다. 공격 속도 (AS)는 그대로 게이지 축적 속도와 직결되므로 <strong class=\"text-[var(--color-text)]\">AS가 높을수록 공격 횟수가 증가</strong>합니다.",
+      "formulas": [
+        "AS 1.0 = 초당 200 게이지 축적",
+        "행동 간격 = 100 / (AS × 200) = 0.5 / AS 초"
+      ],
+      "notes": [
+        "AS 1.0 → 0.5초마다 공격",
+        "AS 2.0 → 0.25초마다 (초당 공격 횟수 2배)",
+        "AS 0.5 → 1초마다",
+        "<strong class=\"text-[var(--color-text)]\">냉기</strong> 중에는 AS 배율이 곱해져 축적이 느려집니다",
+        "<strong class=\"text-[var(--color-text)]\">빙결</strong> 중에는 게이지 축적이 완전히 정지"
+      ],
+      "asModHeading": "공격 속도 MOD는 2종류",
+      "asModIntro": "PoE 계열에 익숙한 분들을 위한 설명. 공격 속도를 올리는 MOD에는 <strong class=\"text-[var(--color-text)]\">increased</strong>와 <strong class=\"text-[var(--color-text)]\">more</strong>의 2종류가 있고 계산 방식이 다릅니다.",
+      "asModBox": [
+        "<strong>increased (가산):</strong> 여러 개 있어도 합계에서 배율을 산출. +30%와 +20%라면 합계 +50% → ×1.50",
+        "<strong>more (승산):</strong> 하나씩 곱해짐. +30% more와 +20% more라면 ×1.30 × ×1.20 = ×1.56",
+        "<strong>계산 순서:</strong> <code>최종 AS = 기본 AS × (1 + increased 합계 / 100) × more 배율 ×...</code>"
+      ]
+    },
+    "followUp": {
+      "heading": "추격 시스템",
+      "intro": "일반 공격의 메인 적중에 더해 추가 공격이 발생하는 효과. 중첩하면 한 번에 여러 번의 피해를 입힐 수 있습니다.",
+      "subIntro": "추격 효과는 대부분 <strong class=\"text-[var(--color-text)]\">특정 유니크 장비에 부여되는 고유 MOD</strong>로, 랜덤 MOD나 트리가 아닌 장비 자체에서 선택하는 설계입니다.",
+      "cards": [
+        "<strong>치명타 시 추격</strong> (쌍격의 반지 / Uber 쌍격의 반지): 치명타 적중 시에만 ATK×0.5의 추격. 적중 시 HP 회복이 재발동하여 실질적으로 화력과 회복이 모두 증가합니다.",
+        "<strong>UberUber 쌍격의 반지의 매 공격 추격</strong>: 매 공격마다 ATK × 지정%의 추격 발생. 치명타 비의존이라 치명타율이 낮은 빌드에서도 상시 발동합니다.",
+        "<strong>킹 슬램</strong> (UberUber 고블린의 발구르기): 5회 공격마다 ATK×3의 초강력 추격. 메인 공격과 동시 발동하므로 실질 ATK×4 피해.",
+        "<strong>Uber 치명타 추격</strong> (Uber 트리 키스톤): 치명타 시 추격이 +1 적중 (ATK×1.0). 치명타 특화 빌드의 화력을 대폭 상승시킵니다."
+      ]
+    },
+    "status": {
+      "heading": "상태이상",
+      "poison": {
+        "heading": "독 (Poison)",
+        "intro": "플레이어의 일반 공격 시 「독 부여%」로 판정되어 성공하면 적에게 부여됩니다. 중첩제로 여러 개 동시 진행 가능 (기본 최대 1 중첩, 패시브/MOD로 확장 가능).",
+        "box": [
+          "<strong>피해:</strong> <code>기본 피해 × 1.2</code>를 <strong>1초마다 × 5회</strong> (합계 ×6.0)",
+          "<strong>증폭:</strong> <code>독 피해+% (가산)</code> / <code>독 피해 more% (승산)</code> MOD로 강화",
+          "<strong>중첩:</strong> 상한에 도달하면 신규 부여 실패 (독이 끝나길 기다리거나 소비)"
+        ],
+        "note": "적을 독 상태로 만들면 「독 상태 시 피해 감소% MOD」가 발동하여 받는 피해도 가벼워집니다."
+      },
+      "ignite": {
+        "heading": "점화 (Ignite)",
+        "intro": "「점화 부여%」로 판정, 성공 시 적에게 부여. <strong>덮어쓰기 방식</strong>으로 중첩되지 않으며, 신규 부여 시 남은 시간과 피해가 갱신됩니다.",
+        "box": [
+          "<strong>피해:</strong> <code>기본 피해 × 0.5</code>를 <strong>0.3초마다 × 10회</strong> (합계 ×5.0, 3초 지속)",
+          "<strong>지속:</strong> <code>점화 지속+% MOD</code>로 연장",
+          "<strong>점화 속도:</strong> <code>점화 속도+% MOD</code>로 피해 간격 단축 (= 피해 밀도 상승으로 총 피해 증가)",
+          "<strong>점화 피해:</strong> <code>점화 피해+% MOD</code>로 1회당 위력 상승"
+        ],
+        "note": "독 (×6.0)에 비하면 총 피해는 작지만, 덮어쓰기 방식이라 최신 스탯을 반영하기 쉽고 공격 속도를 올려도 공격 횟수를 벌기 쉽습니다."
+      },
+      "chill": {
+        "heading": "냉기 (Chill)",
+        "intro": "「냉기 부여%」로 판정, 성공 시 적의 공격 속도를 감소시킵니다. 덮어쓰기 방식.",
+        "box": [
+          "<strong>효과:</strong> 적의 공격 속도 배율 = <code>max(0.5, 0.8 − 냉기 효과% × 0.2)</code>",
+          "　 ・ 냉기 효과 0% → ×0.8 (공격 속도 20% 감소)",
+          "　 ・ 냉기 효과 50% → ×0.7 (30% 감소)",
+          "　 ・ 냉기 효과 100% 이상 → ×0.5 (50% 감소, 하드 캡)",
+          "<strong>지속:</strong> 3초 (<code>냉기 지속+% MOD</code>로 연장)"
+        ],
+        "note": "피해가 아닌 「공격 횟수를 줄이는」 유형의 상태이상. 공격 속도가 높은 보스 (UberUber 산적 두목 등)에 특히 유효합니다."
+      },
+      "freeze": {
+        "heading": "빙결 (Freeze)",
+        "intro": "「빙결 부여%」로 판정, 성공 시 적을 완전히 정지시킵니다. 행동 카운트 계열 스킬 (킹 슬램 등)은 카운트도 리셋됩니다.",
+        "box": [
+          "<strong>효과:</strong> 적의 게이지/행동을 완전 정지",
+          "<strong>지속:</strong> 1.5초 (<code>빙결 지속+% MOD</code>로 연장)",
+          "<strong>발생률 상한:</strong> <strong class=\"text-[var(--color-text)]\">10% 하드 캡</strong> (MOD를 아무리 쌓아도 10%를 넘지 않음)",
+          "<strong>재부여:</strong> 빙결 중에는 재빙결되지 않음",
+          "<strong>해제 후:</strong> 동일 MOD의 냉기로 자동 전환 (거의 끊김 없이 감속 지속)"
+        ],
+        "note": "확률로 완전 정지시킬 수 있는 희귀한 수단. 확률 자체는 10% 상한이지만 공격 속도가 빠를수록 시도 횟수가 늘어 기회도 증가합니다."
+      }
+    },
+    "defense": {
+      "heading": "방어 메커니즘",
+      "intro": "받는 피해를 줄이는 계열과 회복 계열의 2종류. 고난이도 보스일수록 여러 개를 조합할 필요가 있습니다.",
+      "damageReduction": {
+        "heading": "피해 감소%",
+        "intro": "받는 피해를 일정 비율 차단합니다. DEF 감소와 <strong class=\"text-[var(--color-text)]\">합산</strong>되므로 고 DEF 장비와 조합하면 단단해집니다.",
+        "box": [
+          "<strong>계산:</strong> <code>총 감소율 = DEF 감소율 + 피해 감소%</code>",
+          "<strong>예:</strong> DEF 500 (50% 감소) + 피해 감소 5% → 합계 55% 감소"
+        ],
+        "note": "매우 강력한 방어 수단이지만 <strong class=\"text-[var(--color-text)]\">부여 경로가 빈약</strong>한 것이 약점입니다. 현재는 갑옷의 랜덤 MOD (-5%)나 일부 유니크 장비 등 제한된 경로로만 쌓을 수 있습니다. 엔드 콘텐츠에서 받는 피해에 고생한다면 먼저 갑옷의 MOD 선별을 검토하세요."
+      },
+      "damageDefer": {
+        "heading": "피해 지연%",
+        "intro": "받는 피해의 일부를 즉시 받지 않고 4초에 걸쳐 분할해서 받습니다. 즉사 회피 (순간 화력 내성)와 초당 HP 회복과의 상성이 좋습니다.",
+        "box": [
+          "<strong>효과:</strong> 받는 피해의 <code>X%</code>를 즉시 받지 않고 <strong>4초에 걸쳐 매초 균등하게</strong> 받음",
+          "<strong>상한:</strong> 50% (그 이상의 MOD를 쌓아도 50%에서 멈춤)",
+          "<strong>예:</strong> 피해 1000 / 지연 50% → 즉시 500 + (125/초 × 4초)"
+        ],
+        "note": "분산되는 동안 초당 HP 회복 등으로 상쇄할 수 있으면 실질적인 피해를 크게 줄일 수 있습니다. 킹 슬램처럼 단발의 초고 피해 공격에 강합니다."
+      },
+      "hpOnHit": {
+        "heading": "적중 시 HP 회복",
+        "intro": "플레이어가 적에게 피해를 입힐 때마다 고정값으로 회복. 피해가 0이면 발동하지 않습니다.",
+        "box": [
+          "<strong>효과:</strong> 공격이 적중할 때마다 <code>회복량</code>만큼 HP 회복 (고정값, %가 아님)",
+          "<strong>치명타 시 HP 회복 MOD</strong>가 있는 경우 치명타 적중 시 추가 회복",
+          "<strong>발동 조건:</strong> 피해 &gt; 0 (일반 공격·추격 대상, 상태이상 피해는 별도)",
+          "<strong>재발동:</strong> 추격이 발생한 경우 추격에도 적중 시 HP 회복이 적용됨"
+        ],
+        "note": "공격 속도·추격 MOD와 조합하면 공격 횟수가 많을수록 회복량도 증가합니다. 빌드의 기본 방어 라인."
+      },
+      "hpRegen": {
+        "heading": "초당 HP 회복",
+        "intro": "1초마다 자동으로 HP가 회복됩니다. 고정값 타입과 최대 HP 비율 타입의 2종류가 있습니다.",
+        "box": [
+          "<strong>효과:</strong> 1초마다 <code>고정값 + 최대 HP × (초당 HP% 회복)</code>만큼 회복",
+          "<strong>간격:</strong> 전투 시작부터 1초마다",
+          "<strong>상한:</strong> 최대 HP를 초과해서 회복하지 않음"
+        ],
+        "note": "피해 지연과 조합하면 「지연 중 회복으로 상쇄」 루프가 돌아 순간 화력을 지속 전투로 전환할 수 있습니다."
+      },
+      "poisonAbsorb": {
+        "heading": "독 피해 흡수%",
+        "intro": "적에게 주고 있는 독 피해의 일정 비율을 자신의 HP 회복으로 전환합니다.",
+        "box": [
+          "<strong>효과:</strong> 1초당 독 피해 (전체 중첩 합계) × <code>흡수%</code> 회복",
+          "<strong>대상:</strong> 「적이 받는 독 피해」가 대상이며, 자신이 독에 걸린 경우는 대상 외"
+        ],
+        "note": "독 빌드의 서스테인 중심축. 독 중첩 수를 늘리는 패시브/MOD와 상성이 좋습니다."
+      },
+      "igniteAbsorb": {
+        "heading": "점화 피해 흡수%",
+        "intro": "적이 받은 점화 피해의 일정 비율을 HP 회복으로 전환합니다.",
+        "box": [
+          "<strong>효과:</strong> 점화 피해 × <code>흡수%</code> 회복",
+          "<strong>특징:</strong> 점화는 0.3초마다 피해가 발생하므로 회복 간격이 세밀하고 지속 전투에서 안정적"
+        ],
+        "note": "점화 빌드의 서스테인 중심축. 점화 속도+% MOD와 조합하면 피해 간격이 짧아져 회복 속도도 상승합니다."
+      },
+      "counter": {
+        "heading": "반격",
+        "intro": "패시브 트리에서 획득 가능한 「피격 시 DEF의 %를 반격」 효과. 적의 공격을 받는 순간 DEF × 지정%의 피해를 적에게 돌려줍니다.",
+        "box": [
+          "<strong>효과:</strong> 피격마다 <code>DEF × 반격%</code>의 피해를 적에게 반사",
+          "<strong>예:</strong> DEF 500, 반격 20% → 1회 피격마다 적에게 100 피해"
+        ],
+        "note": "적의 공격 속도가 높을수록 반격 횟수도 증가하므로, 적 AS 고·플레이어 저 AS 빌드와 상성이 좋습니다. 공격이 아닌 「피격」이 기점이라 피격하지 않는 빌드에서는 작동하지 않습니다."
+      }
+    },
+    "timeBuff": {
+      "heading": "시간 경과 버프",
+      "intro": "장기전일수록 유리해지는 효과. 5초마다 1 중첩이 가산되며 <strong class=\"text-[var(--color-text)]\">상한 없이 쌓입니다</strong>. 모두 <strong class=\"text-[var(--color-text)]\">Uber 유니크 장비의 고유 MOD</strong>로 부여되므로 해당 장비가 없으면 작동하지 않습니다.",
+      "cards": [
+        "<strong>5초마다 ATK+X%</strong> (Uber 고블린의 검 / Uber 종언의 칼날): 경과 5초마다 ATK increased%가 +X 가산. 10초로 +2X, 30초로 +6X…",
+        "<strong>5초마다 DEF+X%</strong> (Uber 고블린의 갑옷 / Uber 종언의 갑주): 마찬가지로 DEF increased%",
+        "<strong>5초마다 HP 회복+N</strong> (UberUber 고블린의 발구르기): 초당 HP 회복의 플랫 값에 +N 가산"
+      ],
+      "footnote": "보스전이 길어질수록 강해지는 설계. 초반의 피해를 버티는 구조 (피해 지연·초당 HP 회복·고 HP)가 있으면 중첩이 쌓여 화력이 폭발하는 전개를 노릴 수 있습니다."
+    },
+    "awakening": {
+      "heading": "각성·키스톤",
+      "intro": "트리의 깊은 곳에서 해방되는 특수 효과. 대부분이 빌드 축 자체를 결정하는 강력한 효과입니다.",
+      "passiveHeading": "패시브 트리",
+      "passiveCards": [
+        "<strong>일반 피해 무효</strong>: 일반 공격의 피해가 0이 되는 대신 상태이상·추격 계열 피해에 완전 특화하는 독/점화 빌드용 키스톤.",
+        "<strong>완만한 불꽃</strong>: 점화 부여 5회마다 점화 피해가 +10% 가산 (최대 +200%). 점화 빌드의 장기전 화력을 올립니다.",
+        "<strong>점화 전염</strong>: 점화 중인 적을 처치하면 다음 적에게 점화 상태가 이어집니다. 도중의 섬멸 속도가 크게 상승."
+      ],
+      "uberHeading": "Uber 트리 (Uber 보스 해방 후)",
+      "uberCards": [
+        "<strong>중격</strong>: 공격 속도 -20% / 주는 피해 100%를 HP 흡수 / 공격마다 적에게 중상 중첩 부여 (상한 5, 1 중첩당 받는 피해 ×1.2, 최대 ×2.488).",
+        "<strong>방어 전환</strong>: <code>DEF + 최대 HP/2</code>를 ATK에 가산. 탱크 장비로 때리는 로망 빌드.",
+        "<strong>Uber 치명타 추격</strong>: 치명타 시 추격이 1회 증가, 추가분은 ATK×1.0 (일반 공격과 동일 위력). 치명타 빌드의 최강 노드.",
+        "<strong>맹독 각성</strong>: 독 피해의 실효 중첩 배율을 +50% (×1.5). 독 빌드의 순수 화력 부스트.",
+        "<strong>작열 가속</strong>: 점화의 지속 시간이 절반 / 간격도 절반 (피해 밀도 2배). 단기 결전에서 점화의 순간 화력 극대화.",
+        "<strong>냉기/빙결 중 피해 배율</strong>: 냉기·빙결 중인 적에게 주는 피해를 ×배로 증폭. 빙결 빌드의 결정타."
+      ],
+      "footnote": "이 노드들은 빌드 축을 결정하므로 장비·랜덤 MOD도 키스톤에 맞춰 선별하면 효과가 극대화됩니다."
+    }
+  }
+}
