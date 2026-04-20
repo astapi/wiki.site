@@ -1,0 +1,140 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro'
+import { dungeonName, itemName, monsterName, slotName } from '../../data/lootdive/i18n'
+import { getModDescription } from '../../data/lootdive/modDescription'
+import {
+  getDungeonSources,
+  getMonsterSources,
+  isCommonDrop,
+} from '../../data/lootdive/dropIndex'
+import { t, localeHref, type Lang } from '../../i18n/site'
+
+type Item = {
+  id: string
+  slot: string
+  weaponType?: string
+  atk?: number
+  def?: number
+  fixedMods?: { type: string; value: number }[]
+}
+
+interface Props {
+  lang: Lang
+  item: Item
+}
+const { lang, item } = Astro.props
+
+const gameSlug = 'lootdive'
+const base = `/${gameSlug}`
+
+const iconSlug =
+  item.slot === 'weapon' && item.weaponType === 'staff' ? 'staff' : item.slot
+
+const monsterSources = getMonsterSources(item.id)
+const dungeonSources = getDungeonSources(item.id).sort(
+  (a, b) => b.dropRate - a.dropRate
+)
+const itemIsCommon = isCommonDrop(item.id)
+const hasSources =
+  monsterSources.length > 0 || dungeonSources.length > 0 || itemIsCommon
+
+const name = itemName(item.id, lang)
+const description = hasSources
+  ? t(lang, 'items.detailDescriptionWithSources', { name })
+  : t(lang, 'items.detailDescriptionWithoutSources', { name })
+---
+<GameLayout
+  title={t(lang, 'items.detailTitle', { name })}
+  description={description}
+  keywords={t(lang, 'items.detailKeywords', { name })}
+  gameSlug={gameSlug}
+  ogType="article"
+  lang={lang}
+  currentPath={`/items/${item.id}/`}
+>
+  <a href={localeHref(lang, base, '/items/')} class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)]">
+    {t(lang, 'common.backToItems')}
+  </a>
+
+  <div class="mt-4 flex items-start gap-6">
+    <img src={`/${gameSlug}/images/items/${iconSlug}.png`} alt={name} class="w-24 h-24 md:w-32 md:h-32 object-contain" />
+    <div class="flex-1 min-w-0">
+      <h1 class="text-2xl md:text-3xl font-semibold mb-2">{name}</h1>
+      <p class="text-xs text-[var(--color-text-muted)] mb-4">
+        {slotName(item.slot, lang)}
+        {item.weaponType && ` / ${item.weaponType}`}
+      </p>
+      <dl class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-sm max-w-xs">
+        {item.atk !== undefined && (<><dt class="text-[var(--color-text-muted)]">ATK</dt><dd>{item.atk}</dd></>)}
+        {item.def !== undefined && (<><dt class="text-[var(--color-text-muted)]">DEF</dt><dd>{item.def}</dd></>)}
+      </dl>
+    </div>
+  </div>
+
+  {item.fixedMods?.length ? (
+    <section class="mt-8">
+      <h2 class="text-sm font-bold mb-2 text-[#9370DB]">{t(lang, 'items.fixedModsHeading')}</h2>
+      <ul class="space-y-1 text-sm text-[#9370DB]">
+        {item.fixedMods.map((m) => {
+          const desc = getModDescription(m, lang)
+          return desc ? <li>• {desc}</li> : null
+        })}
+      </ul>
+    </section>
+  ) : null}
+
+  {hasSources && (
+    <section class="mt-8">
+      <h2 class="text-base font-semibold mb-3">{t(lang, 'items.sourcesHeading')}</h2>
+
+      {monsterSources.length > 0 && (
+        <div class="mb-4">
+          <h3 class="text-xs text-[var(--color-text-muted)] mb-2">{t(lang, 'items.monsterSourcesHeading')}</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {monsterSources.map((s) => (
+              <li>
+                <a
+                  href={localeHref(lang, base, `/monsters/${s.monsterId}/`)}
+                  class="flex items-baseline justify-between p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
+                >
+                  <span class="text-sm">{monsterName(s.monsterId, lang)}</span>
+                  <span class="text-xs text-[var(--color-text-muted)]">{s.dropRate}%</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {dungeonSources.length > 0 && (
+        <div class="mb-4">
+          <h3 class="text-xs text-[var(--color-text-muted)] mb-2">{t(lang, 'items.dungeonSourcesHeading')}</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {dungeonSources.map((s) => (
+              <li>
+                <a
+                  href={localeHref(lang, base, `/dungeons/${s.dungeonId}/`)}
+                  class="flex items-baseline justify-between p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
+                >
+                  <span class="text-sm">
+                    {dungeonName(s.dungeonId, lang)}
+                    {s.category === 'dungeon' && (
+                      <span class="ml-2 text-[10px] text-[var(--color-text-muted)]">{t(lang, 'items.dungeonExclusive')}</span>
+                    )}
+                  </span>
+                  <span class="text-xs text-[var(--color-text-muted)]">{s.dropRate}%</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {itemIsCommon && (
+        <p class="text-xs text-[var(--color-text-muted)]">
+          {t(lang, 'items.commonDropNote')}
+        </p>
+      )}
+    </section>
+  )}
+</GameLayout>

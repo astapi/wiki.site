@@ -1,0 +1,124 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro'
+import monstersData from '../../data/lootdive/game/monsters.json'
+import itemsData from '../../data/lootdive/game/items.json'
+import dungeonsData from '../../data/lootdive/game/dungeons.json'
+import { t, localeHref, type Lang } from '../../i18n/site'
+
+interface Props {
+  lang: Lang
+}
+const { lang } = Astro.props
+
+const gameSlug = 'lootdive'
+const base = `/${gameSlug}`
+
+const monsterCount = Object.entries(monstersData.monsters).filter(
+  ([k, v]) => !k.startsWith('_') && v && typeof v === 'object'
+).length
+const itemCount = Object.entries(itemsData.items).filter(
+  ([k, v]) => !k.startsWith('_') && v && typeof v === 'object'
+).length
+const dungeonCount = Object.entries(dungeonsData.dungeons).filter(
+  ([k, v]) =>
+    !k.startsWith('_') &&
+    !k.startsWith('debug_') &&
+    v &&
+    typeof v === 'object'
+).length
+
+const title = t(lang, 'index.title')
+const description = t(lang, 'index.description', {
+  itemCount,
+  monsterCount,
+  dungeonCount,
+})
+const keywords = t(lang, 'index.keywords')
+
+const categories = [
+  {
+    href: localeHref(lang, base, '/monsters/'),
+    label: t(lang, 'nav.monsters'),
+    desc: t(lang, 'index.categories.monsters'),
+    count: monsterCount,
+  },
+  {
+    href: localeHref(lang, base, '/items/'),
+    label: t(lang, 'nav.items'),
+    desc: t(lang, 'index.categories.items'),
+    count: itemCount,
+  },
+  {
+    href: localeHref(lang, base, '/dungeons/'),
+    label: t(lang, 'nav.dungeons'),
+    desc: t(lang, 'index.categories.dungeons'),
+    count: dungeonCount,
+  },
+  {
+    href: localeHref(lang, base, '/system/'),
+    label: t(lang, 'nav.system'),
+    desc: t(lang, 'index.categories.system'),
+    count: null,
+  },
+]
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: t(lang, 'index.jsonLdDescription'),
+    url: `https://wiki.astapi.net${localeHref(lang, base, '/')}`,
+    inLanguage: t(lang, 'htmlLang'),
+    description,
+    publisher: {
+      '@type': 'Organization',
+      name: 'astapi Games',
+      url: 'https://astapi.net',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoGame',
+    name: t(lang, 'gameTitle'),
+    alternateName: 'Loot Dive',
+    publisher: { '@type': 'Organization', name: 'astapi Games' },
+    applicationCategory: 'GameApplication',
+    genre: ['Hack and slash', 'Role-playing game', 'Idle game'],
+    operatingSystem: ['iOS', 'Android'],
+    url: 'https://astapi.net/lootdive',
+  },
+]
+---
+<GameLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  gameSlug={gameSlug}
+  lang={lang}
+  currentPath="/"
+  jsonLd={jsonLd}
+>
+  <h1 class="text-2xl md:text-3xl font-semibold mb-2">{t(lang, 'index.heading')}</h1>
+  <p
+    class="text-sm md:text-base text-[var(--color-text-muted)] mb-8 leading-relaxed"
+    set:html={t(lang, 'index.intro')}
+  />
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {categories.map((c) => (
+      <a
+        href={c.href}
+        class="block p-5 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] transition-colors"
+      >
+        <div class="flex items-baseline justify-between mb-1">
+          <h2 class="text-base font-semibold">{c.label}</h2>
+          {c.count !== null && (
+            <span class="text-xs text-[var(--color-text-muted)]">
+              {t(lang, 'common.count', { count: c.count })}
+            </span>
+          )}
+        </div>
+        <p class="text-xs text-[var(--color-text-muted)]">{c.desc}</p>
+      </a>
+    ))}
+  </div>
+</GameLayout>

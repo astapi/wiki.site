@@ -1,0 +1,37 @@
+---
+import MonsterDetail from '../../../../components/lootdive/MonsterDetail.astro'
+import { NON_DEFAULT_LANGS, type Lang } from '../../../../i18n/site'
+
+type Monster = {
+  id?: string
+  image: string
+  maxHp: number
+  atk: number
+  def: number
+  exp: number
+  attackSpeed: number
+  isBoss?: boolean
+  uniqueDrop?: { itemId: string; dropRate: number } | null
+  uniqueDrops?: { itemId: string; dropRate: number }[]
+}
+
+export async function getStaticPaths() {
+  const data = (await import('../../../../data/lootdive/game/monsters.json')).default
+  const monsters = Object.entries(data.monsters as Record<string, Partial<Monster>>)
+    .filter(([key, m]) => !key.startsWith('_') && m.id)
+
+  const paths = []
+  for (const lang of NON_DEFAULT_LANGS) {
+    for (const [, m] of monsters) {
+      paths.push({
+        params: { lang, id: m.id! },
+        props: { lang, monster: m as Monster },
+      })
+    }
+  }
+  return paths
+}
+
+const { lang, monster } = Astro.props as { lang: Lang; monster: Monster }
+---
+<MonsterDetail lang={lang} monster={monster} />

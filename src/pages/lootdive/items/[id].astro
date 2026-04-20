@@ -1,31 +1,14 @@
 ---
-import GameLayout from '../../../layouts/GameLayout.astro'
-import itemsData from '../../../data/lootdive/game/items.json'
-import { slotName } from '../../../data/lootdive/i18n'
-import { getModDescription } from '../../../data/lootdive/modDescription'
-import {
-  getDungeonSources,
-  getMonsterSources,
-  isCommonDrop,
-} from '../../../data/lootdive/dropIndex'
+import ItemDetail from '../../../components/lootdive/ItemDetail.astro'
 
 type Item = {
   id: string
-  name: string
   slot: string
   weaponType?: string
   atk?: number
   def?: number
   fixedMods?: { type: string; value: number }[]
 }
-
-const gameSlug = 'lootdive'
-const nav = [
-  { href: '/monsters/', label: 'モンスター' },
-  { href: '/items/', label: 'アイテム' },
-  { href: '/dungeons/', label: 'ダンジョン' },
-  { href: '/system/', label: 'システム' },
-]
 
 export async function getStaticPaths() {
   const data = (await import('../../../data/lootdive/game/items.json')).default
@@ -38,108 +21,5 @@ export async function getStaticPaths() {
 }
 
 const { item } = Astro.props as { item: Item }
-
-const iconSlug =
-  item.slot === 'weapon' && item.weaponType === 'staff' ? 'staff' : item.slot
-
-const monsterSources = getMonsterSources(item.id)
-const dungeonSources = getDungeonSources(item.id).sort(
-  (a, b) => b.dropRate - a.dropRate
-)
-const itemIsCommon = isCommonDrop(item.id)
-const hasSources =
-  monsterSources.length > 0 || dungeonSources.length > 0 || itemIsCommon
 ---
-<GameLayout
-  title={`${item.name}の性能・入手方法 | ルートダイブ攻略`}
-  description={`ルートダイブの「${item.name}」の性能(ATK/DEF/固有MOD)、${hasSources ? 'ドロップ先のモンスター/ダンジョン' : '詳細データ'}をまとめています。`}
-  keywords={`${item.name}, ${item.name} 入手, ${item.name} ドロップ, ルートダイブ 装備, ルートダイブ攻略, LootDive`}
-  gameSlug={gameSlug}
-  gameTitle="ルートダイブ"
-  ogType="article"
-  nav={nav}
->
-  <a href={`/${gameSlug}/items/`} class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)]">← アイテム一覧</a>
-
-  <div class="mt-4 flex items-start gap-6">
-    <img src={`/${gameSlug}/images/items/${iconSlug}.png`} alt={item.name} class="w-24 h-24 md:w-32 md:h-32 object-contain" />
-    <div class="flex-1 min-w-0">
-      <h1 class="text-2xl md:text-3xl font-semibold mb-2">{item.name}</h1>
-      <p class="text-xs text-[var(--color-text-muted)] mb-4">
-        {slotName(item.slot)}
-        {item.weaponType && ` / ${item.weaponType}`}
-      </p>
-      <dl class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-sm max-w-xs">
-        {item.atk !== undefined && (<><dt class="text-[var(--color-text-muted)]">ATK</dt><dd>{item.atk}</dd></>)}
-        {item.def !== undefined && (<><dt class="text-[var(--color-text-muted)]">DEF</dt><dd>{item.def}</dd></>)}
-      </dl>
-    </div>
-  </div>
-
-  {item.fixedMods?.length ? (
-    <section class="mt-8">
-      <h2 class="text-sm font-bold mb-2 text-[#9370DB]">固有MOD</h2>
-      <ul class="space-y-1 text-sm text-[#9370DB]">
-        {item.fixedMods.map((m) => {
-          const desc = getModDescription(m)
-          return desc ? <li>• {desc}</li> : null
-        })}
-      </ul>
-    </section>
-  ) : null}
-
-  {hasSources && (
-    <section class="mt-8">
-      <h2 class="text-base font-semibold mb-3">入手方法</h2>
-
-      {monsterSources.length > 0 && (
-        <div class="mb-4">
-          <h3 class="text-xs text-[var(--color-text-muted)] mb-2">モンスタードロップ</h3>
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {monsterSources.map((s) => (
-              <li>
-                <a
-                  href={`/${gameSlug}/monsters/${s.monsterId}/`}
-                  class="flex items-baseline justify-between p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
-                >
-                  <span class="text-sm">{s.monsterName}</span>
-                  <span class="text-xs text-[var(--color-text-muted)]">{s.dropRate}%</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {dungeonSources.length > 0 && (
-        <div class="mb-4">
-          <h3 class="text-xs text-[var(--color-text-muted)] mb-2">ダンジョンドロップ</h3>
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {dungeonSources.map((s) => (
-              <li>
-                <a
-                  href={`/${gameSlug}/dungeons/${s.dungeonId}/`}
-                  class="flex items-baseline justify-between p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
-                >
-                  <span class="text-sm">
-                    {s.dungeonName}
-                    {s.category === 'dungeon' && (
-                      <span class="ml-2 text-[10px] text-[var(--color-text-muted)]">固有</span>
-                    )}
-                  </span>
-                  <span class="text-xs text-[var(--color-text-muted)]">{s.dropRate}%</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {itemIsCommon && (
-        <p class="text-xs text-[var(--color-text-muted)]">
-          ※ 全ダンジョンで共通ドロップ対象
-        </p>
-      )}
-    </section>
-  )}
-</GameLayout>
+<ItemDetail lang="ja" item={item} />

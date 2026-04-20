@@ -1,16 +1,19 @@
 ---
 import BaseLayout from './BaseLayout.astro'
+import { t, localeHref, SUPPORTED_LANGS, type Lang } from '../i18n/site'
 
 interface Props {
   title: string
   description?: string
   keywords?: string
   gameSlug: string
-  gameTitle: string
   ogImage?: string
   ogType?: 'website' | 'article'
-  nav?: { href: string; label: string }[]
   jsonLd?: Record<string, unknown> | Record<string, unknown>[]
+  lang?: Lang
+  // Relative path within the game (e.g. '/monsters/slime/'). Used to build the
+  // language switcher and hreflang alternates. Index page should pass '/'.
+  currentPath?: string
 }
 
 const {
@@ -18,13 +21,28 @@ const {
   description,
   keywords,
   gameSlug,
-  gameTitle,
   ogImage,
   ogType,
-  nav = [],
   jsonLd,
+  lang = 'ja',
+  currentPath = '/',
 } = Astro.props
+
 const base = `/${gameSlug}`
+const gameTitle = t(lang, 'gameTitle')
+
+const nav = [
+  { href: localeHref(lang, base, '/monsters/'), label: t(lang, 'nav.monsters') },
+  { href: localeHref(lang, base, '/items/'), label: t(lang, 'nav.items') },
+  { href: localeHref(lang, base, '/dungeons/'), label: t(lang, 'nav.dungeons') },
+  { href: localeHref(lang, base, '/system/'), label: t(lang, 'nav.system') },
+]
+
+const alternates = SUPPORTED_LANGS.map((l) => ({
+  lang: l,
+  href: localeHref(l, base, currentPath),
+}))
+const xDefaultHref = localeHref('ja', base, currentPath)
 ---
 <BaseLayout
   title={title}
@@ -33,13 +51,31 @@ const base = `/${gameSlug}`
   ogImage={ogImage}
   ogType={ogType}
   jsonLd={jsonLd}
+  lang={lang}
+  alternates={alternates}
+  xDefaultHref={xDefaultHref}
 >
   <header class="border-b border-[var(--color-border)]">
-    <div class="max-w-5xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
-      <a href={base} class="font-semibold">{gameTitle} wiki</a>
-      <nav class="flex items-center gap-4 text-sm text-[var(--color-text-muted)]">
+    <div class="max-w-5xl mx-auto px-5 md:px-8 py-4">
+      <div class="flex items-center justify-between gap-4">
+        <a href={localeHref(lang, base, '/')} class="font-semibold">{gameTitle} wiki</a>
+        <div class="shrink-0">
+          <label class="sr-only" for="lang-switcher">{t(lang, 'langSwitcher.label')}</label>
+          <select
+            id="lang-switcher"
+            class="text-xs bg-[var(--color-surface)] border border-[var(--color-border)] rounded-md px-2 py-1 text-[var(--color-text-muted)] hover:text-[var(--color-text)]"
+            data-base={base}
+            data-current-path={currentPath}
+          >
+            {SUPPORTED_LANGS.map((l) => (
+              <option value={l} selected={l === lang}>{t(lang, `langSwitcher.${l}`)}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <nav class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-text-muted)]">
         {nav.map((n) => (
-          <a href={`${base}${n.href}`} class="hover:text-[var(--color-text)]">{n.label}</a>
+          <a href={n.href} class="hover:text-[var(--color-text)]">{n.label}</a>
         ))}
       </nav>
     </div>
@@ -49,7 +85,21 @@ const base = `/${gameSlug}`
   </main>
   <footer class="border-t border-[var(--color-border)] mt-12">
     <div class="max-w-5xl mx-auto px-5 md:px-8 py-6 text-xs text-[var(--color-text-muted)]">
-      <p>&copy; 2026 astapi Games</p>
+      <p>{t(lang, 'common.copyright')}</p>
     </div>
   </footer>
+  <script is:inline>
+    (() => {
+      const sel = document.getElementById('lang-switcher')
+      if (!sel) return
+      sel.addEventListener('change', (e) => {
+        const target = e.target
+        const lang = target.value
+        const base = sel.dataset.base
+        const path = sel.dataset.currentPath || '/'
+        const href = lang === 'ja' ? `${base}${path}` : `${base}/${lang}${path}`
+        window.location.href = href
+      })
+    })()
+  </script>
 </BaseLayout>

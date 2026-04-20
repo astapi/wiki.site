@@ -1,0 +1,402 @@
+{
+  "gameTitle": "ルートダイブ",
+  "gameSubtitle": "自動戦闘ハクスラRPG",
+  "siteName": "astapi Games 攻略wiki",
+  "htmlLang": "ja",
+  "ogLocale": "ja_JP",
+  "nav": {
+    "monsters": "モンスター",
+    "items": "アイテム",
+    "dungeons": "ダンジョン",
+    "system": "システム"
+  },
+  "common": {
+    "count": "{{count}}件",
+    "countMonsters": "{{count}}体",
+    "backToList": "← 一覧に戻る",
+    "backToMonsters": "← モンスター一覧",
+    "backToItems": "← アイテム一覧",
+    "backToDungeons": "← ダンジョン一覧",
+    "copyright": "© 2026 astapi Games"
+  },
+  "index": {
+    "title": "ルートダイブ攻略 wiki | 装備・モンスター・ダンジョン完全データベース",
+    "description": "スマホゲーム「ルートダイブ(LootDive)」の公式攻略wiki。全{{itemCount}}件の装備、{{monsterCount}}体のモンスター、{{dungeonCount}}ダンジョンのマスターデータをまとめたデータベース。自動戦闘ハクスラRPGの周回・ビルド構築の参考に。",
+    "keywords": "ルートダイブ, ルートダイブ攻略, LootDive, LootDive攻略, ハクスラ, ハクスラRPG, 自動戦闘, 放置RPG, 攻略wiki, データベース",
+    "heading": "ルートダイブ攻略 wiki",
+    "intro": "自動戦闘ハクスラRPG「<strong>ルートダイブ</strong>」のマスターデータリファレンス。装備・モンスター・ダンジョンの情報を網羅し、ビルド構築や周回効率化の参考にどうぞ。",
+    "categories": {
+      "monsters": "図鑑データ・ステータス・出現ダンジョン・ドロップ",
+      "items": "基本ベース・ユニーク装備・固有MOD・入手方法",
+      "dungeons": "階層・敵構成・ボス・ドロップテーブル",
+      "system": "状態異常・防御機構などバトル計算ルール"
+    },
+    "jsonLdDescription": "ルートダイブ攻略 wiki"
+  },
+  "monsters": {
+    "listTitle": "モンスター一覧 | ルートダイブ攻略 wiki",
+    "listDescription": "ルートダイブに登場する全{{count}}体のモンスターをHP・ATK・DEFなどのステータス付きで一覧表示。ボス・Uber系を含む図鑑データ。",
+    "listKeywords": "ルートダイブ モンスター, ルートダイブ 敵, モンスター一覧, モンスター図鑑, ルートダイブ攻略, LootDive",
+    "listHeading": "モンスター一覧 ({{count}})",
+    "detailTitle": "{{name}}のステータス・ドロップ | ルートダイブ攻略",
+    "detailDescription": "ルートダイブの「{{name}}」のHP {{hp}} / ATK {{atk}} / DEF {{def}} などの全ステータス、{{skillsPart}}{{dropsPart}}出現情報をまとめています。",
+    "detailDescriptionSkillsPart": "スキル、",
+    "detailDescriptionDropsPart": "ユニークドロップ、",
+    "detailKeywords": "{{name}}, {{name}} 攻略, {{name}} ステータス, {{name}} ドロップ, ルートダイブ 攻略, LootDive",
+    "idLabel": "ID",
+    "stats": {
+      "hp": "HP",
+      "atk": "ATK",
+      "def": "DEF",
+      "exp": "EXP",
+      "attackSpeed": "攻撃速度"
+    },
+    "tipsHeading": "攻略ポイント",
+    "skillsHeading": "スキル",
+    "uniqueDropsHeading": "ユニークドロップ"
+  },
+  "items": {
+    "listTitle": "装備・アイテム一覧 | ルートダイブ攻略 wiki",
+    "listDescription": "ルートダイブの全{{count}}件の装備・アイテムをスロット別(武器・防具・手袋・靴・アクセ)にまとめた一覧。ユニーク装備・固有MODも収録。",
+    "listKeywords": "ルートダイブ 装備, ルートダイブ アイテム, ルートダイブ ユニーク, 装備一覧, ルートダイブ攻略, LootDive 装備",
+    "listHeading": "アイテム一覧",
+    "listTotal": "全 {{count}} 件",
+    "detailTitle": "{{name}}の性能・入手方法 | ルートダイブ攻略",
+    "detailDescriptionWithSources": "ルートダイブの「{{name}}」の性能(ATK/DEF/固有MOD)、ドロップ先のモンスター/ダンジョンをまとめています。",
+    "detailDescriptionWithoutSources": "ルートダイブの「{{name}}」の性能(ATK/DEF/固有MOD)、詳細データをまとめています。",
+    "detailKeywords": "{{name}}, {{name}} 入手, {{name}} ドロップ, ルートダイブ 装備, ルートダイブ攻略, LootDive",
+    "fixedModsHeading": "固有MOD",
+    "sourcesHeading": "入手方法",
+    "monsterSourcesHeading": "モンスタードロップ",
+    "dungeonSourcesHeading": "ダンジョンドロップ",
+    "dungeonExclusive": "固有",
+    "commonDropNote": "※ 全ダンジョンで共通ドロップ対象"
+  },
+  "dungeons": {
+    "listTitle": "ダンジョン一覧 | ルートダイブ攻略 wiki",
+    "listDescription": "ルートダイブの全{{count}}ダンジョンの最大階層・出現モンスター・ボス情報をまとめた一覧。Uberダンジョン・異次元回廊も網羅。",
+    "listKeywords": "ルートダイブ ダンジョン, ルートダイブ ボス, ダンジョン一覧, Uber, 異次元回廊, ルートダイブ攻略, LootDive",
+    "listHeading": "ダンジョン一覧",
+    "listTotal": "全 {{count}} 件",
+    "floorUnit": "F",
+    "requiresTicketShort": "要チケット",
+    "detailTitle": "{{name}}の攻略・敵構成・ドロップ | ルートダイブ攻略",
+    "detailDescription": "ルートダイブのダンジョン「{{name}}」(最大{{maxFloor}}階)の出現モンスター、{{bossPart}}ドロップテーブル、MOD Tierをまとめた攻略情報。",
+    "detailDescriptionBossPart": "ボス情報、",
+    "detailKeywords": "{{name}}, {{name}} 攻略, {{name}} ドロップ, {{name}} ボス, ルートダイブ ダンジョン, ルートダイブ攻略, LootDive",
+    "maxFloorSuffix": "F まで",
+    "requiresTicket": "入場チケット必要",
+    "modTier": "MOD Tier {{max}}–{{min}}",
+    "modCount": "MOD数 {{min}}–{{max}}",
+    "bossHeading": "ボス",
+    "bossFloorSuffix": "F",
+    "enemiesHeading": "出現モンスター",
+    "spawnRate": "出現率 {{rate}}%",
+    "dropTableHeading": "ドロップテーブル",
+    "dropTableDungeon": "ダンジョン専用",
+    "dropTableCommon": "共通"
+  },
+  "triggers": {
+    "persistent": "永続",
+    "regular": "3攻撃ごと",
+    "everyAttack": "毎攻撃",
+    "every10": "10攻撃ごと",
+    "threshold": "HP50%以下"
+  },
+  "modDescriptions": {
+    "atk_bonus": "ATK+{{value}}",
+    "def_bonus": "DEF+{{value}}",
+    "hp_bonus": "HP+{{value}}",
+    "hp_regen": "毎秒HP{{value}}回復",
+    "hp_regen_pct": "毎秒HP{{value}}%回復",
+    "poison_chance": "毒付与+{{value}}%",
+    "ignite_chance": "発火付与+{{value}}%",
+    "ignite_duration_pct": "発火時間+{{value}}%",
+    "ignite_tick_speed_pct": "発火速度+{{value}}%",
+    "ignite_damage_pct": "発火ダメージ+{{value}}%",
+    "ignite_lifesteal": "発火ダメージ吸収{{value}}%",
+    "critical_chance": "クリティカル+{{value}}%",
+    "critical_damage": "クリダメ+{{value}}%",
+    "hp_on_hit": "HIT時HP+{{value}}回復",
+    "damage_defer_pct": "ダメージ遅延{{value}}%",
+    "damage_reduction_pct": "被ダメ-{{value}}%",
+    "attack_speed_pct": "攻撃速度{{sign}}{{value}}%",
+    "attack_speed_more_pct": "攻撃速度{{sign}}{{value}}% more",
+    "hp_increased_pct": "HP+{{value}}%",
+    "atk_increased_pct": "ATK+{{value}}%",
+    "def_increased_pct": "DEF+{{value}}%",
+    "time_atk_inc_pct": "5秒毎にATK+{{value}}%",
+    "time_def_inc_pct": "5秒毎にDEF+{{value}}%",
+    "time_hp_regen": "5秒毎に毎秒HP+{{value}}回復",
+    "hp_regen_to_atk_pct": "HP回復量の{{value}}%をATKに変換",
+    "warlord_enrage": "乱軍の王（HP30%以下で1度だけ発動。攻撃速度+20%, 攻撃時HP回復+300）",
+    "chill_chance": "チル付与+{{value}}%",
+    "chill_effect_pct": "チル効果+{{value}}%",
+    "chill_duration_pct": "チル時間+{{value}}%",
+    "freeze_chance": "フリーズ付与+{{value}}%",
+    "freeze_duration_pct": "フリーズ時間+{{value}}%",
+    "poison_damage_pct": "毒ダメージ+{{value}}%",
+    "poison_damage_more_pct": "毒ダメージ{{value}}% more",
+    "poison_damage_reduction": "毒状態の敵からの被ダメ-{{value}}%",
+    "hp_on_crit": "クリティカル時HP+{{value}}回復",
+    "critical_follow_up_attack": "クリティカル時追撃+{{value}}",
+    "follow_up_attack_pct": "双撃の刃（毎攻撃時、ATKの{{value}}%で追撃）",
+    "king_slam": "キングスラム（5回攻撃ごとにATK×3の追撃）",
+    "royal_roar": "王の咆哮（3回攻撃ごとに自身の毒・発火・チルを解除）",
+    "lifesteal": "ライフスティール{{value}}%",
+    "atk_more_pct": "ATK {{value}}% more",
+    "def_more_pct": "DEF {{value}}% more",
+    "hp_more_pct": "HP {{value}}% more"
+  },
+  "bossTips": {
+    "uber_uber_goblin_king": [
+      "ダメージ遅延と回復系MODを積んで高火力に耐えよう",
+      "特定ユニーク、鎧のランダムMODのダメージ軽減%もほしい",
+      "キングスラムは一撃死の可能性が高い。ゴブリンキングをフリーズ状態にするとカウントがリセットされるぞ",
+      "UberUberゴブリンの踏みつけの王の咆哮が役に立つ時が来るかも"
+    ],
+    "uber_uber_bandit_leader": [
+      "ダメージ遅延と回復MODを積んで高速攻撃に耐えよう",
+      "特定ユニーク、鎧のランダムMODのダメージ軽減%もほしい",
+      "攻撃速度が速いのでチルによる攻撃速度低下が有効",
+      "フリーズチャンスもあるとフリーズの間に回復が出来る",
+      "UberUber双撃の指輪は超攻撃的アイテムだ"
+    ]
+  },
+  "langSwitcher": {
+    "label": "言語",
+    "ja": "日本語",
+    "ko": "한국어",
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "system": {
+    "title": "バトルシステム解説 | ルートダイブ攻略 wiki",
+    "description": "ルートダイブのバトルシステム解説。基礎ダメージ式・クリティカル・攻撃速度 (ATB)・追撃・状態異常 (毒/発火/チル/フリーズ)・防御機構・覚醒/キーストーンを計算式つきで網羅。",
+    "keywords": "ルートダイブ システム, ルートダイブ 状態異常, ルートダイブ 毒, ルートダイブ 発火, ルートダイブ チル, ルートダイブ フリーズ, ダメージ遅延, ダメージ軽減, クリティカル, 攻撃速度, キーストーン, ルートダイブ攻略",
+    "heading": "バトルシステム解説",
+    "intro": "装備選びやビルド構築の前提となる計算ルールをまとめています。数値はデフォルト設定に基づく (バランス調整で変わる可能性あり)。",
+    "toc": {
+      "damageFormula": "基礎ダメージ",
+      "critical": "クリティカル",
+      "gauge": "攻撃速度・ATB",
+      "followUp": "追撃",
+      "status": "状態異常",
+      "defense": "防御機構",
+      "timeBuff": "時間経過バフ",
+      "awakening": "覚醒・キーストーン"
+    },
+    "damageFormula": {
+      "heading": "基礎ダメージ式",
+      "intro": "通常攻撃のダメージは ATK と DEF から以下の式で決まる。状態異常・追撃系ダメージはこの「基本ダメージ」を元に算出される。",
+      "formulas": [
+        "DEF軽減率 = DEF / (DEF + 500)",
+        "総軽減率 = DEF軽減率 + ダメージ軽減MOD",
+        "基本ダメージ = max(1, floor(ATK × (1 − 総軽減率)))"
+      ],
+      "notes": [
+        "DEF 500 → 50%軽減、DEF 1000 → 67%軽減、DEF 1500 → 75%軽減",
+        "「ダメージ軽減%」MOD は DEF軽減と<strong class=\"text-[var(--color-text)]\">加算</strong>される",
+        "クリティカル時は基本ダメージに ×3.0 + クリダメMOD を掛ける"
+      ]
+    },
+    "critical": {
+      "heading": "クリティカル",
+      "intro": "通常攻撃時に「クリティカル+%」で判定、成功すると高倍率のダメージ。基礎倍率が <strong class=\"text-[var(--color-text)]\">×3.0</strong> と高いので、クリ特化ビルドは火力の伸び方が桁違い。",
+      "formulas": [
+        "クリ倍率 = 3.0 + クリダメ% / 100",
+        "クリダメージ = 基本ダメージ × クリ倍率"
+      ],
+      "notes": [
+        "クリダメ +100% → ×4.0 (基本の4倍ダメージ)",
+        "クリダメ +200% → ×5.0、+300% → ×6.0",
+        "<strong class=\"text-[var(--color-text)]\">クリティカル時追撃</strong> (双撃の指輪 / Uber双撃の指輪の固有効果): クリヒット時に ATK×0.5 の追加ヒット (HIT時HP回復も再発動)",
+        "<strong class=\"text-[var(--color-text)]\">クリ時HP回復</strong> (パッシブツリーで取得可): クリ時だけ HIT時HP回復に追加で固定値回復",
+        "<strong class=\"text-[var(--color-text)]\">クリ時ダメージ吸収%</strong> (パッシブツリーで取得可): クリダメージの一定%を HP に変換"
+      ],
+      "footnote": "ウォリアークラスは初期でクリ率+10% を持つのでクリビルドに入りやすい。クリ率100%に到達するとダメージが安定して期待値計算しやすくなる。"
+    },
+    "gauge": {
+      "heading": "攻撃速度・ゲージ制バトル (ATB)",
+      "intro": "プレイヤーと敵は個別にゲージを持ち、ゲージが100になると1回行動する。攻撃速度 (AS) はそのままゲージ蓄積スピードに直結するので、<strong class=\"text-[var(--color-text)]\">AS が高いほど手数が増える</strong>。",
+      "formulas": [
+        "AS 1.0 = 1秒あたり200ゲージ蓄積",
+        "行動間隔 = 100 / (AS × 200) = 0.5 / AS 秒"
+      ],
+      "notes": [
+        "AS 1.0 → 0.5秒ごとに攻撃",
+        "AS 2.0 → 0.25秒ごと (1秒あたり手数2倍)",
+        "AS 0.5 → 1秒ごと",
+        "<strong class=\"text-[var(--color-text)]\">チル</strong> 中は AS倍率が掛け算されて蓄積が遅くなる",
+        "<strong class=\"text-[var(--color-text)]\">フリーズ</strong> 中はゲージ蓄積が完全停止"
+      ],
+      "asModHeading": "攻撃速度 MOD は2種類",
+      "asModIntro": "PoE 系に馴染みがある人向けの話。攻撃速度を上げるMODには <strong class=\"text-[var(--color-text)]\">increased</strong> と <strong class=\"text-[var(--color-text)]\">more</strong> の2種類があり、計算の仕方が違う。",
+      "asModBox": [
+        "<strong>increased (加算):</strong> 複数あっても合計値から倍率を出す。+30% と +20% なら合計+50% → ×1.50",
+        "<strong>more (乗算):</strong> 1つずつ掛け合わさる。+30% more と +20% more なら ×1.30 × ×1.20 = ×1.56",
+        "<strong>計算順:</strong> <code>最終AS = 基礎AS × (1 + increased合計 / 100) × more倍率 ×...</code>"
+      ]
+    },
+    "followUp": {
+      "heading": "追撃システム",
+      "intro": "通常攻撃のメインヒットに加えて追加攻撃が発生する効果。重ねると一撃で複数回のダメージを叩き込める。",
+      "subIntro": "追撃効果はほぼ <strong class=\"text-[var(--color-text)]\">特定のユニーク装備に付与される固有MOD</strong> で、ランダムMODやツリーではなく装備そのもので選び取る設計。",
+      "cards": [
+        "<strong>クリティカル時追撃</strong> (双撃の指輪 / Uber双撃の指輪): クリヒット時のみ ATK×0.5 の追撃。HIT時HP回復が再発動するので実質的に火力と回復の両方が増える。",
+        "<strong>UberUber双撃の指輪 の毎攻撃追撃</strong>: 毎攻撃時に ATK × 指定% の追撃が発生。クリ非依存なのでクリ率が低いビルドでも常時発動する。",
+        "<strong>キングスラム</strong> (UberUberゴブリンの踏みつけ): 5回攻撃ごとに ATK×3 の超追撃。メイン攻撃と同時発動なので実質ATK×4のダメージ。",
+        "<strong>Uberクリティカル追撃</strong> (Uberツリーのキーストーン): クリ時追撃がさらに+1ヒット (ATK×1.0)。クリ特化ビルドの火力を大幅に底上げ。"
+      ]
+    },
+    "status": {
+      "heading": "状態異常",
+      "poison": {
+        "heading": "毒 (Poison)",
+        "intro": "プレイヤーの通常攻撃時に「毒付与%」で判定、成功で敵に付与。スタック制で複数同時進行が可能 (通常は上限1スタック、パッシブ/MODで拡張可)。",
+        "box": [
+          "<strong>ダメージ:</strong> <code>基本ダメージ × 1.2</code> を<strong>1秒ごと × 5回</strong> (合計×6.0)",
+          "<strong>増幅:</strong> <code>毒ダメージ+% (加算)</code> / <code>毒ダメージ more% (乗算)</code> MOD で強化",
+          "<strong>スタック:</strong> 上限に達していると新規付与は失敗 (毒が切れるのを待つか消費する)"
+        ],
+        "note": "敵を毒状態にすると「毒状態時の被ダメ軽減% MOD」が発動し被ダメージも軽くなる。"
+      },
+      "ignite": {
+        "heading": "発火 (Ignite)",
+        "intro": "「発火付与%」で判定、成功で敵に付与。<strong>上書き式</strong>なのでスタックせず、新規付与で残り時間・ダメージが更新される。",
+        "box": [
+          "<strong>ダメージ:</strong> <code>基本ダメージ × 0.5</code> を<strong>0.3秒ごと × 10回</strong> (合計×5.0、3秒継続)",
+          "<strong>持続:</strong> <code>発火時間+% MOD</code> で延長",
+          "<strong>発火速度:</strong> <code>発火速度+% MOD</code> でダメージ間隔を短縮 (= ダメージ密度が上がり総ダメージ増)",
+          "<strong>発火ダメージ:</strong> <code>発火ダメージ+% MOD</code> で1発あたりの威力を上昇"
+        ],
+        "note": "毒 (×6.0) と比べると総ダメージは小さいが、上書き式で最新のステータスを反映しやすく、攻撃速度を上げても手数を稼ぎやすい。"
+      },
+      "chill": {
+        "heading": "チル (Chill)",
+        "intro": "「チル付与%」で判定、成功で敵の攻撃速度を低下させる。上書き式。",
+        "box": [
+          "<strong>効果:</strong> 敵の攻撃速度倍率 = <code>max(0.5, 0.8 − チル効果% × 0.2)</code>",
+          "　 ・ チル効果 0% → ×0.8 (攻撃速度20%低下)",
+          "　 ・ チル効果 50% → ×0.7 (30%低下)",
+          "　 ・ チル効果 100%以上 → ×0.5 (50%低下、ハードキャップ)",
+          "<strong>持続:</strong> 3秒 (<code>チル時間+% MOD</code> で延長)"
+        ],
+        "note": "ダメージではなく「手数を減らす」タイプの状態異常。攻撃速度が高いボス (UberUber盗賊の頭など) に特に有効。"
+      },
+      "freeze": {
+        "heading": "フリーズ (Freeze)",
+        "intro": "「フリーズ付与%」で判定、成功で敵を完全停止させる。行動カウント系のスキル (キングスラム等) はカウントもリセットされる。",
+        "box": [
+          "<strong>効果:</strong> 敵のゲージ/行動を完全停止",
+          "<strong>持続:</strong> 1.5秒 (<code>フリーズ時間+% MOD</code> で延長)",
+          "<strong>発生率上限:</strong> <strong class=\"text-[var(--color-text)]\">10% ハードキャップ</strong> (MODでどれだけ積んでも10%を超えない)",
+          "<strong>再付与:</strong> フリーズ中は再フリーズしない",
+          "<strong>解除後:</strong> 同じ MOD のチルに自動で切り替わる (ほぼ継ぎ目なく減速継続)"
+        ],
+        "note": "確率で完全停止できる希少な手段。チャンス自体は10%上限だが、攻撃速度が速いほど試行回数が稼げるのでチャンスも増える。"
+      }
+    },
+    "defense": {
+      "heading": "防御機構",
+      "intro": "被ダメージを減らす系と回復系の2種類。高難度ボスほど複数を組み合わせる必要がある。",
+      "damageReduction": {
+        "heading": "ダメージ軽減%",
+        "intro": "被ダメージを一定割合カットする。DEF軽減と<strong class=\"text-[var(--color-text)]\">加算</strong>されるので、高DEF装備と組み合わせると堅くなる。",
+        "box": [
+          "<strong>計算:</strong> <code>総軽減率 = DEF軽減率 + ダメージ軽減%</code>",
+          "<strong>例:</strong> DEF 500 (50%軽減) + ダメージ軽減5% → 合計55%軽減"
+        ],
+        "note": "非常に強力な防御手段だが、<strong class=\"text-[var(--color-text)]\">付与手段が乏しい</strong>のが弱点。現状では鎧のランダムMOD (-5%) や一部のユニーク装備など限られた経路でしか積めない。エンドコンテンツで被ダメに苦しんだら、まず鎧のMOD厳選を検討したい。"
+      },
+      "damageDefer": {
+        "heading": "ダメージ遅延%",
+        "intro": "被ダメージの一部を即時受けず、4秒かけて分割で受ける。即死の回避 (瞬間火力への耐性) と、毎秒HP回復との相性が良い。",
+        "box": [
+          "<strong>効果:</strong> 被ダメージの <code>X%</code> を即時受けず、<strong>4秒かけて毎秒均等に</strong>受ける",
+          "<strong>上限:</strong> 50% (それ以上のMODを積んでも50%で頭打ち)",
+          "<strong>例:</strong> 被ダメ1000 / 遅延50% → 即時500 + (125/秒 × 4秒)"
+        ],
+        "note": "分散する間に毎秒HP回復などで相殺できれば実質的な被ダメを大幅に減らせる。キングスラムのような単発の超高ダメージ攻撃に強い。"
+      },
+      "hpOnHit": {
+        "heading": "HIT時HP回復",
+        "intro": "プレイヤーが敵にダメージを与えるたびに固定値で回復。ダメージが0だと発動しない。",
+        "box": [
+          "<strong>効果:</strong> 攻撃がヒットするたびに <code>回復量</code> だけHP回復 (固定値、%ではない)",
+          "<strong>クリティカル時HP回復MOD</strong>がある場合、クリヒット時はさらに追加回復",
+          "<strong>発動条件:</strong> ダメージ &gt; 0 (通常攻撃・追撃が対象、状態異常ダメージは別枠)",
+          "<strong>再発動:</strong> 追撃が発生した場合は追撃にも HIT時HP回復 が適用される"
+        ],
+        "note": "攻撃速度・追撃MODと組み合わせると、手数が多いほど回復量も増える。ビルドの基本防御ライン。"
+      },
+      "hpRegen": {
+        "heading": "毎秒HP回復",
+        "intro": "1秒ごとに自動でHPが回復する。固定値タイプと最大HP割合タイプの2種類がある。",
+        "box": [
+          "<strong>効果:</strong> 1秒ごとに <code>固定値 + 最大HP × (毎秒HP%回復)</code> を回復",
+          "<strong>間隔:</strong> バトル開始から1秒ごと",
+          "<strong>上限:</strong> 最大HPを超えて回復しない"
+        ],
+        "note": "ダメージ遅延と組み合わせると「遅延している間に回復で相殺」というループが回るので、瞬間火力を持続戦闘に変換できる。"
+      },
+      "poisonAbsorb": {
+        "heading": "毒ダメージ吸収%",
+        "intro": "敵に与えている毒ダメージの一定割合を自分のHP回復に変換する。",
+        "box": [
+          "<strong>効果:</strong> 1秒ごとの毒ダメージ (全スタック合計) × <code>吸収%</code> を回復",
+          "<strong>対象:</strong> 「敵が受けている毒ダメージ」が対象で、自分が毒を受けている場合は対象外"
+        ],
+        "note": "毒ビルドのサステイン主軸。毒スタック数を増やすパッシブ/MODと相性が良い。"
+      },
+      "igniteAbsorb": {
+        "heading": "発火ダメージ吸収%",
+        "intro": "敵が受けた発火ダメージの一定割合をHP回復に変換。",
+        "box": [
+          "<strong>効果:</strong> 発火ダメージ × <code>吸収%</code> を回復",
+          "<strong>特徴:</strong> 発火は0.3秒ごとにダメージが発生するので、回復の刻みが細かく、継続戦闘で安定する"
+        ],
+        "note": "発火ビルドのサステイン主軸。発火速度+% MOD と組み合わせるとダメージ間隔が短くなり、回復ペースも上がる。"
+      },
+      "counter": {
+        "heading": "反撃",
+        "intro": "パッシブツリーで取得可能な「被ダメ時DEFの%を反撃」効果。敵の攻撃を受けた瞬間に DEF × 指定% のダメージを敵に返す。",
+        "box": [
+          "<strong>効果:</strong> 被弾ごとに <code>DEF × 反撃%</code> のダメージを敵に反射",
+          "<strong>例:</strong> DEF 500、反撃20% → 1回被弾ごとに敵に100ダメ"
+        ],
+        "note": "敵の攻撃速度が高いほど反撃回数も増えるので、敵AS高・プレイヤー低AS ビルドと相性が良い。攻撃ではなく「被弾」が起点なので、被弾しないビルドでは機能しない。"
+      }
+    },
+    "timeBuff": {
+      "heading": "時間経過バフ",
+      "intro": "長期戦ほど有利になる効果。5秒ごとに1スタック加算され、<strong class=\"text-[var(--color-text)]\">上限なく積み上がる</strong>。いずれも <strong class=\"text-[var(--color-text)]\">Uberユニーク装備の固有MOD</strong> として付与されるので、該当装備を持っていないと機能しない。",
+      "cards": [
+        "<strong>5秒毎にATK+X%</strong> (Uber ゴブリンの剣 / Uber 終焉の刃): 経過5秒ごとに ATK increased% が +X 加算。10秒で+2X、30秒で+6X…",
+        "<strong>5秒毎にDEF+X%</strong> (Uber ゴブリンの鎧 / Uber 終焉の甲冑): 同様に DEF increased%",
+        "<strong>5秒毎にHP回復+N</strong> (UberUber ゴブリンの踏みつけ): 毎秒HP回復のフラット値に +N 加算"
+      ],
+      "footnote": "ボス戦が長引くほど強くなる設計。序盤の被ダメを耐えきる仕組み (ダメージ遅延・毎秒HP回復・高HP) があれば、スタックが積み上がって火力が爆発する展開が狙える。"
+    },
+    "awakening": {
+      "heading": "覚醒・キーストーン",
+      "intro": "ツリーの深部で解放される特殊効果。大半がビルド軸そのものを決定する強力な効果。",
+      "passiveHeading": "パッシブツリー",
+      "passiveCards": [
+        "<strong>通常ダメージ無効</strong>: 通常攻撃のダメージが 0 になる代わりに、状態異常・追撃系ダメージに完全特化する毒/発火ビルド用キーストーン。",
+        "<strong>緩慢なる炎</strong>: 発火付与5回ごとに発火ダメージが +10% 加算 (最大 +200%)。発火ビルドの長期戦火力を伸ばす。",
+        "<strong>イグナイト伝染</strong>: 発火中の敵を倒すと、次の敵に発火状態が引き継がれる。道中の殲滅速度が大幅に上がる。"
+      ],
+      "uberHeading": "Uberツリー (Uberボス解放後)",
+      "uberCards": [
+        "<strong>重撃</strong>: 攻撃速度-20% / 与ダメ100%をHP吸収 / 攻撃ごとに敵に重傷スタック付与 (上限5、1スタックあたり被ダメージ×1.2、最大で×2.488)。",
+        "<strong>防御転換</strong>: <code>DEF + 最大HP/2</code> を ATK に加算。タンク装備で殴るロマンビルド。",
+        "<strong>Uberクリ追撃</strong>: クリティカル時追撃が1回増え、追加分は ATK×1.0 (通常攻撃と同威力)。クリビルドの最強ノード。",
+        "<strong>猛毒覚醒</strong>: 毒ダメージの実効スタック倍率を +50% (×1.5)。毒ビルドの純粋な火力ブースト。",
+        "<strong>灼熱加速</strong>: 発火の継続時間が半分 / 間隔も半分 (ダメージ密度2倍)。短期決戦で発火の瞬間火力を最大化。",
+        "<strong>チル/フリーズ中ダメ倍率</strong>: チル・フリーズ中の敵へのダメージを×倍に増幅。氷結ビルドの決め手。"
+      ],
+      "footnote": "これらのノードはビルド軸を決定するので、装備・ランダムMODもキーストーンに合わせて厳選すると効果が最大化する。"
+    }
+  }
+}

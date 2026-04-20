@@ -1,0 +1,14 @@
+---
+import ItemList from '../../../../components/lootdive/ItemList.astro'
+import { NON_DEFAULT_LANGS, type Lang } from '../../../../i18n/site'
+
+export async function getStaticPaths() {
+  return NON_DEFAULT_LANGS.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }))
+}
+
+const { lang } = Astro.props as { lang: Lang }
+---
+<ItemList lang={lang} />

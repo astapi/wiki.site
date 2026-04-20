@@ -1,4 +1,8 @@
 import ja from './locales/ja.json'
+import ko from './locales/ko.json'
+import zh from './locales/zh.json'
+import en from './locales/en.json'
+import { t, type Lang } from '../../i18n/site'
 
 export type SkillTriggerType =
   | 'persistent'
@@ -124,20 +128,31 @@ export function getBossAbilities(monsterId: string): BossAbilities | null {
   return BOSS_ABILITIES_MAP[resolveBaseId(monsterId)] ?? null
 }
 
-const BOSS_SKILL_LOCALES = (ja.bossSkills ?? {}) as Record<string, Record<string, string>>
-
-export function lookupSkillLabel(monsterId: string, key: string): string {
-  return BOSS_SKILL_LOCALES[resolveBaseId(monsterId)]?.[key] ?? key
+type BossSkillLocales = Record<string, Record<string, string>>
+const BOSS_SKILL_LOCALES: Record<Lang, BossSkillLocales> = {
+  ja: (ja.bossSkills ?? {}) as BossSkillLocales,
+  ko: (ko.bossSkills ?? {}) as BossSkillLocales,
+  zh: (zh.bossSkills ?? {}) as BossSkillLocales,
+  en: (en.bossSkills ?? {}) as BossSkillLocales,
 }
 
-const TRIGGER_LABEL: Record<SkillTriggerType, string> = {
-  persistent: '永続',
-  regular: '3攻撃ごと',
-  everyAttack: '毎攻撃',
-  every10: '10攻撃ごと',
-  threshold: 'HP50%以下',
+export function lookupSkillLabel(
+  monsterId: string,
+  key: string,
+  lang: Lang = 'ja'
+): string {
+  const base = resolveBaseId(monsterId)
+  return (
+    BOSS_SKILL_LOCALES[lang][base]?.[key] ??
+    BOSS_SKILL_LOCALES.ja[base]?.[key] ??
+    key
+  )
 }
 
-export function triggerLabel(type: SkillTriggerType | undefined): string | null {
-  return type ? TRIGGER_LABEL[type] : null
+export function triggerLabel(
+  type: SkillTriggerType | undefined,
+  lang: Lang = 'ja'
+): string | null {
+  if (!type) return null
+  return t(lang, `triggers.${type}`)
 }

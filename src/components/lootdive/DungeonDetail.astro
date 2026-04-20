@@ -1,0 +1,158 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro'
+import monstersData from '../../data/lootdive/game/monsters.json'
+import { dungeonDescription, dungeonName, itemName, monsterName } from '../../data/lootdive/i18n'
+import { t, localeHref, type Lang } from '../../i18n/site'
+
+type Dungeon = {
+  id: string
+  maxFloor: number
+  monsters?: { monsterId: string; spawnRate: number }[]
+  boss?: { monsterId: string; floor: number }
+  dropTable?: {
+    common?: { itemId: string; dropRate: number }[]
+    dungeon?: { itemId: string; dropRate: number }[]
+  }
+  modTierRange?: { minTier: number; maxTier: number }
+  modCountRange?: { min: number; max: number }
+  requiresTicket?: boolean
+}
+
+interface Props {
+  lang: Lang
+  dungeon: Dungeon
+}
+const { lang, dungeon } = Astro.props
+
+type MonsterRef = { id?: string; image?: string }
+
+const gameSlug = 'lootdive'
+const base = `/${gameSlug}`
+
+const monstersMap = monstersData.monsters as Record<string, MonsterRef>
+const monsterImage = (id: string): string | null => {
+  const m = monstersMap[id]
+  return m && m.image ? `/${gameSlug}/images/monsters/${m.image}.png` : null
+}
+
+const name = dungeonName(dungeon.id, lang)
+const bossPart = dungeon.boss ? t(lang, 'dungeons.detailDescriptionBossPart') : ''
+---
+<GameLayout
+  title={t(lang, 'dungeons.detailTitle', { name })}
+  description={t(lang, 'dungeons.detailDescription', {
+    name,
+    maxFloor: dungeon.maxFloor,
+    bossPart,
+  })}
+  keywords={t(lang, 'dungeons.detailKeywords', { name })}
+  gameSlug={gameSlug}
+  ogType="article"
+  lang={lang}
+  currentPath={`/dungeons/${dungeon.id}/`}
+>
+  <a href={localeHref(lang, base, '/dungeons/')} class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)]">
+    {t(lang, 'common.backToDungeons')}
+  </a>
+
+  <header class="mt-4 mb-6">
+    <h1 class="text-2xl md:text-3xl font-semibold mb-2">{name}</h1>
+    <p class="text-sm text-[var(--color-text-muted)] mb-3">{dungeonDescription(dungeon.id, lang)}</p>
+    <div class="flex flex-wrap gap-3 text-xs">
+      <span class="px-2 py-1 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)]">
+        {dungeon.maxFloor}{t(lang, 'dungeons.maxFloorSuffix')}
+      </span>
+      {dungeon.requiresTicket && (
+        <span class="inline-flex items-center h-7 px-3 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] whitespace-nowrap">
+          {t(lang, 'dungeons.requiresTicket')}
+        </span>
+      )}
+      {dungeon.modTierRange && (
+        <span class="inline-flex items-center h-7 px-3 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] whitespace-nowrap">
+          {t(lang, 'dungeons.modTier', { max: dungeon.modTierRange.maxTier, min: dungeon.modTierRange.minTier })}
+        </span>
+      )}
+      {dungeon.modCountRange && (
+        <span class="inline-flex items-center h-7 px-3 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] whitespace-nowrap">
+          {t(lang, 'dungeons.modCount', { min: dungeon.modCountRange.min, max: dungeon.modCountRange.max })}
+        </span>
+      )}
+    </div>
+  </header>
+
+  {dungeon.boss && (
+    <section class="mb-8">
+      <h2 class="text-base font-semibold mb-3">{t(lang, 'dungeons.bossHeading')}</h2>
+      <a
+        href={localeHref(lang, base, `/monsters/${dungeon.boss.monsterId}/`)}
+        class="inline-flex items-center gap-3 p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
+      >
+        {monsterImage(dungeon.boss.monsterId) && (
+          <img src={monsterImage(dungeon.boss.monsterId)!} alt="" class="w-10 h-10 object-contain" />
+        )}
+        <div>
+          <p class="text-sm font-medium">{monsterName(dungeon.boss.monsterId, lang)}</p>
+          <p class="text-xs text-[var(--color-text-muted)]">{dungeon.boss.floor}{t(lang, 'dungeons.bossFloorSuffix')}</p>
+        </div>
+      </a>
+    </section>
+  )}
+
+  {dungeon.monsters?.length ? (
+    <section class="mb-8">
+      <h2 class="text-base font-semibold mb-3">{t(lang, 'dungeons.enemiesHeading')}</h2>
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-2">
+        {dungeon.monsters.map((m) => (
+          <li>
+            <a
+              href={localeHref(lang, base, `/monsters/${m.monsterId}/`)}
+              class="flex items-center gap-2 p-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
+            >
+              {monsterImage(m.monsterId) && (
+                <img src={monsterImage(m.monsterId)!} alt="" class="w-8 h-8 object-contain shrink-0" />
+              )}
+              <div class="min-w-0">
+                <p class="text-xs truncate">{monsterName(m.monsterId, lang)}</p>
+                <p class="text-[10px] text-[var(--color-text-muted)]">{t(lang, 'dungeons.spawnRate', { rate: m.spawnRate })}</p>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ) : null}
+
+  {(dungeon.dropTable?.common?.length || dungeon.dropTable?.dungeon?.length) ? (
+    <section class="mb-8">
+      <h2 class="text-base font-semibold mb-3">{t(lang, 'dungeons.dropTableHeading')}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {dungeon.dropTable.dungeon?.length ? (
+          <div>
+            <h3 class="text-xs text-[var(--color-text-muted)] mb-2">{t(lang, 'dungeons.dropTableDungeon')}</h3>
+            <ul class="space-y-1">
+              {dungeon.dropTable.dungeon.map((d) => (
+                <li class="flex items-baseline justify-between text-sm px-3 py-2 rounded border border-[var(--color-border)] bg-[var(--color-surface)]">
+                  <a href={localeHref(lang, base, `/items/${d.itemId}/`)} class="hover:underline">{itemName(d.itemId, lang)}</a>
+                  <span class="text-xs text-[var(--color-text-muted)]">{d.dropRate}%</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {dungeon.dropTable.common?.length ? (
+          <div>
+            <h3 class="text-xs text-[var(--color-text-muted)] mb-2">{t(lang, 'dungeons.dropTableCommon')}</h3>
+            <ul class="space-y-1">
+              {dungeon.dropTable.common.map((d) => (
+                <li class="flex items-baseline justify-between text-sm px-3 py-2 rounded border border-[var(--color-border)] bg-[var(--color-surface)]">
+                  <a href={localeHref(lang, base, `/items/${d.itemId}/`)} class="hover:underline">{itemName(d.itemId, lang)}</a>
+                  <span class="text-xs text-[var(--color-text-muted)]">{d.dropRate}%</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
+    </section>
+  ) : null}
+</GameLayout>
