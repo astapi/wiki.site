@@ -1,0 +1,44 @@
+---
+import DungeonDetail from '../../../../components/lootdive/DungeonDetail.astro'
+import { NON_DEFAULT_LANGS, type Lang } from '../../../../i18n/site'
+
+type Dungeon = {
+  id: string
+  maxFloor: number
+  monsters?: { monsterId: string; spawnRate: number }[]
+  boss?: { monsterId: string; floor: number }
+  dropTable?: {
+    common?: { itemId: string; dropRate: number }[]
+    dungeon?: { itemId: string; dropRate: number }[]
+  }
+  modTierRange?: { minTier: number; maxTier: number }
+  modCountRange?: { min: number; max: number }
+  requiresTicket?: boolean
+}
+
+export async function getStaticPaths() {
+  const data = (await import('../../../../data/lootdive/game/dungeons.json')).default
+  const dungeons = Object.entries(data.dungeons as Record<string, unknown>).filter(
+    ([key, v]) =>
+      !key.startsWith('_') &&
+      !key.startsWith('debug_') &&
+      v &&
+      typeof v === 'object' &&
+      (v as Dungeon).id
+  )
+
+  const paths = []
+  for (const lang of NON_DEFAULT_LANGS) {
+    for (const [, v] of dungeons) {
+      paths.push({
+        params: { lang, id: (v as Dungeon).id },
+        props: { lang, dungeon: v as Dungeon },
+      })
+    }
+  }
+  return paths
+}
+
+const { lang, dungeon } = Astro.props as { lang: Lang; dungeon: Dungeon }
+---
+<DungeonDetail lang={lang} dungeon={dungeon} />

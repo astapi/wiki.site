@@ -3,22 +3,20 @@ import dungeonsData from './game/dungeons.json'
 import monstersData from './game/monsters.json'
 import itemsData from './game/items.json'
 
+// Sources keep only IDs; callers resolve localized names via i18n.ts helpers.
 export interface DungeonDropSource {
   dungeonId: string
-  dungeonName: string
   category: 'common' | 'dungeon'
   dropRate: number
 }
 
 export interface MonsterDropSource {
   monsterId: string
-  monsterName: string
   dropRate: number
 }
 
 type DungeonEntry = {
   id: string
-  name: string
   dropTable?: {
     common?: { itemId: string; dropRate: number }[]
     dungeon?: { itemId: string; dropRate: number }[]
@@ -27,7 +25,6 @@ type DungeonEntry = {
 
 type MonsterEntry = {
   id: string
-  name: string
   uniqueDrop?: { itemId: string; dropRate: number } | null
   uniqueDrops?: { itemId: string; dropRate: number }[]
 }
@@ -45,7 +42,6 @@ for (const [key, v] of Object.entries(dungeonsData.dungeons as Record<string, un
       if (!dungeonDrops[drop.itemId]) dungeonDrops[drop.itemId] = []
       dungeonDrops[drop.itemId].push({
         dungeonId: d.id,
-        dungeonName: d.name,
         category: cat,
         dropRate: drop.dropRate,
       })
@@ -66,7 +62,6 @@ for (const [key, v] of Object.entries(monstersData.monsters as Record<string, un
     if (!monsterDrops[drop.itemId]) monsterDrops[drop.itemId] = []
     monsterDrops[drop.itemId].push({
       monsterId: m.id,
-      monsterName: m.name,
       dropRate: drop.dropRate,
     })
   }

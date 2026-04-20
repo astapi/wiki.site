@@ -1,0 +1,217 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro'
+import { t, tArray, type Lang } from '../../i18n/site'
+
+interface Props {
+  lang: Lang
+}
+const { lang } = Astro.props
+
+const gameSlug = 'lootdive'
+
+const toc = [
+  { href: '#damage-formula', label: t(lang, 'system.toc.damageFormula') },
+  { href: '#critical', label: t(lang, 'system.toc.critical') },
+  { href: '#gauge', label: t(lang, 'system.toc.gauge') },
+  { href: '#follow-up', label: t(lang, 'system.toc.followUp') },
+  { href: '#status', label: t(lang, 'system.toc.status') },
+  { href: '#defense', label: t(lang, 'system.toc.defense') },
+  { href: '#time-buff', label: t(lang, 'system.toc.timeBuff') },
+  { href: '#awakening', label: t(lang, 'system.toc.awakening') },
+]
+
+const statusSections = ['poison', 'ignite', 'chill', 'freeze'] as const
+const defenseSections = [
+  'damageReduction',
+  'damageDefer',
+  'hpOnHit',
+  'hpRegen',
+  'poisonAbsorb',
+  'igniteAbsorb',
+  'counter',
+] as const
+---
+<GameLayout
+  title={t(lang, 'system.title')}
+  description={t(lang, 'system.description')}
+  keywords={t(lang, 'system.keywords')}
+  gameSlug={gameSlug}
+  lang={lang}
+  currentPath="/system/"
+>
+  <h1 class="text-2xl md:text-3xl font-semibold mb-2">{t(lang, 'system.heading')}</h1>
+  <p class="text-sm md:text-base text-[var(--color-text-muted)] mb-8 leading-relaxed">
+    {t(lang, 'system.intro')}
+  </p>
+
+  <nav class="mb-10 flex flex-wrap gap-2 text-xs">
+    {toc.map((item) => (
+      <a
+        href={item.href}
+        class="px-3 py-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)]"
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
+
+  <!-- ========== 基礎ダメージ式 ========== -->
+  <section id="damage-formula" class="scroll-mt-20 mb-12">
+    <h2 class="text-xl md:text-2xl font-semibold mb-3">{t(lang, 'system.damageFormula.heading')}</h2>
+    <p class="text-sm text-[var(--color-text-muted)] mb-3 leading-relaxed" set:html={t(lang, 'system.damageFormula.intro')} />
+    <div class="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-sm leading-relaxed space-y-2">
+      {tArray(lang, 'system.damageFormula.formulas').map((f) => (
+        <p><code class="text-[var(--color-text)]">{f}</code></p>
+      ))}
+    </div>
+    <ul class="mt-3 text-xs text-[var(--color-text-muted)] space-y-1 leading-relaxed">
+      {tArray(lang, 'system.damageFormula.notes').map((n) => (
+        <li>・<span set:html={n} /></li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- ========== クリティカル ========== -->
+  <section id="critical" class="scroll-mt-20 mb-12">
+    <h2 class="text-xl md:text-2xl font-semibold mb-3">{t(lang, 'system.critical.heading')}</h2>
+    <p class="text-sm text-[var(--color-text-muted)] mb-3 leading-relaxed" set:html={t(lang, 'system.critical.intro')} />
+    <div class="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-sm leading-relaxed space-y-2">
+      {tArray(lang, 'system.critical.formulas').map((f) => (
+        <p><code class="text-[var(--color-text)]">{f}</code></p>
+      ))}
+    </div>
+    <ul class="mt-3 text-xs text-[var(--color-text-muted)] space-y-1 leading-relaxed">
+      {tArray(lang, 'system.critical.notes').map((n) => (
+        <li>・<span set:html={n} /></li>
+      ))}
+    </ul>
+    <p class="mt-3 text-xs text-[var(--color-text-muted)] leading-relaxed">
+      {t(lang, 'system.critical.footnote')}
+    </p>
+  </section>
+
+  <!-- ========== 攻撃速度・ATB ========== -->
+  <section id="gauge" class="scroll-mt-20 mb-12">
+    <h2 class="text-xl md:text-2xl font-semibold mb-3">{t(lang, 'system.gauge.heading')}</h2>
+    <p class="text-sm text-[var(--color-text-muted)] mb-3 leading-relaxed" set:html={t(lang, 'system.gauge.intro')} />
+    <div class="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-sm leading-relaxed space-y-2">
+      {tArray(lang, 'system.gauge.formulas').map((f) => (
+        <p><code class="text-[var(--color-text)]">{f}</code></p>
+      ))}
+    </div>
+    <ul class="mt-3 text-xs text-[var(--color-text-muted)] space-y-1 leading-relaxed">
+      {tArray(lang, 'system.gauge.notes').map((n) => (
+        <li>・<span set:html={n} /></li>
+      ))}
+    </ul>
+
+    <h3 class="text-base font-semibold mt-6 mb-2">{t(lang, 'system.gauge.asModHeading')}</h3>
+    <p class="text-xs text-[var(--color-text-muted)] mb-2 leading-relaxed" set:html={t(lang, 'system.gauge.asModIntro')} />
+    <div class="p-3 rounded-lg bg-[var(--color-gradient-start)] text-xs leading-relaxed space-y-1">
+      {tArray(lang, 'system.gauge.asModBox').map((line) => (
+        <p set:html={line} />
+      ))}
+    </div>
+  </section>
+
+  <!-- ========== 追撃システム ========== -->
+  <section id="follow-up" class="scroll-mt-20 mb-12">
+    <h2 class="text-xl md:text-2xl font-semibold mb-3">{t(lang, 'system.followUp.heading')}</h2>
+    <p class="text-sm text-[var(--color-text-muted)] mb-3 leading-relaxed">
+      {t(lang, 'system.followUp.intro')}
+    </p>
+    <p class="text-xs text-[var(--color-text-muted)] mb-3 leading-relaxed" set:html={t(lang, 'system.followUp.subIntro')} />
+    <div class="space-y-3">
+      {tArray(lang, 'system.followUp.cards').map((card) => (
+        <div class="p-3 rounded-lg bg-[var(--color-gradient-start)] text-xs leading-relaxed">
+          <p set:html={card} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- ========== 状態異常 ========== -->
+  <section id="status" class="scroll-mt-20 mb-12">
+    <h2 class="text-xl md:text-2xl font-semibold mb-4">{t(lang, 'system.status.heading')}</h2>
+    {statusSections.map((key) => (
+      <article class="mb-6 p-5 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+        <h3 class="text-lg font-semibold mb-2">{t(lang, `system.status.${key}.heading`)}</h3>
+        <p class="text-sm text-[var(--color-text-muted)] mb-3 leading-relaxed" set:html={t(lang, `system.status.${key}.intro`)} />
+        <div class="p-3 rounded-lg bg-[var(--color-gradient-start)] text-xs leading-relaxed space-y-1">
+          {tArray(lang, `system.status.${key}.box`).map((line) => (
+            <p set:html={line} />
+          ))}
+        </div>
+        <p class="mt-3 text-xs text-[var(--color-text-muted)] leading-relaxed">
+          {t(lang, `system.status.${key}.note`)}
+        </p>
+      </article>
+    ))}
+  </section>
+
+  <!-- ========== 防御機構 ========== -->
+  <section id="defense" class="scroll-mt-20 mb-12">
+    <h2 class="text-xl md:text-2xl font-semibold mb-4">{t(lang, 'system.defense.heading')}</h2>
+    <p class="text-sm text-[var(--color-text-muted)] mb-4 leading-relaxed">
+      {t(lang, 'system.defense.intro')}
+    </p>
+    {defenseSections.map((key) => (
+      <article class="mb-6 p-5 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]">
+        <h3 class="text-lg font-semibold mb-2">{t(lang, `system.defense.${key}.heading`)}</h3>
+        <p class="text-sm text-[var(--color-text-muted)] mb-3 leading-relaxed" set:html={t(lang, `system.defense.${key}.intro`)} />
+        <div class="p-3 rounded-lg bg-[var(--color-gradient-start)] text-xs leading-relaxed space-y-1">
+          {tArray(lang, `system.defense.${key}.box`).map((line) => (
+            <p set:html={line} />
+          ))}
+        </div>
+        <p class="mt-3 text-xs text-[var(--color-text-muted)] leading-relaxed" set:html={t(lang, `system.defense.${key}.note`)} />
+      </article>
+    ))}
+  </section>
+
+  <!-- ========== 時間経過バフ ========== -->
+  <section id="time-buff" class="scroll-mt-20 mb-12">
+    <h2 class="text-xl md:text-2xl font-semibold mb-3">{t(lang, 'system.timeBuff.heading')}</h2>
+    <p class="text-sm text-[var(--color-text-muted)] mb-3 leading-relaxed" set:html={t(lang, 'system.timeBuff.intro')} />
+    <div class="space-y-3">
+      {tArray(lang, 'system.timeBuff.cards').map((card) => (
+        <div class="p-3 rounded-lg bg-[var(--color-gradient-start)] text-xs leading-relaxed">
+          <p set:html={card} />
+        </div>
+      ))}
+    </div>
+    <p class="mt-3 text-xs text-[var(--color-text-muted)] leading-relaxed">
+      {t(lang, 'system.timeBuff.footnote')}
+    </p>
+  </section>
+
+  <!-- ========== 覚醒・キーストーン ========== -->
+  <section id="awakening" class="scroll-mt-20 mb-12">
+    <h2 class="text-xl md:text-2xl font-semibold mb-3">{t(lang, 'system.awakening.heading')}</h2>
+    <p class="text-sm text-[var(--color-text-muted)] mb-3 leading-relaxed">
+      {t(lang, 'system.awakening.intro')}
+    </p>
+
+    <h3 class="text-base font-semibold mb-2 mt-6">{t(lang, 'system.awakening.passiveHeading')}</h3>
+    <div class="space-y-3">
+      {tArray(lang, 'system.awakening.passiveCards').map((card) => (
+        <div class="p-3 rounded-lg bg-[var(--color-gradient-start)] text-xs leading-relaxed">
+          <p set:html={card} />
+        </div>
+      ))}
+    </div>
+
+    <h3 class="text-base font-semibold mb-2 mt-6">{t(lang, 'system.awakening.uberHeading')}</h3>
+    <div class="space-y-3">
+      {tArray(lang, 'system.awakening.uberCards').map((card) => (
+        <div class="p-3 rounded-lg bg-[var(--color-gradient-start)] text-xs leading-relaxed">
+          <p set:html={card} />
+        </div>
+      ))}
+    </div>
+
+    <p class="mt-4 text-xs text-[var(--color-text-muted)] leading-relaxed">
+      {t(lang, 'system.awakening.footnote')}
+    </p>
+  </section>
+</GameLayout>

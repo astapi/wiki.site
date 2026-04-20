@@ -1,0 +1,14 @@
+---
+import DungeonList from '../../../../components/lootdive/DungeonList.astro'
+import { NON_DEFAULT_LANGS, type Lang } from '../../../../i18n/site'
+
+export async function getStaticPaths() {
+  return NON_DEFAULT_LANGS.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }))
+}
+
+const { lang } = Astro.props as { lang: Lang }
+---
+<DungeonList lang={lang} />

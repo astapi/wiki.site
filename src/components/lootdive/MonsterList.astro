@@ -1,0 +1,55 @@
+---
+import GameLayout from '../../layouts/GameLayout.astro'
+import monstersData from '../../data/lootdive/game/monsters.json'
+import { monsterName } from '../../data/lootdive/i18n'
+import { t, localeHref, type Lang } from '../../i18n/site'
+
+interface Props {
+  lang: Lang
+}
+const { lang } = Astro.props
+
+const gameSlug = 'lootdive'
+const base = `/${gameSlug}`
+
+const monsters = Object.entries(
+  monstersData.monsters as Record<string, {
+    id?: string
+    image: string
+    maxHp: number
+    atk: number
+    def: number
+  }>
+)
+  .filter(([key, m]) => !key.startsWith('_') && m.id)
+  .map(([, m]) => m as { id: string; image: string; maxHp: number; atk: number; def: number })
+
+const count = monsters.length
+---
+<GameLayout
+  title={t(lang, 'monsters.listTitle')}
+  description={t(lang, 'monsters.listDescription', { count })}
+  keywords={t(lang, 'monsters.listKeywords')}
+  gameSlug={gameSlug}
+  lang={lang}
+  currentPath="/monsters/"
+>
+  <h1 class="text-2xl md:text-3xl font-semibold mb-6">{t(lang, 'monsters.listHeading', { count })}</h1>
+  <ul class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    {monsters.map((m) => {
+      const name = monsterName(m.id, lang)
+      return (
+        <li>
+          <a
+            href={localeHref(lang, base, `/monsters/${m.id}/`)}
+            class="flex flex-col items-center gap-2 p-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] hover:bg-[var(--color-gradient-start)] transition-colors"
+          >
+            <img src={`/${gameSlug}/images/monsters/${m.image}.png`} alt={name} class="w-16 h-16 object-contain" loading="lazy" />
+            <span class="text-xs text-center">{name}</span>
+            <span class="text-[10px] text-[var(--color-text-muted)]">HP {m.maxHp} / ATK {m.atk}</span>
+          </a>
+        </li>
+      )
+    })}
+  </ul>
+</GameLayout>
