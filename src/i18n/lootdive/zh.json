@@ -146,7 +146,13 @@
     "lifesteal": "生命偷取 {{value}}%",
     "atk_more_pct": "ATK {{value}}% more",
     "def_more_pct": "DEF {{value}}% more",
-    "hp_more_pct": "HP {{value}}% more"
+    "hp_more_pct": "HP {{value}}% more",
+    "evasion": "闪避+{{value}}",
+    "evasion_increased_pct": "闪避+{{value}}%",
+    "evasion_more_pct": "闪避{{value}}% more",
+    "shield_on_evade_streak_hit_pct": "连续闪避后受击时，每次闪避回复最大护盾的{{value}}%",
+    "hp_on_taken_hit": "受击时HP+{{value}}回复",
+    "ignite_resist_pct": "受到发火伤害 -{{value}}%"
   },
   "bossTips": {
     "uber_uber_goblin_king": [
@@ -161,6 +167,12 @@
       "由于攻击速度快, 用冰缓降低攻击速度有效",
       "配合冻结几率, 可在冻结期间回复",
       "UberUber 双击之戒是超攻击性道具"
+    ],
+    "uber_uber_kraken": [
+      "冰海波动会使玩家陷入冻结·冰缓状态。携带冻结抗性·冰缓抗性 MOD 来防止被控制",
+      "灼热抗性会将其受到的发火伤害减少至2/3。以发火为主的流派威力下降，物理·毒·暴击流派更有效",
+      "触手乱打每10次攻击发动一次10连击，造成大量伤害。用护盾·闪避·伤害延迟·回复来扛住",
+      "深海之铠能抵御70%的冻结判定。比起冻结，用冰缓降低其攻击速度更稳定"
     ]
   },
   "langSwitcher": {
@@ -172,8 +184,8 @@
   },
   "system": {
     "title": "战斗系统解说 | Loot Dive攻略 wiki",
-    "description": "Loot Dive战斗系统解说。基础伤害公式·暴击·攻击速度 (ATB)·追击·异常状态 (中毒/点燃/冰缓/冻结)·防御机制·觉醒/关键石附带计算公式完整介绍。",
-    "keywords": "Loot Dive 系统, Loot Dive 异常状态, Loot Dive 中毒, Loot Dive 点燃, Loot Dive 冰缓, Loot Dive 冻结, 伤害延迟, 伤害减免, 暴击, 攻击速度, 关键石, Loot Dive攻略",
+    "description": "Loot Dive战斗系统解说。基础伤害公式·暴击·攻击速度 (ATB)·追击·异常状态 (中毒/点燃/冰缓/冻结)·防御机制·闪避·格挡·护盾 (v2.0.0)·觉醒/关键石附带计算公式完整介绍。",
+    "keywords": "Loot Dive 系统, Loot Dive 异常状态, Loot Dive 中毒, Loot Dive 点燃, Loot Dive 冰缓, Loot Dive 冻结, Loot Dive 闪避, Loot Dive 护盾, Loot Dive 格挡, 伤害延迟, 伤害减免, 暴击, 攻击速度, 关键石, Loot Dive攻略",
     "heading": "战斗系统解说",
     "intro": "整理了装备选择与配装构筑的前提计算规则。数值基于默认设置 (可能随平衡调整而变化)。",
     "toc": {
@@ -282,7 +294,7 @@
           "　 ・ 冰缓效果 100% 以上 → ×0.5 (降低 50%, 硬上限)",
           "<strong>持续:</strong> 3 秒 (<code>冰缓持续+% MOD</code>延长)"
         ],
-        "note": "非伤害型, 属于「减少出手数」的异常状态。对攻速高的 Boss (UberUber 山贼首领等) 特别有效。"
+        "note": "非伤害型, 属于「减少出手数」的异常状态。对攻速高的 Boss (UberUber 山贼首领等) 特别有效。v2.0.0 起反过来部分 Boss (UberUber 海妖的冰海波动) 会使玩家陷入冰缓, 可用冰缓抗性 MOD 应对。"
       },
       "freeze": {
         "heading": "冻结 (Freeze)",
@@ -294,12 +306,12 @@
           "<strong>再附加:</strong> 冻结中不会再次冻结",
           "<strong>解除后:</strong> 自动切换为同 MOD 的冰缓 (减速几乎无缝延续)"
         ],
-        "note": "可概率完全停止的稀有手段。概率本身 10% 上限, 但攻速越快尝试次数越多, 机会也越大。"
+        "note": "可概率完全停止的稀有手段。概率本身 10% 上限, 但攻速越快尝试次数越多, 机会也越大。v2.0.0 起部分 Boss 会冻结玩家, 可用冻结抗性 MOD 抑制发生。"
       }
     },
     "defense": {
       "heading": "防御机制",
-      "intro": "减伤系与回复系两类。高难度 Boss 越需要多项组合。",
+      "intro": "「减免/无效化」受到伤害的系统与「回复」系统。v2.0.0 新增了 <strong class=\"text-[var(--color-text)]\">闪避·格挡·护盾</strong> 这些新的防御层, 组合空间大幅拓宽。高难度 Boss 越需要多项组合。",
       "damageReduction": {
         "heading": "伤害减免%",
         "intro": "按一定比例削减受到的伤害。与 DEF 减免<strong class=\"text-[var(--color-text)]\">相加</strong>, 与高 DEF 装备组合更耐打。",
@@ -318,6 +330,57 @@
           "<strong>例:</strong> 受伤 1000 / 延迟 50% → 立即 500 + (125/秒 × 4 秒)"
         ],
         "note": "分散期间若能用每秒 HP 回复等抵消, 可大幅降低实际受伤。对王者冲击这种单发超高伤害攻击尤为有效。"
+      },
+      "evasion": {
+        "heading": "闪避·命中 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "v2.0.0 新增的闪避层。玩家堆叠 <strong class=\"text-[var(--color-text)]\">EVA (闪避)</strong> 后, 可以一定概率完全闪避敌人的攻击。敌人拥有 <strong class=\"text-[var(--color-text)]\">命中 (accuracy)</strong>, 由双方比值决定命中率。<strong class=\"text-[var(--color-text)]\">玩家的攻击必定命中。</strong>",
+        "box": [
+          "<strong>命中率:</strong> <code>round(敌命中 / (敌命中 + EVA) × 100)</code> % (下限 5% / 上限 95%)",
+          "<strong>闪避率:</strong> <code>100 − 命中率</code>",
+          "<strong>例:</strong> 敌命中 450·EVA 0 → 命中 95% 上限。EVA 450 → 命中 50%。EVA 1350 → 命中 25%",
+          "<strong>增幅:</strong> EVA MOD 由 <code>increased%(相加)</code> / <code>more%(相乘)</code> 强化"
+        ],
+        "note": "游侠·霜法师初始即拥有 EVA。各地下城新增了「闪避装备 (evasion)」基底, 对出手数多的敌人闪避减伤尤为有效。但完全取决于运气, 与伤害减免·护盾等确定防御并用更稳定。"
+      },
+      "block": {
+        "heading": "格挡 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "以格挡率% <strong class=\"text-[var(--color-text)]\">完全无效化</strong>受击。发动时该次攻击伤害为 0。",
+        "box": [
+          "<strong>格挡率:</strong> 格挡率% MOD/节点的合计 (<strong class=\"text-[var(--color-text)]\">上限 50% 硬上限</strong>)",
+          "<strong>成功时:</strong> 该次攻击伤害完全为 0 (护盾和 HP 都不减少)"
+        ],
+        "note": "与闪避不同, 是「无效化」而非「减免」。最大 50%, 单独不可过度依赖, 但与闪避·护盾多层叠加越发稳定。"
+      },
+      "shield": {
+        "heading": "护盾 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "v2.0.0 新增。在 HP 之前替你承受伤害的护罩。只要护盾尚存, HP 就不会减少。",
+        "box": [
+          "<strong>最大护盾:</strong> <code>(护盾基础 + 平坦 MOD) × (1 + increased%) × (1 + more%)</code>",
+          "<strong>HP→护盾转换:</strong> 将最大 HP 转为护盾, 但战斗中最大 HP <strong class=\"text-[var(--color-text)]\">压缩至 30%</strong>。同时回复系 (每秒 HP 回复·命中时 HP 回复·吸收) 失效, 需注意",
+          "<strong>重构:</strong> 受击后经过 <code>延迟 ms</code> 开始重构, 每秒回复最大护盾的 <code>X%</code>",
+          "<strong>每 10 次攻击回复:</strong> 部分 MOD 每攻击 10 次回复最大护盾的 <code>X%</code>",
+          "<strong>持续伤害:</strong> 普通护盾不承受毒等持续伤害, 但拥有「持续伤害由护盾承受」效果时, 毒也由护盾吸收"
+        ],
+        "note": "相对闪避·格挡的「运气」, 护盾是「确定的额外 HP」。配合连续闪避后护盾回复 MOD, 可成为闪避流派的续航。HP→护盾转换流派回复中断, 因此须以护盾重构来支撑。"
+      },
+      "repeatLowHp": {
+        "heading": "连续受击·低 HP 减免 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "v2.0.0 为应对高速·连击 Boss 新增的条件减伤。两者皆与伤害减免%分开, 以相乘方式生效。",
+        "box": [
+          "<strong>连续受击减免:</strong> 距上次受击 1 秒内再次受击时, 伤害减免 <code>X%</code> (<strong class=\"text-[var(--color-text)]\">上限 80%</strong>)",
+          "<strong>低 HP 减免:</strong> HP 处于最大值 <strong class=\"text-[var(--color-text)]\">30% 以下</strong>时, 受到伤害减免 <code>X%</code> (上限 80%)"
+        ],
+        "note": "对 UberUber 海妖的触手乱打或王者冲击这类连击·瞬间火力有效, 也提升濒死时的韧性。"
+      },
+      "statusResist": {
+        "heading": "异常状态抗性 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "v2.0.0 起 Boss 会向玩家附加异常状态 (UberUber 海妖的冰海波动等)。为此新增了对抗的抗性 MOD/节点。",
+        "box": [
+          "<strong>冰缓抗性 / 冻结抗性:</strong> 概率无效化玩家受到的冰缓·冻结 (与海妖的深海之铠同一机制)",
+          "<strong>毒伤减免 (毒抗):</strong> 将玩家受到的毒持续伤害减免 <code>X%</code>",
+          "<strong>自动解除异常:</strong> 还新增了按固定间隔解除玩家自身异常状态的效果"
+        ],
+        "note": "被冰缓·被冻结直接导致出手减少或行动不能。对拥有冰海波动的 UberUber 海妖之战尤为有效。"
       },
       "hpOnHit": {
         "heading": "命中时 HP 回复",
