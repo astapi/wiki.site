@@ -5,7 +5,7 @@ export type EquipmentSlot = 'weapon' | 'armor' | 'gloves' | 'boots' | 'accessory
 export type WeaponType = 'sword' | 'staff';
 
 // キャラクタークラス
-export type CharacterType = 'warrior' | 'elementalist' | 'ranger' | 'frostmage';
+export type CharacterType = 'warrior' | 'elementalist' | 'ranger' | 'frostmage' | 'tamer';
 
 // クラス別固有能力
 export interface ClassAbility {
@@ -14,6 +14,8 @@ export interface ClassAbility {
   attackSpeedPct?: number;    // 攻撃速度+%（ウォリアー）
   poisonChance?: number;      // 毒付与率%（レンジャー）
   chillChance?: number;       // チル付与率%（フロストメイジ）
+  petDropRatePct?: number;    // ペットドロップ率+%（テイマー）
+  petEffectMultiplier?: number; // ペットバフ効果の倍率（テイマー: 2 = 2倍）
 }
 
 // ドロップフィルター設定
@@ -61,6 +63,8 @@ export interface Character {
   maxHp: number;
   atk: number;
   def: number;
+  /** キャラクターが属するシーズン（作成時に固定）。スキルツリー/ランキングの振り分けに使用 */
+  season: number;
   createdAt: string;
   updatedAt: string;
 }
@@ -114,10 +118,16 @@ export type ModType =
   | 'ignite_tick_speed_pct'  // 発火ダメージ速度+X%（杖専用）
   | 'ignite_damage_pct'      // 発火ダメージ+X%（杖専用）
   | 'ignite_lifesteal'       // 発火ダメージ吸収+X%
+  | 'ignite_damage_reduction' // 敵が発火状態時のダメージ軽減+X%
   | 'critical_chance'    // クリティカル確率+X%
   | 'critical_damage'    // クリティカルダメージ+X%
   | 'damage_defer_pct'  // ダメージ遅延+X%（鎧専用）：ダメージのX%を4秒かけて受ける
   | 'damage_reduction_pct'  // ダメージ軽減+X%（鎧専用）
+  | 'evasion'            // EVA +X
+  | 'evasion_increased_pct' // EVA +X% (increased、加算)
+  | 'evasion_more_pct'   // EVA X% more (乗算、非常に強力)
+  | 'shield_on_evade_streak_hit_pct' // 連続回避後の被弾時、回避1回ごとに最大シールドのX%回復
+  | 'hp_on_taken_hit'     // 被弾時HP回復
   | 'hp_on_hit'          // HIT時HP回復（武器専用）
   | 'lifesteal'          // ライフスティール（与ダメージの一部を回復）
   | 'attack_speed_pct'   // AS +X% (increased、加算)
@@ -136,6 +146,24 @@ export type ModType =
   | 'follow_up_attack_pct'      // 毎攻撃時、valueパーセントのATKで追撃（UberUber双撃の指輪）
   | 'king_slam'                 // 5回攻撃ごとにATK×3の追撃（UberUberゴブリンの踏みつけ）
   | 'royal_roar'                // 3回攻撃ごとに自身の毒・発火・チル状態を解除
+  | 'ignite_resist_pct'         // 発火ダメージ軽減%（UberUberクラーケン由来）
+  | 'shield_bonus'              // シールド+X (フラット)
+  | 'shield_increased_pct'      // シールド +X% increased
+  | 'shield_more_pct'           // シールド X% more
+  | 'hp_to_shield'              // 最大HPをシールドへ変換
+  | 'shield_on_10_attacks_pct'  // 10回攻撃ごとに最大シールドのX%回復
+  | 'shield_recharge_delay_ms'  // 被弾後Xmsでシールド再構築開始
+  | 'shield_recharge_pct'       // 再構築中、毎秒最大シールドのX%回復
+  | 'shield_blocks_dot'         // 毒などの継続ダメージもシールドで受ける
+  | 'pet_effect_pct'            // ペット効果 +X% increased
+  | 'pet_drop_rate_pct'         // ペットドロップ率 +X%
+  | 'block_chance'              // ブロック率 +X%
+  | 'chill_resist_pct'          // チル耐性 +X%
+  | 'freeze_resist_pct'         // フリーズ耐性 +X%
+  | 'poison_resist_pct'         // 毒ダメージ軽減 +X%
+  | 'repeat_hit_damage_reduction_pct' // 短時間の連続被弾軽減 +X%
+  | 'low_hp_damage_reduction_pct'     // 低HP時被ダメージ軽減 +X%
+  | 'auto_cleanse_interval_ms'        // 一定間隔で状態異常解除
   | 'poison_damage_pct'       // 毒ダメージ+X%
   | 'poison_damage_more_pct'  // 毒ダメージ X% more
   | 'poison_damage_reduction' // 敵が毒状態時のダメージ軽減+X%
@@ -172,6 +200,7 @@ export interface ItemBase {
   weaponType?: WeaponType;  // 武器種別（slot='weapon'の場合のみ）
   atk: number;
   def: number;
+  evasion?: number;
   fixedMods?: ItemMod[]; // ユニークアイテムの固有MOD
 }
 
@@ -222,6 +251,7 @@ export interface PassiveEffect {
   ignite_damage_pct?: number;      // 発火ダメージ+X%
   ignite_damage_more_pct?: number; // 発火ダメージ X% more（乗算）
   ignite_lifesteal?: number;       // 発火ダメージ吸収 +X%
+  ignite_damage_reduction?: number; // 敵が発火状態時のダメージ軽減 +X%
   ignite_spread?: boolean;         // イグナイト伝染（発火中の敵死亡時、次の敵に発火継承）
   ignite_stacking_damage?: boolean; // 緩慢なる炎: 発火付与5回ごとに+10% inc発火ダメージ（最大200%）
   // クリティカル系
@@ -233,8 +263,34 @@ export interface PassiveEffect {
   hp_regen?: number;           // 毎秒HP回復
   hp_regen_pct?: number;       // 毎秒HP X%回復
   damage_defer_pct?: number; // ダメージ遅延+X%（ダメージのX%を4秒かけて受ける）
+  evasion?: number;            // EVA +X
+  evasion_increased_pct?: number; // EVA +X% increased
+  evasion_more_pct?: number;    // EVA X% more
+  shield_on_evade_streak_hit_pct?: number; // 連続回避後の被弾時、回避1回ごとに最大シールドのX%回復
+  hp_on_taken_hit?: number;     // 被弾時HP回復（固定値）
   hp_on_hit?: number;          // HIT時HP回復（固定値）
+  lifestealPct?: number;       // 与ダメージのX%をHP回復
   retaliate_def_pct?: number;  // 被ダメ時DEFのX%を反撃ダメージ
+  // シールド系
+  shield?: number;                 // 最大シールド +X
+  shield_increased_pct?: number;   // シールド +X% increased
+  shield_more_pct?: number;        // シールド X% more
+  hp_to_shield?: boolean;          // HP系をシールドに変換（戦闘時HPを圧縮）
+  shield_on_10_attacks_pct?: number; // 10回攻撃ごとに最大シールドのX%回復
+  shield_recharge_delay_ms?: number; // 被弾後Xmsで再構築開始
+  shield_recharge_pct?: number;      // 再構築中、毎秒最大シールドのX%回復
+  shield_blocks_dot?: boolean;       // 毒などの継続ダメージもシールドで受ける
+  // ペット系
+  pet_effect_pct?: number;       // ペット効果 +X% increased
+  pet_drop_rate_pct?: number;    // ペットドロップ率 +X%
+  // ブロック・状態異常耐性・ボス対策
+  block_chance?: number;         // ブロック率 +X%
+  chill_resist_pct?: number;     // チル耐性 +X%
+  freeze_resist_pct?: number;    // フリーズ耐性 +X%
+  poison_resist_pct?: number;    // 毒ダメージ軽減 +X%
+  repeat_hit_damage_reduction_pct?: number; // 短時間の連続被弾軽減 +X%
+  low_hp_damage_reduction_pct?: number;     // 低HP時被ダメージ軽減 +X%
+  auto_cleanse_interval_ms?: number;        // 一定間隔で状態異常解除
   // 攻撃速度系
   attack_speed_pct?: number;       // AS +X% increased
   attack_speed_more_pct?: number;  // AS X% more
@@ -266,6 +322,17 @@ export interface PassiveNodePosition {
 // 例: ["a", ["b", "c"]] → a AND (b OR c)
 export type NodeRequirement = string | string[];
 
+// パッシブノードのアイコンタイプ（UI表示用）
+// 注意: 新しい値を追加したら PassiveTree.tsx の ICON_IMAGES / ICON_BG_COLORS も対応させること
+export type PassiveIconType =
+  | 'atk' | 'hp' | 'def'
+  | 'poison' | 'crit' | 'regen' | 'guard' | 'vamp' | 'speed'
+  | 'evasion' | 'special' | 'legendary';
+
+// パッシブノードの種別（UI表示・サイズ判定用）
+// minor=小ノード / notable=大ノード / keystone=キーストーン / start=スタート / mastery=マスタリー
+export type PassiveNodeType = 'start' | 'minor' | 'notable' | 'keystone' | 'mastery';
+
 // パッシブノード定義（JSON用）
 export interface PassiveNodeData {
   id: string;
@@ -274,11 +341,18 @@ export interface PassiveNodeData {
   effect: PassiveEffect;
   requiredNodes: NodeRequirement[];  // 前提ノード条件
   position: PassiveNodePosition;
+  // --- 以下はS3型ツリー用の明示メタ情報（optional・未設定ならUI側が従来推定にフォールバック） ---
+  nodeType?: PassiveNodeType;   // ノード種別（サイズ判定を明示）
+  iconType?: PassiveIconType;   // アイコンを明示（id/effectからの推定をやめる）
+  class?: CharacterType;        // クラススタート / クラスター帰属（任意・将来のフィルタ表示用）
 }
 
 // パッシブツリー定義（JSON用）
 export interface PassiveTreeData {
   startNodeId: string;
+  // クラス別スタートノード（S3型ツリー用・optional）。
+  // 未設定なら全クラスが startNodeId を共通スタートに使う（S2ツリー互換）。
+  startNodeIds?: Partial<Record<CharacterType, string>>;
   nodes: PassiveNodeData[];
 }
 
@@ -290,6 +364,7 @@ export interface PassiveNode extends PassiveNodeData {
 // パッシブツリー（ランタイム用）
 export interface PassiveTree {
   startNodeId: string;
+  startNodeIds?: Partial<Record<CharacterType, string>>;  // クラス別スタート（S3型）
   nodes: Map<string, PassiveNode>;
 }
 
@@ -323,6 +398,7 @@ export interface Enemy {
   def: number;
   exp: number;
   attackSpeed?: number; // 攻撃速度（デフォルト1.0）
+  accuracy?: number; // 命中精度（%）。プレイヤー攻撃は必中
   uniqueDrop: UniqueDrop | null; // モンスター固有ドロップ
   uniqueDrops?: UniqueDrop[]; // 複数ユニークドロップ（Uber用）
 }
@@ -372,6 +448,8 @@ export interface Dungeon {
   monsters: MonsterSpawn[];
   dropTable: DungeonDropTable;
   boss?: DungeonBoss;           // ボス設定
+  enemyHpMultiplier?: number;   // 通常敵HP倍率
+  bossHpMultiplier?: number;    // ボスHP倍率
   modTierRange?: ModTierRange;  // ダンジョンのMOD tier範囲
   modCountRange?: ModCountRange; // ダンジョンのMOD数範囲
 }
@@ -427,6 +505,7 @@ export interface BattleEnemy {
   uniqueDrops?: UniqueDrop[];
   atk: number;
   def: number;
+  accuracy?: number;
   exp: number;
   attackSpeed: number; // 攻撃速度
 }
@@ -435,7 +514,7 @@ export interface BattleEnemy {
 export interface BattleLogEntry {
   id: number;
   message: string;
-  type: 'player_attack' | 'enemy_attack' | 'victory' | 'defeat' | 'floor_clear' | 'info' | 'poison' | 'ignite' | 'critical' | 'heal' | 'chill' | 'freeze';
+  type: 'player_attack' | 'enemy_attack' | 'block' | 'evade' | 'victory' | 'defeat' | 'floor_clear' | 'info' | 'poison' | 'ignite' | 'critical' | 'heal' | 'chill' | 'freeze';
 }
 
 // 発火状態
@@ -453,12 +532,16 @@ export interface BattleState {
   maxFloor: number;
   playerCurrentHp: number;
   playerMaxHp: number;
+  playerShield: number;
+  playerMaxShield: number;
   enemy: BattleEnemy | null;
   enemyPoison: PoisonState[]; // 敵の毒状態（複数スタック対応）
   playerPoison: PoisonState[]; // プレイヤーの毒状態（複数スタック対応）
   enemyIgnite: IgniteState | null; // 敵の発火状態
   enemyChill: { speedMultiplier: number; remainingMs: number } | null; // 敵のチル状態
   enemyFreeze: { remainingMs: number } | null; // 敵のフリーズ状態
+  playerChill: { speedMultiplier: number; remainingMs: number } | null; // プレイヤーのチル状態
+  playerFreeze: { remainingMs: number } | null; // プレイヤーのフリーズ状態
   phase: BattlePhase;
   battleLog: BattleLogEntry[];
   droppedItems: Item[];
@@ -533,8 +616,8 @@ export interface DungeonBattleState {
 // @deprecated 新規コードでは DungeonBattleAction を使用
 export type BattleAction =
   | { type: 'START_BATTLE'; enemy: BattleEnemy }
-  | { type: 'PLAYER_ATTACK'; damage: number; isCritical?: boolean }
-  | { type: 'ENEMY_ATTACK'; damage: number }
+  | { type: 'PLAYER_ATTACK'; damage: number; isCritical?: boolean; source?: 'king_slam' | 'twin_blade' }
+  | { type: 'ENEMY_ATTACK'; damage: number; shieldDamage?: number; blocked?: boolean; evaded?: boolean; playerShield?: number }
   | { type: 'PLAYER_DAMAGE'; damage: number; message: string; logType?: BattleLogEntry['type'] }
   | { type: 'ENEMY_HEAL'; amount: number; source?: 'regen' | 'on_hit' }
   | { type: 'ENEMY_DEFEATED'; exp: number; droppedItems: Item[] } // 複数アイテム対応
@@ -551,7 +634,7 @@ export type BattleAction =
   | { type: 'APPLY_IGNITE'; damage: number; durationMs: number; tickIntervalMs: number }
   | { type: 'APPLY_IGNITE_SPREAD'; damage: number; durationMs: number; tickIntervalMs: number }
   | { type: 'IGNITE_DAMAGE'; damage: number; remainingMs: number }
-  | { type: 'UPDATE_GAUGES'; playerGauge: number; enemyGauge: number; enemyChill?: { speedMultiplier: number; remainingMs: number } | null; enemyFreeze?: { remainingMs: number } | null }
+  | { type: 'UPDATE_GAUGES'; playerGauge: number; enemyGauge: number; playerShield?: number; playerMaxShield?: number; enemyChill?: { speedMultiplier: number; remainingMs: number } | null; enemyFreeze?: { remainingMs: number } | null; playerChill?: { speedMultiplier: number; remainingMs: number } | null; playerFreeze?: { remainingMs: number } | null }
   | { type: 'RESET_PLAYER_GAUGE' }
   | { type: 'RESET_ENEMY_GAUGE' };
 
@@ -571,8 +654,44 @@ export type DungeonBattleAction =
   | { type: 'NEXT_FLOOR'; enemyInfo: EnemyDisplayInfo; enemyStats: { maxHp: number; atk: number; def: number; attackSpeed: number } }
   | { type: 'DUNGEON_CLEARED' }
   | { type: 'ADD_LOG'; entry: Omit<BattleLogEntry, 'id'> }
-  | { type: 'UPDATE_GAUGES'; playerGauge: number; enemyGauge: number; enemyChill?: { speedMultiplier: number; remainingMs: number } | null; enemyFreeze?: { remainingMs: number } | null }
+  | { type: 'UPDATE_GAUGES'; playerGauge: number; enemyGauge: number; enemyChill?: { speedMultiplier: number; remainingMs: number } | null; enemyFreeze?: { remainingMs: number } | null; playerChill?: { speedMultiplier: number; remainingMs: number } | null; playerFreeze?: { remainingMs: number } | null }
   | { type: 'RESET_DUNGEON'; playerMaxHp: number; playerAtk: number; playerDef: number; playerAttackSpeed: number };
+
+// ========================================
+// Pet System Types
+// ========================================
+
+// ペットのバフ効果（CombinedModEffects と一部の getTotalStats への加算）
+export interface PetBuff {
+  hpRegen?: number;            // 毎秒HP回復（フラット）
+  attackSpeedPct?: number;     // AS +X% increased
+  poisonChance?: number;       // 毒付与率%
+  igniteChance?: number;       // 発火付与率%
+  freezeChance?: number;       // フリーズ付与率%
+  atkIncreasedPct?: number;    // ATK +X% increased（装備incと同じレイヤー）
+  defIncreasedPct?: number;    // DEF +X% increased
+  maxHp?: number;              // 最大HP +X（フラット、getTotalStats() で基礎ステータスに加算）
+  critChancePct?: number;      // クリティカル率 +X%
+  lifestealPct?: number;       // 与ダメージの X% をHP回復（全ヒット）
+  freezeChanceCapPct?: number; // フリーズ発生率の上限 +X%（既定10%を引き上げる）
+}
+
+export type PetRarity = 'normal' | 'boss';
+
+// ペットマスタ定義
+export interface PetDefinition {
+  id: string;                  // "pet_slime" など
+  sourceMonsterId: string;     // 画像取得用キー（monsterImagesのキー）
+  rarity: PetRarity;
+  buff: PetBuff;
+}
+
+// プレイヤー所持ペットインスタンス
+export interface PetInstance {
+  instanceId: string;          // DB保存用ユニークID
+  petId: string;               // PetDefinition.id への参照
+  obtainedAt: string;          // ISO datetime
+}
 
 // 結果画面用のパラメータ
 export interface BattleResult {

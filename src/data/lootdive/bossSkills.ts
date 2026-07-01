@@ -67,6 +67,10 @@ const BOSS_ABILITIES_MAP: Record<string, BossAbilities> = {
     regularSkills: [
       { skillKey: 'tsunami', descKey: 'tsunamiDesc' },
       { skillKey: 'abyssalEbb', descKey: 'abyssalEbbDesc', isUberOnly: true },
+      { skillKey: 'tentacleFlurry', descKey: 'tentacleFlurryDesc', isUberUberOnly: true, triggerType: 'every10' },
+      { skillKey: 'frostAura', descKey: 'frostAuraDesc', isUberUberOnly: true, triggerType: 'persistent' },
+      { skillKey: 'freezeResist', descKey: 'freezeResistDesc', isUberUberOnly: true, triggerType: 'persistent' },
+      { skillKey: 'igniteResist', descKey: 'igniteResistDesc', isUberUberOnly: true, triggerType: 'persistent' },
     ],
     thresholdSkills: [
       { skillKey: 'deepEmbrace', descKey: 'deepEmbraceDesc', isThreshold: true },
@@ -106,6 +110,7 @@ const BASE_BOSS_BY_UBER: Record<string, string> = Object.fromEntries(
 const UBER_UBER_BY_UBER: Record<string, string> = {
   uber_goblin_king: 'uber_uber_goblin_king',
   uber_bandit_leader: 'uber_uber_bandit_leader',
+  uber_kraken: 'uber_uber_kraken',
 }
 const UBER_BY_UBER_UBER: Record<string, string> = Object.fromEntries(
   Object.entries(UBER_UBER_BY_UBER).map(([uber, uberUber]) => [uberUber, uber])
