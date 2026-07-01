@@ -146,7 +146,13 @@
     "lifesteal": "Lifesteal {{value}}%",
     "atk_more_pct": "ATK {{value}}% more",
     "def_more_pct": "DEF {{value}}% more",
-    "hp_more_pct": "HP {{value}}% more"
+    "hp_more_pct": "HP {{value}}% more",
+    "evasion": "Evasion +{{value}}",
+    "evasion_increased_pct": "Evasion +{{value}}%",
+    "evasion_more_pct": "Evasion {{value}}% more",
+    "shield_on_evade_streak_hit_pct": "Recover {{value}}% of max shield per evade when hit after an evade streak",
+    "hp_on_taken_hit": "HP +{{value}} when hit",
+    "ignite_resist_pct": "Ignite damage taken -{{value}}%"
   },
   "bossTips": {
     "uber_uber_goblin_king": [
@@ -161,6 +167,12 @@
       "Since attack speed is high, chill-based slowdown is effective",
       "A freeze chance lets you heal during the freeze window",
       "The UberUber Twin Strike ring is a hyper-offensive item"
+    ],
+    "uber_uber_kraken": [
+      "Frost Aura inflicts freeze and chill on the player. Bring freeze/chill resist mods to avoid being locked down",
+      "Its ignite resistance cuts the ignite damage it takes to 2/3. Ignite-focused builds lose power here, so physical, poison, and crit builds work better",
+      "Tentacle Flurry unleashes a 10-hit barrage every 10 attacks for heavy damage. Survive it with shield, evasion, damage-defer, and healing",
+      "Its deep-sea armor resists 70% of freeze attempts. Chilling it to slow its attack speed is more reliable than relying on freeze"
     ]
   },
   "langSwitcher": {
@@ -172,8 +184,8 @@
   },
   "system": {
     "title": "Battle System Guide | Loot Dive Wiki",
-    "description": "Loot Dive battle system guide. Base damage formula, critical hits, attack speed (ATB), follow-up attacks, ailments (poison/ignite/chill/freeze), defense mechanics, and awakening/keystone effects — all covered with formulas.",
-    "keywords": "Loot Dive system, Loot Dive ailments, Loot Dive poison, Loot Dive ignite, Loot Dive chill, Loot Dive freeze, damage defer, damage reduction, critical, attack speed, keystone, Loot Dive wiki",
+    "description": "Loot Dive battle system guide. Base damage formula, critical hits, attack speed (ATB), follow-up attacks, ailments (poison/ignite/chill/freeze), defense mechanics, evasion, block, shield (v2.0.0), and awakening/keystone effects — all covered with formulas.",
+    "keywords": "Loot Dive system, Loot Dive ailments, Loot Dive poison, Loot Dive ignite, Loot Dive chill, Loot Dive freeze, Loot Dive evasion, Loot Dive shield, Loot Dive block, damage defer, damage reduction, critical, attack speed, keystone, Loot Dive wiki",
     "heading": "Battle System Guide",
     "intro": "Calculation rules that underpin gear choice and build crafting. Numbers reflect default settings (subject to balance changes).",
     "toc": {
@@ -282,7 +294,7 @@
           "　 ・ Chill effect 100% or more → ×0.5 (-50%, hard cap)",
           "<strong>Duration:</strong> 3 seconds (extended by <code>Chill duration+% MOD</code>)"
         ],
-        "note": "A \"reduce actions\" ailment rather than damage. Especially effective against high-AS bosses (e.g. UberUber Bandit Leader)."
+        "note": "A \"reduce actions\" ailment rather than damage. Especially effective against high-AS bosses (e.g. UberUber Bandit Leader). As of v2.0.0 some bosses (UberUber Kraken's Frost Aura) chill the player instead — counter it with chill resist MODs."
       },
       "freeze": {
         "heading": "Freeze",
@@ -294,12 +306,12 @@
           "<strong>Re-apply:</strong> Cannot re-freeze while frozen",
           "<strong>After expiry:</strong> Auto-transitions to chill from the same MOD (near-seamless slowdown)"
         ],
-        "note": "One of the few ways to fully stun enemies by chance. The 10% cap holds, but high attack speed means more rolls and more openings."
+        "note": "One of the few ways to fully stun enemies by chance. The 10% cap holds, but high attack speed means more rolls and more openings. As of v2.0.0 some bosses freeze the player — freeze resist MODs cut down how often it lands."
       }
     },
     "defense": {
       "heading": "Defense",
-      "intro": "Two categories: damage mitigation and sustain. Higher-difficulty bosses usually demand a mix.",
+      "intro": "Categories that \"reduce/negate\" incoming damage and that \"restore\" it. v2.0.0 added new defensive layers — <strong class=\"text-[var(--color-text)]\">evasion, block, and shield</strong> — greatly widening your options. Higher-difficulty bosses usually demand a mix.",
       "damageReduction": {
         "heading": "Damage Reduction %",
         "intro": "Cuts incoming damage by a percentage. <strong class=\"text-[var(--color-text)]\">Added</strong> to DEF reduction, so combines well with high-DEF gear.",
@@ -318,6 +330,57 @@
           "<strong>Example:</strong> Hit for 1000 / 50% defer → 500 instant + (125/s × 4s)"
         ],
         "note": "If you out-heal the spread with HP/s regen, effective damage drops dramatically. Strong against single burst hits like King's Slam."
+      },
+      "evasion": {
+        "heading": "Evasion & Accuracy <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "A dodge layer added in v2.0.0. Stacking <strong class=\"text-[var(--color-text)]\">EVA (Evasion)</strong> lets you fully dodge enemy hits at a chance. Enemies have <strong class=\"text-[var(--color-text)]\">accuracy</strong>, and the ratio of the two sets the hit chance. <strong class=\"text-[var(--color-text)]\">Your own attacks always hit.</strong>",
+        "box": [
+          "<strong>Hit chance:</strong> <code>round(enemy accuracy / (enemy accuracy + EVA) × 100)</code> % (min 5% / max 95%)",
+          "<strong>Dodge chance:</strong> <code>100 − hit chance</code>",
+          "<strong>Example:</strong> accuracy 450 & EVA 0 → 95% cap. EVA 450 → 50% hit. EVA 1350 → 25% hit",
+          "<strong>Scaling:</strong> EVA MODs are boosted by <code>increased% (additive)</code> / <code>more% (multiplicative)</code>"
+        ],
+        "note": "Rangers and Frost Mages start with EVA. Each dungeon gains an \"evasion\" gear base, and dodge is best against fast, multi-hit enemies. Since it's pure luck, pair it with guaranteed layers like damage reduction or shield for stability."
+      },
+      "block": {
+        "heading": "Block <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "Block chance% <strong class=\"text-[var(--color-text)]\">fully negates</strong> a hit. On a successful block the hit deals 0 damage.",
+        "box": [
+          "<strong>Block chance:</strong> sum of block chance% MODs/nodes (<strong class=\"text-[var(--color-text)]\">50% hard cap</strong>)",
+          "<strong>On success:</strong> that hit deals 0 (neither shield nor HP is reduced)"
+        ],
+        "note": "Unlike evasion this \"negates\" rather than \"reduces\". The 50% cap means it's not reliable alone, but layering it with evasion and shield makes you far more stable."
+      },
+      "shield": {
+        "heading": "Shield <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "Added in v2.0.0. A barrier that absorbs incoming damage before HP. While shield remains, HP doesn't drop.",
+        "box": [
+          "<strong>Max shield:</strong> <code>(shield base + flat MODs) × (1 + increased%) × (1 + more%)</code>",
+          "<strong>HP→Shield conversion:</strong> converts max HP into shield, but <strong class=\"text-[var(--color-text)]\">compresses combat max HP to 30%</strong>. Note that healing (HP/s regen, HP on hit, leech) is disabled while active",
+          "<strong>Recharge:</strong> starts <code>delay ms</code> after a hit, then recovers <code>X%</code> of max shield per second",
+          "<strong>Recover per 10 attacks:</strong> some MODs restore <code>X%</code> of max shield every 10 attacks",
+          "<strong>DoT:</strong> shield normally ignores DoT like poison, but with \"shield blocks DoT\" poison also drains the shield"
+        ],
+        "note": "Against the \"luck\" of evasion/block, shield is \"guaranteed extra HP\". Combined with the shield-on-evade-streak MOD it sustains evasion builds. HP→shield builds lose healing, so they must lean on shield recharge to survive."
+      },
+      "repeatLowHp": {
+        "heading": "Repeat-hit & Low-HP Reduction <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "Conditional damage reduction added in v2.0.0 to counter fast, multi-hit bosses. Both apply multiplicatively, separate from damage reduction%.",
+        "box": [
+          "<strong>Repeat-hit reduction:</strong> taking another hit within 1 second of the last reduces damage by <code>X%</code> (<strong class=\"text-[var(--color-text)]\">80% cap</strong>)",
+          "<strong>Low-HP reduction:</strong> while HP is at or below <strong class=\"text-[var(--color-text)]\">30%</strong> of max, incoming damage is reduced by <code>X%</code> (80% cap)"
+        ],
+        "note": "Effective against UberUber Kraken's Tentacle Flurry and burst combos like King's Slam, and improves survival at low HP."
+      },
+      "statusResist": {
+        "heading": "Status Resistance <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "In v2.0.0 bosses can now inflict ailments on the player (e.g. UberUber Kraken's Frost Aura). Resist MODs/nodes were added to counter this.",
+        "box": [
+          "<strong>Chill / Freeze resist:</strong> a chance to negate chill/freeze applied to the player (same mechanism as the Kraken's deep-sea armor)",
+          "<strong>Poison damage reduction (poison resist):</strong> reduces poison DoT taken by the player by <code>X%</code>",
+          "<strong>Auto-cleanse:</strong> some effects clear the player's own ailments at a fixed interval"
+        ],
+        "note": "Being chilled or frozen directly cuts your actions. Especially useful against the UberUber Kraken and its Frost Aura."
       },
       "hpOnHit": {
         "heading": "HP on Hit",

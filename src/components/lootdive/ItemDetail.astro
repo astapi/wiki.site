@@ -67,6 +67,7 @@ const description = hasSources
       <dl class="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1 text-sm max-w-xs">
         {item.atk !== undefined && (<><dt class="text-[var(--color-text-muted)]">ATK</dt><dd>{item.atk}</dd></>)}
         {item.def !== undefined && (<><dt class="text-[var(--color-text-muted)]">DEF</dt><dd>{item.def}</dd></>)}
+        {item.evasion !== undefined && item.evasion !== 0 && (<><dt class="text-[var(--color-text-muted)]">EVA</dt><dd>{item.evasion}</dd></>)}
       </dl>
     </div>
   </div>

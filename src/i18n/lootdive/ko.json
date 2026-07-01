@@ -146,7 +146,13 @@
     "lifesteal": "생명력 흡수 {{value}}%",
     "atk_more_pct": "ATK {{value}}% more",
     "def_more_pct": "DEF {{value}}% more",
-    "hp_more_pct": "HP {{value}}% more"
+    "hp_more_pct": "HP {{value}}% more",
+    "evasion": "회피 +{{value}}",
+    "evasion_increased_pct": "회피 +{{value}}%",
+    "evasion_more_pct": "회피 {{value}}% more",
+    "shield_on_evade_streak_hit_pct": "연속 회피 후 피격 시 회피 1회마다 최대 실드의 {{value}}% 회복",
+    "hp_on_taken_hit": "피격 시 HP +{{value}} 회복",
+    "ignite_resist_pct": "받는 발화 데미지 -{{value}}%"
   },
   "bossTips": {
     "uber_uber_goblin_king": [
@@ -161,6 +167,12 @@
       "공격 속도가 빠르므로 냉기로 공격 속도 저하가 유효합니다",
       "빙결 확률이 있으면 빙결 중에 회복이 가능합니다",
       "UberUber 쌍격의 반지는 초공격적 아이템입니다"
+    ],
+    "uber_uber_kraken": [
+      "빙해의 파동으로 플레이어가 빙결·냉기 상태가 됩니다. 빙결 저항·냉기 저항 MOD로 행동 불능을 막으세요",
+      "작열 저항으로 받는 발화 데미지가 2/3로 감소합니다. 발화 중심 빌드는 위력이 떨어지므로 물리·독·치명타 계열이 유효합니다",
+      "촉수 난타는 10회 공격마다 10연타로 큰 데미지를 줍니다. 실드·회피·피해 지연·회복으로 버텨내세요",
+      "심해의 갑옷으로 빙결 판정의 70%를 견뎌냅니다. 빙결보다 냉기로 공격 속도를 낮추는 편이 안정적입니다"
     ]
   },
   "langSwitcher": {
@@ -172,8 +184,8 @@
   },
   "system": {
     "title": "전투 시스템 해설 | Loot Dive 공략 wiki",
-    "description": "Loot Dive의 전투 시스템 해설. 기본 피해식·치명타·공격 속도 (ATB)·추격·상태이상 (독/점화/냉기/빙결)·방어 메커니즘·각성/키스톤을 계산식과 함께 망라.",
-    "keywords": "Loot Dive 시스템, Loot Dive 상태이상, Loot Dive 독, Loot Dive 점화, Loot Dive 냉기, Loot Dive 빙결, 피해 지연, 피해 감소, 치명타, 공격 속도, 키스톤, Loot Dive 공략",
+    "description": "Loot Dive의 전투 시스템 해설. 기본 피해식·치명타·공격 속도 (ATB)·추격·상태이상 (독/점화/냉기/빙결)·방어 메커니즘·회피·블록·실드 (v2.0.0)·각성/키스톤을 계산식과 함께 망라.",
+    "keywords": "Loot Dive 시스템, Loot Dive 상태이상, Loot Dive 독, Loot Dive 점화, Loot Dive 냉기, Loot Dive 빙결, Loot Dive 회피, Loot Dive 실드, Loot Dive 블록, 피해 지연, 피해 감소, 치명타, 공격 속도, 키스톤, Loot Dive 공략",
     "heading": "전투 시스템 해설",
     "intro": "장비 선택과 빌드 구축의 전제가 되는 계산 규칙을 정리했습니다. 수치는 기본 설정 기준 (밸런스 조정으로 변경될 수 있음).",
     "toc": {
@@ -282,7 +294,7 @@
           "　 ・ 냉기 효과 100% 이상 → ×0.5 (50% 감소, 하드 캡)",
           "<strong>지속:</strong> 3초 (<code>냉기 지속+% MOD</code>로 연장)"
         ],
-        "note": "피해가 아닌 「공격 횟수를 줄이는」 유형의 상태이상. 공격 속도가 높은 보스 (UberUber 산적 두목 등)에 특히 유효합니다."
+        "note": "피해가 아닌 「공격 횟수를 줄이는」 유형의 상태이상. 공격 속도가 높은 보스 (UberUber 산적 두목 등)에 특히 유효합니다. v2.0.0부터는 반대로 일부 보스 (UberUber 크라켄의 빙해의 파동)가 플레이어를 냉기 상태로 만드므로 냉기 저항 MOD로 대처할 수 있습니다."
       },
       "freeze": {
         "heading": "빙결 (Freeze)",
@@ -294,12 +306,12 @@
           "<strong>재부여:</strong> 빙결 중에는 재빙결되지 않음",
           "<strong>해제 후:</strong> 동일 MOD의 냉기로 자동 전환 (거의 끊김 없이 감속 지속)"
         ],
-        "note": "확률로 완전 정지시킬 수 있는 희귀한 수단. 확률 자체는 10% 상한이지만 공격 속도가 빠를수록 시도 횟수가 늘어 기회도 증가합니다."
+        "note": "확률로 완전 정지시킬 수 있는 희귀한 수단. 확률 자체는 10% 상한이지만 공격 속도가 빠를수록 시도 횟수가 늘어 기회도 증가합니다. v2.0.0부터는 일부 보스가 플레이어를 빙결시키므로 빙결 저항 MOD로 발생을 억제할 수 있습니다."
       }
     },
     "defense": {
       "heading": "방어 메커니즘",
-      "intro": "받는 피해를 줄이는 계열과 회복 계열의 2종류. 고난이도 보스일수록 여러 개를 조합할 필요가 있습니다.",
+      "intro": "받는 피해를 「줄이거나/무효화하는」 계열과 「회복하는」 계열. v2.0.0에서 <strong class=\"text-[var(--color-text)]\">회피·블록·실드</strong>라는 새로운 방어 레이어가 추가되어 조합의 폭이 크게 넓어졌습니다. 고난이도 보스일수록 여러 개를 조합할 필요가 있습니다.",
       "damageReduction": {
         "heading": "피해 감소%",
         "intro": "받는 피해를 일정 비율 차단합니다. DEF 감소와 <strong class=\"text-[var(--color-text)]\">합산</strong>되므로 고 DEF 장비와 조합하면 단단해집니다.",
@@ -318,6 +330,57 @@
           "<strong>예:</strong> 피해 1000 / 지연 50% → 즉시 500 + (125/초 × 4초)"
         ],
         "note": "분산되는 동안 초당 HP 회복 등으로 상쇄할 수 있으면 실질적인 피해를 크게 줄일 수 있습니다. 킹 슬램처럼 단발의 초고 피해 공격에 강합니다."
+      },
+      "evasion": {
+        "heading": "회피·명중 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "v2.0.0에서 추가된 회피 레이어. 플레이어는 <strong class=\"text-[var(--color-text)]\">EVA (회피)</strong>를 쌓으면 일정 확률로 적의 공격을 완전히 회피할 수 있습니다. 적에게는 <strong class=\"text-[var(--color-text)]\">명중 (accuracy)</strong>이 설정되어 있어 양쪽의 비율로 명중률이 결정됩니다. <strong class=\"text-[var(--color-text)]\">플레이어의 공격은 반드시 명중</strong>합니다.",
+        "box": [
+          "<strong>명중률:</strong> <code>round(적 명중 / (적 명중 + EVA) × 100)</code> % (하한 5% / 상한 95%)",
+          "<strong>회피율:</strong> <code>100 − 명중률</code>",
+          "<strong>예:</strong> 적 명중 450·EVA 0 → 명중 95% 상한. EVA 450 → 명중 50%. EVA 1350 → 명중 25%",
+          "<strong>증폭:</strong> EVA MOD는 <code>increased%(합산)</code> / <code>more%(곱연산)</code>로 강화"
+        ],
+        "note": "레인저·프로스트메이지는 초기부터 EVA를 가집니다. 각 던전에 「회피 장비 (evasion)」 베이스가 추가되었고, 공격 횟수가 많은 적일수록 회피 경감이 효과적입니다. 다만 완전히 운에 좌우되므로 피해 감소·실드 등 확정 방어와 병용하면 안정적입니다."
+      },
+      "block": {
+        "heading": "블록 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "블록 확률%로 피격을 <strong class=\"text-[var(--color-text)]\">완전 무효화</strong>합니다. 발동하면 그 일격의 피해는 0이 됩니다.",
+        "box": [
+          "<strong>블록 확률:</strong> 블록 확률% MOD/노드의 합계 (<strong class=\"text-[var(--color-text)]\">상한 50% 하드 캡</strong>)",
+          "<strong>성공 시:</strong> 그 일격의 피해를 완전히 0 (실드도 HP도 줄지 않음)"
+        ],
+        "note": "회피와 달리 「경감」이 아닌 「무효화」. 최대 50%이므로 단독으로는 과신 금물이지만, 회피·실드와 다층으로 쌓을수록 안정적입니다."
+      },
+      "shield": {
+        "heading": "실드 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "v2.0.0에서 추가. HP 앞에서 피해를 대신 받는 보호막. 실드가 남아 있는 한 HP는 줄지 않습니다.",
+        "box": [
+          "<strong>최대 실드:</strong> <code>(실드 기본 + 플랫 MOD) × (1 + increased%) × (1 + more%)</code>",
+          "<strong>HP→실드 변환:</strong> 최대 HP를 실드화하는 대신 전투 중 최대 HP가 <strong class=\"text-[var(--color-text)]\">30%로 압축</strong>. 또한 회복 계열(초당 HP 회복·적중 시 HP 회복·흡수)이 무효화되는 점에 주의",
+          "<strong>재구축:</strong> 피격 후 <code>지연 ms</code> 경과 시 재구축 시작, 매초 최대 실드의 <code>X%</code> 회복",
+          "<strong>10회 공격마다 회복:</strong> 일부 MOD로 공격 10회마다 최대 실드의 <code>X%</code> 회복",
+          "<strong>지속 피해:</strong> 일반 실드는 독 등 지속 피해를 대신 받지 않지만, 「지속 피해를 실드로 받음」 효과가 있으면 독도 실드로 흡수"
+        ],
+        "note": "회피·블록의 「운」에 비해 실드는 「확정 추가 HP」. 연속 회피 시 실드 회복 MOD와 함께라면 회피 빌드의 지속력이 됩니다. HP→실드 변환 빌드는 회복이 끊기므로 실드 재구축으로 버티는 설계가 전제입니다."
+      },
+      "repeatLowHp": {
+        "heading": "연속 피격·저 HP 경감 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "고속·연타 보스 대책으로 v2.0.0에서 추가된 조건부 피해 감소. 둘 다 피해 감소%와는 별도로 곱연산으로 적용됩니다.",
+        "box": [
+          "<strong>연속 피격 경감:</strong> 직전 피격으로부터 1초 이내에 재피격되면 피해를 <code>X%</code> 경감 (<strong class=\"text-[var(--color-text)]\">상한 80%</strong>)",
+          "<strong>저 HP 경감:</strong> HP가 최대의 <strong class=\"text-[var(--color-text)]\">30% 이하</strong>일 때 받는 피해를 <code>X%</code> 경감 (상한 80%)"
+        ],
+        "note": "UberUber 크라켄의 촉수 난타나 킹 슬램 같은 연타·순간 화력에 유효하며, 빈사 상태에서의 끈질김도 늘어납니다."
+      },
+      "statusResist": {
+        "heading": "상태이상 저항 <span class=\"text-[var(--color-accent)]\">(v2.0.0)</span>",
+        "intro": "v2.0.0에서 보스가 플레이어에게 상태이상을 부여하게 되었습니다 (UberUber 크라켄의 빙해의 파동 등). 이에 대항하는 저항 MOD/노드가 추가되었습니다.",
+        "box": [
+          "<strong>냉기 저항 / 빙결 저항:</strong> 플레이어가 받는 냉기·빙결 발생을 확률로 무효화 (크라켄의 심해의 갑옷과 동일한 구조)",
+          "<strong>독 피해 감소 (독 저항):</strong> 플레이어가 받는 독 지속 피해를 <code>X%</code> 경감",
+          "<strong>자동 상태이상 해제:</strong> 일정 간격으로 플레이어 자신의 상태이상을 해제하는 효과도 추가"
+        ],
+        "note": "냉기·빙결은 공격 횟수 감소나 행동 불능으로 직결됩니다. 빙해의 파동을 가진 UberUber 크라켄 전에서 특히 효과적입니다."
       },
       "hpOnHit": {
         "heading": "적중 시 HP 회복",

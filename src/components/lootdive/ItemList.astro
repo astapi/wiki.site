@@ -88,6 +88,8 @@ const total = rawItems.length
                   {it.atk ? `ATK ${it.atk}` : ''}
                   {it.atk && it.def ? ' / ' : ''}
                   {it.def ? `DEF ${it.def}` : ''}
+                  {(it.atk || it.def) && it.evasion ? ' / ' : ''}
+                  {it.evasion ? `EVA ${it.evasion}` : ''}
                   {it.fixedMods?.length ? ' / MOD' : ''}
                 </p>
               </div>
