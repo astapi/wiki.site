@@ -1,5 +1,2 @@
 # Cloudflare Pages redirects/rewrites
-
-# ルート wiki.astapi.net はサイトトップを持たないため、公式サイトへ逃がす
-https://wiki.astapi.net/ https://astapi.net/ 301
-https://wiki.astapi.net https://astapi.net/ 301
+# （トップは src/pages/index.astro のタイトル一覧）
