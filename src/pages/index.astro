@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+// wiki.astapi.net のトップ。タイトルが増えたら games に足す
+const games = [
+  {
+    href: '/lootdive/',
+    icon: '/lootdive/images/icon.png',
+    title: 'LootDive（ルートダイブ）',
+    genre: '放置ハクスラRPG',
+    desc: 'モンスター・アイテム・ダンジョン・ゲームシステムのデータをまとめた公式wiki。',
+  },
+]
+
+const title = 'astapi Games 攻略wiki'
+const description = 'astapi Gamesが運営する公式ゲーム攻略wiki。各タイトルのマスターデータを網羅。'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: title,
+  url: 'https://wiki.astapi.net/',
+  inLanguage: 'ja',
+  description,
+  publisher: { '@type': 'Organization', name: 'astapi Games', url: 'https://astapi.net' },
+}
+---
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <main class="max-w-3xl mx-auto px-4 py-16 md:py-24">
+    <p class="text-xs tracking-[0.2em] uppercase text-[var(--color-text-light)] mb-3">astapi Games</p>
+    <h1 class="text-3xl md:text-4xl font-semibold mb-3">攻略wiki</h1>
+    <p class="text-sm md:text-base text-[var(--color-text-muted)] leading-relaxed mb-12">
+      astapi Games のゲームの公式wikiです。ゲームのデータをもとに、モンスターやアイテムの情報をまとめています。
+    </p>
+
+    <h2 class="text-xs font-medium text-[var(--color-text-light)] mb-4">タイトル</h2>
+    <div class="grid gap-4">
+      {games.map((g) => (
+        <a
+          href={g.href}
+          class="flex items-center gap-4 p-5 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] hover:border-[var(--color-border-light)] transition-colors"
+        >
+          <img src={g.icon} alt="" width="64" height="64" class="w-16 h-16 rounded-2xl shrink-0" />
+          <div class="min-w-0 flex-1">
+            <p class="text-xs text-[var(--color-text-light)] mb-0.5">{g.genre}</p>
+            <p class="text-base font-semibold mb-1">{g.title}</p>
+            <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">{g.desc}</p>
+          </div>
+          <span class="text-[var(--color-text-lighter)] shrink-0" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+
+    <footer class="mt-20 pt-6 border-t border-[var(--color-border)] text-xs text-[var(--color-text-light)]">
+      <a href="https://astapi.net/" class="hover:text-[var(--color-text-muted)]">astapi Games 公式サイト</a>
+    </footer>
+  </main>
+</BaseLayout>
